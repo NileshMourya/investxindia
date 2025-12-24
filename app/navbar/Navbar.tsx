@@ -5,13 +5,18 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [productOpen, setProductOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
   return (
     <div>
       <header className="fixed top-0 left-0 w-full z-40 bg-white shadow backdrop-blur">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="">
-              <Image src="/logo.png" alt="Image" height={70} width={120} />
+            <div className="cursor-pointer">
+              <Link href="/">
+                <Image src="/logo.png" alt="Image" height={70} width={120} />
+              </Link>
             </div>
             {/* Left Menu */}
             <div className="hidden md:flex items-center space-x-6">
@@ -135,16 +140,94 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {open && (
-            <div className="md:hidden bg-white shadow rounded-md mt-2 p-3 space-y-2">
+            <div className="md:hidden bg-white shadow rounded-md mt-2 p-3 space-y-3">
+              <Link href="/" className="block text-sm">
+                Home
+              </Link>
+
+              {/* Product Menu */}
+              <div>
+                <button
+                  onClick={() => setProductOpen(!productOpen)}
+                  className="w-full flex justify-between items-center text-sm font-medium"
+                >
+                  Product
+                  <span className="text-lg">{productOpen ? "−" : "+"}</span>
+                </button>
+
+                {productOpen && (
+                  <div className="mt-2 pl-4 space-y-2">
+                    <Link
+                      href="/Services/MutualFunds"
+                      className="block text-sm"
+                    >
+                      Mutual Funds
+                    </Link>
+                    <Link href="/Services/kycStatus" className="block text-sm">
+                      Insurance
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      PMS/AIF
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      SIF
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      Fixed Deposit
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      Loans
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      Property
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link href="/Services" className="block text-sm">
+                Service
+              </Link>
+
               <Link href="/About" className="block text-sm">
-                About
+                Calculators
               </Link>
-              <Link href="/Calculator" className="block text-sm">
-                Calculator
+
+              <Link href="/Learn" className="block text-sm">
+                Learn
               </Link>
-              <Link href="/Contact" className="block text-sm">
-                Contact
+
+              <Link href="/company" className="block text-sm">
+                Company
               </Link>
+
+              {/* Login Menu */}
+              <div>
+                <button
+                  onClick={() => setLoginOpen(!loginOpen)}
+                  className="w-full flex justify-between items-center text-sm font-medium"
+                >
+                  Login
+                  <span className="text-lg">{loginOpen ? "−" : "+"}</span>
+                </button>
+
+                {loginOpen && (
+                  <div className="mt-2 pl-4 space-y-2">
+                    <Link
+                      href="/Services/MutualFunds"
+                      className="block text-sm"
+                    >
+                      Client Login
+                    </Link>
+                    <Link href="/Services/kycStatus" className="block text-sm">
+                      Partner Login
+                    </Link>
+                    <Link href="/Services/FATCA" className="block text-sm">
+                      Employee Login
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </nav>
