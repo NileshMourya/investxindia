@@ -60,7 +60,7 @@ export const data = [
   { image: "/AMC LOGO/union-mf.png", companyName: "union-mutual fund" },
   { image: "/AMC LOGO/uti-mf.png", companyName: "uti-mutual fund" },
   {
-    image: "/AMC LOGO/whiteoak-capital-mf.png",
+    image: "/AMC LOGO/whiteoak-capital-mf.jpg",
     companyName: "whiteoak-capital-mf",
   },
 ];

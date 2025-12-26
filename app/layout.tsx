@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar/Navbar";
-
+import Footer from "@/app/component/Footer";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -32,6 +32,9 @@ export default function RootLayout({
         <main className="min-h-screen pt-20">
           <div className="w-[90%] m-auto">{children}</div>
         </main>
+        <footer className="w-[90%] m-auto mt-5 mb-5">
+          <Footer />
+        </footer>
       </body>
     </html>
   );
