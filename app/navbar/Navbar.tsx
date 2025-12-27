@@ -5,8 +5,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const productMenu = [
-  { name: "Mutual Funds", url: "/services/mutual-funds" },
-  { name: "Insurance", url: "/services/insurance" },
+  { name: "Mutual Funds", url: "/Services/MutualFunds" },
+  { name: "Insurance", url: "/Services/Insurance" },
   { name: "PMS / AIF", url: "/services/pms-aif" },
   { name: "SIF", url: "/services/sif" },
   { name: "Fixed Deposit", url: "/services/fd" },
@@ -31,8 +31,8 @@ const loginMenu = [
 
 const mainLinks = [
   { name: "Home", url: "/" },
-  { name: "About", url: "/about" },
-  { name: "Services", url: "/services" },
+  { name: "About", url: "/About" },
+  { name: "Services", url: "/Services" },
   { name: "Calculator", url: "/calculator" },
   { name: "Learn", url: "/learn" },
   { name: "Company", url: "/company" },

@@ -1,13 +1,13 @@
-import HeroSection from "@/app/component/Home";
-import Services from "@/app/component/Services";
-import Company from "@/app/component/Company";
-import WhoWeWorkWith from "@/app/component/Business";
-import AMCs from "./component/AMCs";
+import HeroSection from "@/components/Home";
+import Services from "@/components/Services";
+import Company from "@/components/Company";
+import WhoWeWorkWith from "@/components/Business";
+import AMCs from "../components/AMCs";
 import Learn from "@/app/Learn/page";
-import Tools from "@/app/component/Tools";
-import FinanceInsight from "./component/FinanceInsight";
-import ContactUs from "./component/ContactUs";
-import Testimonials from "./component/Testimonials";
+import Tools from "@/components/Tools";
+import FinanceInsight from "../components/FinanceInsight";
+import ContactUs from "../components/ContactUs";
+import Testimonials from "../components/Testimonials";
 export default function Home() {
   return (
     <div>

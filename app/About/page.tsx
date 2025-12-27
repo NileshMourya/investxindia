@@ -1,5 +1,5 @@
 import React from "react";
-import LeadershipSection from "../component/LeadershipSection";
+import LeadershipSection from "../../components/LeadershipSection";
 
 const page = () => {
   return (

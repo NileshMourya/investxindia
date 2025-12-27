@@ -1,4 +1,4 @@
-import Home from "@/app/component/Home";
+import Home from "@/components/Home";
 
 export default function HeroCarousel() {
   return <Home />;

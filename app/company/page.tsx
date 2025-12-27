@@ -1,4 +1,4 @@
-import Company from "@/app/component/Company";
+import Company from "@/components/Company";
 const page = () => {
   return <Company />;
 };

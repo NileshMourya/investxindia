@@ -1,6 +1,6 @@
 import React from "react";
 
-import Learn from "@/app/component/Learn";
+import Learn from "@/components/Learn";
 
 const ServicesSection = () => {
   return <Learn />;

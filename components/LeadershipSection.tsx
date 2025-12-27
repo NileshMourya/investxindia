@@ -1,6 +1,6 @@
 "use client";
 
-import DirectorCard from "@/app/component/DirectorCard";
+import DirectorCard from "@/components/DirectorCard";
 import type { Director } from "@/app/types/director";
 
 const directors: Director[] = [

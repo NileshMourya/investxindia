@@ -116,6 +116,10 @@ export function Component() {
                 <FooterLink href="#">About Us</FooterLink>
                 <FooterLink href="#">Contact Us</FooterLink>
                 <FooterLink href="#">Disclosures & How We Work</FooterLink>
+                <FooterLink href="/PrivacyPolicy">Privacy Policy</FooterLink>
+                <FooterLink href="/Terms&Condition">
+                  Terms of Conditions
+                </FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
