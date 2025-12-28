@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 const productMenu = [
   { name: "Mutual Funds", url: "/Services/MutualFunds" },
   { name: "Insurance", url: "/Services/Insurance" },
-  { name: "PMS / AIF", url: "/services/pms-aif" },
+  { name: "PMS / AIF", url: "/Services/PMS" },
   { name: "SIF", url: "/services/sif" },
   { name: "Fixed Deposit", url: "/services/fd" },
   { name: "Loans", url: "/services/loans" },
