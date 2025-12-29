@@ -27,13 +27,20 @@ export default function HeroCarousel() {
         <CarouselContent>
           {images.map((img, index) => (
             <CarouselItem key={index}>
-              <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[85vh]">
+              <div
+                className="relative w-full   h-[45vh]
+                  sm:h-[55vh]
+                  md:h-[65vh]
+                  lg:h-[80vh]
+                  xl:h-[90vh]"
+              >
                 {/* Image */}
                 <Image
                   src={img}
                   alt={`slide-${index}`}
                   fill
-                  priority
+                  priority={index === 0}
+                  sizes="100vw"
                   className="object-contain"
                 />
               </div>

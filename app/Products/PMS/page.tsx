@@ -50,10 +50,10 @@ const page = () => {
             </p>
             <p className="text-sm text-[#0b2b7f] mt-2">
               At HRP Wealth, we act as a mutual fund distributor and facilitator
-              for NJ PMS / NJ NDPMS. We are not SEBI-registered portfolio
-              managers ourselves. Final PMS selection, suitability and
-              documentation are always discussed one-to-one based on your net
-              worth, risk profile and existing holdings.
+              for investxindiaPMS / investxindiaNDPMS. We are not
+              SEBI-registered portfolio managers ourselves. Final PMS selection,
+              suitability and documentation are always discussed one-to-one
+              based on your net worth, risk profile and existing holdings.
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ const page = () => {
               </p>
 
               <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                Who should consider PMS / NJ NDPMS – and who should not
+                Who should consider PMS / investxindiaNDPMS – and who should not
               </h2>
             </div>
             <p className="text-sm text-[#0b2b7f]">

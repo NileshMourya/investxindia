@@ -27,7 +27,7 @@ const page = () => {
           <p className="text-sm font-semibold text-[#f38120] uppercase">
             Based in Mumbai
           </p>
-          <p className="text-2xl text-[#00113d] leading-relaxed">
+          <p className="text-2xl font-semibold text-[#00113d] leading-relaxed">
             Local expert services for Maharastra & Gujarat families, available
             entirely online.
           </p>
@@ -40,7 +40,7 @@ const page = () => {
         </div>
 
         {/* Right Buttons */}
-        <div className="bg-slate-50 rounded-xl p-6">
+        <div className="bg-slate-100 rounded-xl p-6">
           <div className="grid grid-cols-1">
             <p className="text-sm font-bold text-[#00113d] mt-5 mb-5">
               Why a local expert instead of only DIY platforms?

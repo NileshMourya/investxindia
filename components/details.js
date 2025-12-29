@@ -35,7 +35,7 @@ export const data = [
   { image: "/AMC LOGO/bandhan-mf.png", companyName: "bandhan-mutual fund" },
   {
     image: "/AMC LOGO/baroda-bnp-paribas-mf.png",
-    companyName: "baroda-bnp-paribas-mf",
+    companyName: "baroda-bnp-paribas Mutual Funds",
   },
   {
     image: "/AMC LOGO/canara-robeco-mf.png",
@@ -45,24 +45,24 @@ export const data = [
   { image: "/AMC LOGO/edelweiss-mf.png", companyName: "edelweiss-mutual fund" },
   {
     image: "/AMC LOGO/franklin-templeton-mf.png",
-    companyName: "franklin-templeton-mf",
+    companyName: "franklin-templeton Mutual Funds",
   },
-  { image: "/AMC LOGO/hdfc-mf.png", companyName: "hdfc" },
+  { image: "/AMC LOGO/hdfc-mf.png", companyName: "hdfc Mutual Funds" },
   { image: "/AMC LOGO/hsbc-mf.png", companyName: "hsbc-mutual fund" },
   {
     image: "/AMC LOGO/icici-prudential-mf.png",
-    companyName: "icici-prudential-mf",
+    companyName: "icici-prudential Mutual Funds",
   },
   { image: "/AMC LOGO/invesco-mf.png", companyName: "invesco-mutual fund" },
   {
     image: "/AMC LOGO/jm-financial-mf.png",
     companyName: "jm-financial-mutual fund",
   },
-  { image: "/AMC LOGO/kotak-mf.png", companyName: "kotak-mf.png" },
-  { image: "/AMC LOGO/lic-mf.png", companyName: "lic-mutual fund" },
+  { image: "/AMC LOGO/kotak-mf.png", companyName: "kotak Mutual Fund" },
+  { image: "/AMC LOGO/lic-mf.png", companyName: "lic-mutual Fund" },
   {
     image: "/AMC LOGO/mahindra-manulife-mf.png",
-    companyName: "mahindra-manulife-mf",
+    companyName: "mahindra-manulife Mutual Fund",
   },
   {
     image: "/AMC LOGO/mirae-asset-mf.png",
@@ -89,7 +89,7 @@ export const data = [
   { image: "/AMC LOGO/uti-mf.png", companyName: "uti-mutual fund" },
   {
     image: "/AMC LOGO/whiteoak-capital-mf.jpg",
-    companyName: "whiteoak-capital-mf",
+    companyName: "whiteoak-capital Mutual Funds",
   },
 ];
 

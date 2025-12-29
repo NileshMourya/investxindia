@@ -1,4 +1,5 @@
 "use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -13,43 +14,38 @@ export function CarouselSpacing() {
   return (
     <Carousel
       plugins={[Autoplay({ delay: 2000 })]}
-      className="w-full max-w-7xl mx-auto mt-5 mb-5"
+      className="w-full max-w-7xl mx-auto my-8"
     >
-      <CarouselContent className="-ml-1">
+      <CarouselContent className="-ml-4">
         {data.map((item, index) => (
           <CarouselItem
             key={index}
-            className="pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/5"
+            className="pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/5"
           >
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div
-                    className="flex items-center"
-                    style={{ flexDirection: "column" }}
-                  >
-                    <div className="w-40 h-40 flex justify-center items-center mx-auto">
-                      <Image
-                        src={item.image}
-                        width={100}
-                        height={100}
-                        alt="amc"
-                      />
-                    </div>
-                    <p className="text-sm font-normal mt-4">
-                      {item.companyName
-                        .toLocaleUpperCase()
-                        .split("-")
-                        .join(" ")}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="h-[260px] flex items-center justify-center">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                {/* Image Wrapper */}
+                <div className="w-24 h-24 flex items-center justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.companyName}
+                    width={96}
+                    height={96}
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* Company Name */}
+                <p className="text-center text-sm font-medium text-gray-700">
+                  {item.companyName.toUpperCase().replace("-", " ")}
+                </p>
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
   );
 }
+
 export default CarouselSpacing;

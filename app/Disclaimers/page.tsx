@@ -4,7 +4,7 @@ import { AlertTriangle, ShieldCheck } from "lucide-react";
 
 export default function MutualFundDisclaimer() {
   return (
-    <section className="bg-slate-50 border-t border-slate-200 py-10 px-4">
+    <section className="bg-slate-100 border-t border-slate-200 py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8">
           {/* Header */}

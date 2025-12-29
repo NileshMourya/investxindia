@@ -21,6 +21,25 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 
+const links = [
+  { name: "Home", link: "/" },
+  { name: "About Us", link: "/About" },
+  { name: "Contact Us", link: "/Contact" },
+  { name: "Privacy Policy", link: "/PrivacyPolicy" },
+  { name: "Terms of Conditions", link: "/Terms&Condition" },
+  { name: "Disclaimers", link: "/Disclaimers" },
+];
+
+const calLinks = [
+  { name: "SIP Calculator", links: "/Calculator/SIP" },
+  { name: "Retirement Calculator", links: "" },
+  { name: "Goal Calculator", links: "" },
+  { name: "Tax Saving Calculator", links: "" },
+  { name: "Term Plan Calculator", links: "" },
+  { name: "Health Insurance Calculator", links: "" },
+  { name: "Emergency Fund Calculator", links: "" },
+];
+
 export function Component() {
   return (
     <Footer container>
@@ -71,13 +90,11 @@ export function Component() {
             </div>
             <div className="flex gap-1 mb-4">
               <p className="text-gray-600 font-semibold text-sm">Help Desk:</p>
-              <p className="text-sm text-gray-600">
-                Help Desk: +91 98924 40999
-              </p>
+              <p className="text-sm text-gray-600">+91 98924 40999</p>
             </div>
             <i className="mt-5 text-sm text-gray-500 absolute bottom-0 text-wrap">
-              Investments in securities are subject to market risks. Please read
-              all scheme-related documents carefully before investing.
+              Mutual fund investments are subject to market risks, read all
+              scheme related documents carefully.
             </i>
           </div>
 
@@ -112,35 +129,40 @@ export function Component() {
             <div>
               <FooterTitle title="Quick Link" />
               <FooterLinkGroup col>
-                <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="/About">About Us</FooterLink>
-                <FooterLink href="/Contact">Contact Us</FooterLink>
-                <FooterLink href="/PrivacyPolicy">Privacy Policy</FooterLink>
-                <FooterLink href="/Terms&Condition">
-                  Terms of Conditions
-                </FooterLink>
-                <FooterLink href="/Disclaimers">Disclaimer</FooterLink>
+                {links.map((item, id) => (
+                  <Link
+                    key={id}
+                    href={item.link}
+                    style={{ lineHeight: "10px" }}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </FooterLinkGroup>
             </div>
             <div>
               <FooterTitle title="Calculator" />
               <FooterLinkGroup col>
-                <FooterLink href="#">SIP Calculator</FooterLink>
-                <FooterLink href="#">Retirement Calculator</FooterLink>
-                <FooterLink href="#">Goal Calculator</FooterLink>
-                <FooterLink href="#">Tax Saving Calculator</FooterLink>
-                <FooterLink href="#">Term Plan Calculator</FooterLink>
-                <FooterLink href="#">Health Insurance Calculator</FooterLink>
-                <FooterLink href="#">Emergency Fund Calculator</FooterLink>
+                {calLinks.map((item, id) => (
+                  <Link
+                    key={id}
+                    href={item.links}
+                    style={{ lineHeight: "10px" }}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </FooterLinkGroup>
             </div>
             <div>
               <FooterTitle title="Resources" />
               <FooterLinkGroup col>
-                <FooterLink href="/Products/MutualFunds">
+                <FooterLink href="/Services/MutualFundBasic">
                   Mutual Fund Basics
                 </FooterLink>
-                <FooterLink href="/Learn">SIP / SWP / STP Guide</FooterLink>
+                <FooterLink href="//Services/SIP_SWP_STP">
+                  SIP / SWP / STP Guide
+                </FooterLink>
               </FooterLinkGroup>
             </div>
           </div>

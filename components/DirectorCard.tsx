@@ -33,23 +33,34 @@ export default function DirectorCard({ director }: DirectorCardProps) {
         p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300`}
       >
         {/* Image */}
-        <div className="relative">
-          <div className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl scale-95 group-hover:scale-100 transition-transform" />
-          <div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white">
-            <Image
-              src={director.image}
-              alt={director.name}
-              width={240}
-              height={300}
-              className="object-cover"
+        <div className="group flex flex-col items-center text-center gap-5">
+          {/* Image Wrapper */}
+          <div className="relative w-60 h-72">
+            {/* Glow */}
+            <div
+              className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl scale-95 
+                    group-hover:scale-100 transition-transform"
             />
-          </div>
-        </div>
 
-        {/* Content */}
-        <div className="flex-1 space-y-5 text-center lg:text-left">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+            {/* Image Container */}
+            <div
+              className="relative w-full h-full rounded-xl overflow-hidden 
+                    border border-gray-200 dark:border-gray-700 bg-white"
+            >
+              <Image
+                src={director.image}
+                alt={director.name}
+                fill
+                className="object-cover"
+                sizes="240px"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
               {director.name}
             </h3>
 
@@ -66,13 +77,17 @@ export default function DirectorCard({ director }: DirectorCardProps) {
               href={director.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex gap-2 mt-3 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+              className="inline-flex items-center gap-2 mt-3 text-sm font-medium 
+                 text-blue-600 dark:text-blue-400 hover:underline"
             >
               <LinkedInIcon />
-              <p className="mt-1">View LinkedIn Profile</p>
+              View LinkedIn Profile
             </a>
           </div>
+        </div>
 
+        {/* Content */}
+        <div className="flex-1 space-y-5 text-center lg:text-left">
           {/* Divider */}
           <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
 

@@ -8,10 +8,19 @@ const productMenu = [
   { name: "Mutual Funds", url: "/Products/MutualFunds" },
   { name: "Insurance", url: "/Products/Insurance" },
   { name: "PMS / AIF", url: "/Products/PMS" },
-  { name: "SIF", url: "/Products/sif" },
+  { name: "SIF", url: "/Products/SIF" },
   { name: "Fixed Deposit", url: "/Products/FixedDeposite" },
   { name: "Loans", url: "/Products/Loans" },
   { name: "Property", url: "/Products/Property" },
+];
+
+const serviceMenu = [
+  { name: "SIP SWP & SWP", url: "/Services/SIP_SWP_STP" },
+  { name: "Mutual Fund Basic", url: "/Services/MutualFundBasic" },
+  {
+    name: "Disclosures & How We Work",
+    url: "/Services/Disclosures",
+  },
 ];
 
 const loginMenu = [
@@ -32,11 +41,13 @@ const loginMenu = [
 const mainLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/About" },
-  { name: "Services", url: "/Services" },
-  { name: "Calculator", url: "/calculator" },
-  { name: "Learn", url: "/Learn" },
   { name: "Contact us", url: "/Contact" },
-  { name: "Company", url: "/company" },
+];
+
+const calMeanu = [
+  { name: "SIP Calculator", link: "/Calculator/SIP" },
+  { name: "Lumpsum Calculator", link: "/Calculator/Lumpsum" },
+  { name: "STP Calculator", link: "/Calculator/STP" },
 ];
 
 const Navbar = () => {
@@ -44,6 +55,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [calculatorOpen, setCalculatorOpen] = useState(false);
 
   const activeClass = (url: string) =>
     pathname === url
@@ -72,6 +85,43 @@ const Navbar = () => {
             </Link>
           ))}
 
+          {/* Calculator Meanu */}
+
+          <div className="relative group">
+            <button className="text-sm text-gray-700 font-medium hover:text-[#f38120] cursor-pointer">
+              Calculator
+            </button>
+            <div className="absolute -left-20 mt-2 w-60 bg-white rounded-md shadow-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
+              {calMeanu.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.link}
+                  className="block px-4 py-2 text-sm hover:bg-[#f38120] hover:text-white"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          {/* Services Meanu */}
+
+          <div className="relative group">
+            <button className="text-sm text-gray-700 font-medium hover:text-[#f38120] cursor-pointer">
+              Services
+            </button>
+            <div className="absolute -left-20 mt-2 w-60 bg-white rounded-md shadow-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
+              {serviceMenu.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.url}
+                  className="block px-4 py-2 text-sm hover:bg-[#f38120] hover:text-white"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Product Dropdown */}
           <div className="relative group">
             <button className="text-sm text-gray-700 font-medium hover:text-[#f38120] cursor-pointer">
@@ -92,7 +142,7 @@ const Navbar = () => {
 
           {/* Login Dropdown */}
           <div className="relative group">
-            <button className="text-sm text-gray-700 font-medium hover:text-[#f38120]">
+            <button className="text-sm py-2 px-4 shadow-lg cursor-pointer bg-[#0b2b7f] rounded-lg text-white font-medium hover:bg-[#f38120] hover:text-white">
               Login
             </button>
             <div className="absolute -left-20 mt-2 w-60 bg-white rounded-md shadow-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
@@ -131,6 +181,52 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+
+          {/* Calculator Meanu */}
+          <div>
+            <button
+              onClick={() => setCalculatorOpen(!calculatorOpen)}
+              className="w-full flex justify-between text-sm font-medium"
+            >
+              Calculator <span>{calculatorOpen ? "−" : "+"}</span>
+            </button>
+            {calculatorOpen && (
+              <div className="mt-2 pl-4 space-y-2">
+                {calMeanu.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.link}
+                    className="block text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Services */}
+          <div>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="w-full flex justify-between text-sm font-medium"
+            >
+              Services <span>{servicesOpen ? "−" : "+"}</span>
+            </button>
+            {servicesOpen && (
+              <div className="mt-2 pl-4 space-y-2">
+                {serviceMenu.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.url}
+                    className="block text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Mobile Product */}
           <div>

@@ -1,6 +1,4 @@
 "use client";
-import React from "react";
-import Learn from "@/components/Learn";
 import { SIP, quickComparison, SWP, STP } from "./data";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";

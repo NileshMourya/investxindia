@@ -13,7 +13,7 @@ const Page = () => {
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           {/* Left */}
-          <div className="bg-slate-50 rounded-xl p-6 space-y-2">
+          <div className="bg-slate-100 rounded-xl p-6 space-y-2">
             <p className="text-sm font-semibold text-[#f38120] uppercase">
               Start Here
             </p>
@@ -24,7 +24,7 @@ const Page = () => {
           </div>
 
           {/* Right Buttons */}
-          <div className="bg-slate-50 rounded-xl p-6">
+          <div className="bg-slate-100 rounded-xl p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "Plan my goals",
