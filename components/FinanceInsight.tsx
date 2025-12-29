@@ -53,7 +53,7 @@ const FinanceInsight = () => {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
-            <p className="text-xs tracking-widest font-semibold text-blue-500 uppercase mb-3">
+            <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
               Financial Insights
             </p>
 
@@ -75,9 +75,8 @@ const FinanceInsight = () => {
           {cards.map((card, i) => (
             <div
               key={i}
-              className={`group cursor-pointer relative rounded-2xl p-4 backdrop-blur-xl transition-all duration-300
-           
-            hover:-translate-y-2 hover:shadow-xl bg-white/80  hover:border hover:border-[#f38120]`}
+              className={`group cursor-pointer relative rounded-2xl p-4 backdrop-blur-xl transition-all duration-300 shadow-md
+            hover:-translate-y-2 hover:shadow-xl bg-white/80 `}
             >
               {/* Gradient Hover Glow */}
               <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />

@@ -112,14 +112,14 @@ export function Component() {
             <div>
               <FooterTitle title="Quick Link" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Home</FooterLink>
-                <FooterLink href="#">About Us</FooterLink>
-                <FooterLink href="#">Contact Us</FooterLink>
-                <FooterLink href="#">Disclosures & How We Work</FooterLink>
+                <FooterLink href="/">Home</FooterLink>
+                <FooterLink href="/About">About Us</FooterLink>
+                <FooterLink href="/Contact">Contact Us</FooterLink>
                 <FooterLink href="/PrivacyPolicy">Privacy Policy</FooterLink>
                 <FooterLink href="/Terms&Condition">
                   Terms of Conditions
                 </FooterLink>
+                <FooterLink href="/Disclaimers">Disclaimer</FooterLink>
               </FooterLinkGroup>
             </div>
             <div>
@@ -137,8 +137,10 @@ export function Component() {
             <div>
               <FooterTitle title="Resources" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Mutual Fund Basics</FooterLink>
-                <FooterLink href="#">SIP / SWP / STP Guide</FooterLink>
+                <FooterLink href="/Products/MutualFunds">
+                  Mutual Fund Basics
+                </FooterLink>
+                <FooterLink href="/Learn">SIP / SWP / STP Guide</FooterLink>
               </FooterLinkGroup>
             </div>
           </div>

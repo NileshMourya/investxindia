@@ -27,9 +27,9 @@ const services = [
 ];
 
 const tagStyles = {
-  CORE: "bg-blue-50 text-blue-600",
-  POPULAR: "bg-orange-50 text-orange-600",
-  NEW: "bg-green-50 text-green-600",
+  CORE: "bg-orange-50 text-[#f38120]",
+  POPULAR: "bg-orange-50 text-[#f38120]",
+  NEW: "bg-green-50 text-[#f38120]",
 };
 
 const ServicesSection = () => {
@@ -39,7 +39,7 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
           <div>
-            <p className="text-xs tracking-widest font-semibold text-blue-500 uppercase mb-3">
+            <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
               Services
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
@@ -67,7 +67,7 @@ const ServicesSection = () => {
               {/* Tag */}
               {service.tag && (
                 <span
-                  className={`absolute top-6 right-6 text-xs font-semibold px-3 py-1 rounded-full ${[
+                  className={`absolute top-6 right-6 text-[#f38120] text-xs font-semibold px-3 py-1 rounded-full ${[
                     tagStyles,
                   ]}`}
                 >

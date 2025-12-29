@@ -175,7 +175,7 @@ const page = () => {
           {/* Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div>
-              <p className="text-xs tracking-widest font-semibold text-blue-500 uppercase mb-3">
+              <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
                 Goal-based suggestions
               </p>
 
@@ -253,7 +253,7 @@ const page = () => {
           {/* Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div>
-              <p className="text-xs tracking-widest font-semibold text-blue-500 uppercase mb-3">
+              <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
                 Sample journeys
               </p>
 

@@ -5,13 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const productMenu = [
-  { name: "Mutual Funds", url: "/Services/MutualFunds" },
-  { name: "Insurance", url: "/Services/Insurance" },
-  { name: "PMS / AIF", url: "/Services/PMS" },
-  { name: "SIF", url: "/services/sif" },
-  { name: "Fixed Deposit", url: "/services/fd" },
-  { name: "Loans", url: "/services/loans" },
-  { name: "Property", url: "/services/property" },
+  { name: "Mutual Funds", url: "/Products/MutualFunds" },
+  { name: "Insurance", url: "/Products/Insurance" },
+  { name: "PMS / AIF", url: "/Products/PMS" },
+  { name: "SIF", url: "/Products/sif" },
+  { name: "Fixed Deposit", url: "/Products/FixedDeposite" },
+  { name: "Loans", url: "/Products/Loans" },
+  { name: "Property", url: "/Products/Property" },
 ];
 
 const loginMenu = [
@@ -34,7 +34,8 @@ const mainLinks = [
   { name: "About", url: "/About" },
   { name: "Services", url: "/Services" },
   { name: "Calculator", url: "/calculator" },
-  { name: "Learn", url: "/learn" },
+  { name: "Learn", url: "/Learn" },
+  { name: "Contact us", url: "/Contact" },
   { name: "Company", url: "/company" },
 ];
 
@@ -73,7 +74,7 @@ const Navbar = () => {
 
           {/* Product Dropdown */}
           <div className="relative group">
-            <button className="text-sm font-medium hover:text-[#f38120] cursor-pointer">
+            <button className="text-sm text-gray-700 font-medium hover:text-[#f38120] cursor-pointer">
               Product
             </button>
             <div className="absolute -left-20 mt-2 w-60 bg-white rounded-md shadow-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
@@ -91,7 +92,7 @@ const Navbar = () => {
 
           {/* Login Dropdown */}
           <div className="relative group">
-            <button className="text-sm font-medium hover:text-[#f38120]">
+            <button className="text-sm text-gray-700 font-medium hover:text-[#f38120]">
               Login
             </button>
             <div className="absolute -left-20 mt-2 w-60 bg-white rounded-md shadow-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">

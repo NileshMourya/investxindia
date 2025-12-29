@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "app/Services/PMS/data.js"
+    "app/Products/PMS/data.js"
   ],
   "exclude": ["node_modules"]
 }

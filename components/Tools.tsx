@@ -33,7 +33,7 @@ export default function OurApproach() {
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <p className="text-sm font-semibold tracking-widest text-blue-500 uppercase">
+          <p className="text-sm font-semibold tracking-widest text-[#f38120] uppercase">
             Our Approach
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">

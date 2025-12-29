@@ -9,65 +9,79 @@ interface DirectorCardProps {
 }
 
 export default function DirectorCard({ director }: DirectorCardProps) {
+  const isReverse = director.index % 2 === 0;
+
   return (
     <motion.div
-      key={director.index}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: director.index * 0.1 }}
-      className={`flex flex-col lg:flex-row gap-8 items-start rounded-2xl
-  bg-white dark:bg-gray-900 p-6 shadow-md dark:shadow-gray-800
-  ${director.index % 2 === 0 ? "lg:flex-row-reverse" : ""}
-`}
+      className="relative"
     >
-      {/* Image */}
+      {/* Accent Strip */}
       <div
-        className={`flex justify-center
-    ${director.index % 2 === 0 ? "lg:col-start-3" : "lg:col-start-1"}`}
-      >
-        <div className="rounded-xl overflow-hidden border dark:border-gray-700">
-          <Image
-            src={director.image}
-            alt={director.name}
-            width={220}
-            height={280}
-            className="object-cover"
-          />
-        </div>
-      </div>
+        className={`absolute top-0 ${
+          isReverse ? "right-0" : "left-0"
+        } h-full w-1 rounded-full bg-gradient-to-b from-blue-600 via-indigo-500 to-purple-500`}
+      />
 
-      {/* Content */}
       <div
-        className={`lg:col-span-2 space-y-4
-    ${director.index % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"}`}
+        className={`group flex flex-col ${
+          isReverse ? "lg:flex-row-reverse" : "lg:flex-row"
+        } gap-10 items-center rounded-2xl bg-white dark:bg-gray-900 
+        p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300`}
       >
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-            {director.name}
-          </h3>
-          <p className="text-blue-600 dark:text-blue-400 font-medium">
-            {director.role}
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">{director.company}</p>
-
-          {/* LinkedIn */}
-          <a
-            href={director.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-2 text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            <LinkedInIcon />
-            LinkedIn
-          </a>
+        {/* Image */}
+        <div className="relative">
+          <div className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl scale-95 group-hover:scale-100 transition-transform" />
+          <div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white">
+            <Image
+              src={director.image}
+              alt={director.name}
+              width={240}
+              height={300}
+              className="object-cover"
+            />
+          </div>
         </div>
 
-        {/* Description */}
-        <div className="space-y-3 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-          {director.description.map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
+        {/* Content */}
+        <div className="flex-1 space-y-5 text-center lg:text-left">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {director.name}
+            </h3>
+
+            <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
+              {director.role}
+            </p>
+
+            <p className="text-gray-500 dark:text-gray-400">
+              {director.company}
+            </p>
+
+            {/* LinkedIn */}
+            <a
+              href={director.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex gap-2 mt-3 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              <LinkedInIcon />
+              <p className="mt-1">View LinkedIn Profile</p>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
+
+          {/* Description */}
+          <div className="space-y-3 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+            {director.description.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
