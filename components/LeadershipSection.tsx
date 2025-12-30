@@ -38,7 +38,7 @@ const directors: Director[] = [
     name: "Ketki Pathak",
     role: "Vice President",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
-    image: "/keatki.jpeg",
+    image: "/ketki.jpeg",
     linkedin: "https://www.linkedin.com/in/ketki-pathak",
     description: [
       "Ketki Pathak is the Vice President at Investxindia Corporate Distribution Pvt. Ltd., bringing over 15 years of experience in the Indian financial services industry.",

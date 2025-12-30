@@ -83,7 +83,12 @@ const page = () => {
               <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-xl mb-4 text-[#f38120] hover:bg-[#f38120] hover:text-white">
+              <div
+                className="absolute -top-6 right-6 w-12 h-12 rounded-2xl 
+                      bg-gradient-to-br from-orange-400 to-orange-500 
+                      text-white flex items-center justify-center text-xl 
+                      shadow-lg group-hover:scale-110 transition"
+              >
                 {card.icon}
               </div>
 
@@ -112,7 +117,12 @@ const page = () => {
               <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-xl mb-4 text-[#f38120] hover:bg-[#f38120] hover:text-white">
+              <div
+                className="absolute -top-6 right-6 w-12 h-12 rounded-2xl 
+                      bg-gradient-to-br from-orange-400 to-orange-500 
+                      text-white flex items-center justify-center text-xl 
+                      shadow-lg group-hover:scale-110 transition"
+              >
                 {card.icon}
               </div>
 
@@ -156,7 +166,12 @@ const page = () => {
               <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-xl mb-4 text-[#f38120] hover:bg-[#f38120] hover:text-white">
+              <div
+                className="absolute -top-6 right-6 w-12 h-12 rounded-2xl 
+                      bg-gradient-to-br from-orange-400 to-orange-500 
+                      text-white flex items-center justify-center text-xl 
+                      shadow-lg group-hover:scale-110 transition"
+              >
                 {card.icon}
               </div>
 
@@ -329,7 +344,12 @@ const page = () => {
               <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-xl mb-4 text-[#f38120] hover:bg-[#f38120] hover:text-white">
+              <div
+                className="absolute -top-6 right-6 w-12 h-12 rounded-2xl 
+                      bg-gradient-to-br from-orange-400 to-orange-500 
+                      text-white flex items-center justify-center text-xl 
+                      shadow-lg group-hover:scale-110 transition"
+              >
                 {card.icon}
               </div>
 
