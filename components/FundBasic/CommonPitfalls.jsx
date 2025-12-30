@@ -10,27 +10,27 @@ import {
 
 const pitfalls = [
   {
-    title: "Chasing Past Performance",
+    title: "Relying Too Much on Historical Returns",
     description:
-      "Past returns don’t guarantee future results. Focus on consistency, fund manager track record, and alignment with your goals.",
+      "Strong past performance doesn’t ensure future success. Evaluate consistency, the fund manager’s experience, and how well the fund fits your financial objectives.",
     icon: TrendingDown,
   },
   {
-    title: "Stopping SIPs During Market Dips",
+    title: "Pausing SIPs When Markets Fall",
     description:
-      "Market volatility is normal. Stopping SIPs during downturns means missing opportunities to buy units at lower prices.",
+      "Market ups and downs are expected. Halting SIPs during corrections can cause you to miss the advantage of accumulating units at lower prices.",
     icon: PauseCircle,
   },
   {
-    title: "Over-Diversification",
+    title: "Holding Too Many Funds",
     description:
-      "Too many funds can dilute returns and complicate tracking. A focused portfolio of 4–6 well-chosen funds is usually sufficient.",
+      "Excessive diversification can reduce potential gains and make portfolio management harder. Generally, 4–6 carefully selected funds are enough.",
     icon: Layers,
   },
   {
-    title: "Ignoring Expense Ratios",
+    title: "Overlooking Expense Costs",
     description:
-      "Even small differences in expense ratios can significantly impact long-term returns. Always compare within the same category.",
+      "Minor variations in expense ratios can add up over time and affect returns. Always compare costs among funds in the same category.",
     icon: Percent,
   },
 ];

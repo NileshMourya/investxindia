@@ -1,22 +1,21 @@
 "use client";
 import React from "react";
 import { CheckCircle, XCircle } from "lucide-react";
-
 const whatWeDo = [
-  "Understand your goals, cashflows, time horizon, and family responsibilities.",
-  "Help you assess your risk profile and capacity to take risk.",
-  "Explain mutual funds, SIP/SWP/STP, insurance, NPS, and other products in simple, practical language.",
-  "Suggest suitable categories and broad asset allocations aligned to your profile and goals.",
-  "Execute and track your investments through regulated platforms (such as investxindiaE-Wealth) and support documentation.",
-  "Provide periodic reviews, portfolio discussions, and help you stay disciplined through market cycles.",
+  "Assess your financial goals, income patterns, investment horizon, and family obligations.",
+  "Evaluate your risk appetite and ability to withstand market fluctuations.",
+  "Simplify concepts such as mutual funds, SIP/SWP/STP, insurance, NPS, and related products using practical examples.",
+  "Recommend appropriate fund categories and high-level asset allocation based on your profile and objectives.",
+  "Facilitate execution and monitoring of investments through regulated platforms (such as InvestXIndia E-Wealth), along with required documentation support.",
+  "Conduct regular portfolio reviews, performance discussions, and provide guidance to help you stay disciplined across market cycles.",
 ];
 
 const whatWeDontDo = [
-  "We do not offer intraday trading tips, stock tips, or guaranteed-return schemes.",
-  "We do not promise or assure any fixed rate of return in mutual funds or market-linked products.",
-  "We do not handle your internet banking, OTPs, user IDs, or passwords and will never ask for them.",
-  "We do not collect cash for investments; all investments are executed only through official banking channels.",
-  "We do not provide tax or legal opinions; we work together with your CA wherever required.",
+  "We do not provide intraday trading advice, stock tips, or schemes promising assured returns.",
+  "We do not guarantee or commit to any fixed returns on mutual funds or market-linked investments.",
+  "We never access or request your internet banking details, OTPs, login IDs, or passwords.",
+  "We do not accept cash for investments; all transactions are carried out only via authorized banking channels.",
+  "We do not offer tax or legal advice and coordinate with your Chartered Accountant whenever necessary.",
 ];
 
 const WhatWeDoSection = () => {

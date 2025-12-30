@@ -3,27 +3,25 @@ import React from "react";
 const steps = [
   {
     step: "Step 1",
-    title: "Discover Goals",
+    title: "Set Financial Goals",
     description:
-      "Understand cashflows, risk appetite, timelines, and existing assets.",
+      "Understand income, risk preferences, timelines, and existing investments.",
   },
   {
     step: "Step 2",
-    title: "Design Allocations",
-    description:
-      "Blend SIP, STP, and lumpsum allocations aligned with research insights.",
+    title: "Plan Investments",
+    description: "Allocate funds across SIPs, STPs, and lump-sum options.",
   },
   {
     step: "Step 3",
-    title: "Execute & Protect",
+    title: "Invest & Secure",
     description:
-      "Implement across platforms with term insurance and health cover.",
+      "Execute investments while ensuring health and life protection.",
   },
   {
     step: "Step 4",
-    title: "Review & Refresh",
-    description:
-      "Quarterly monitoring, rebalancing, and milestone tracking dashboards.",
+    title: "Track & Improve",
+    description: "Review performance regularly and rebalance when needed.",
   },
 ];
 
@@ -34,17 +32,18 @@ export default function OurApproach() {
       <div className="max-w-7xl mx-auto mb-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
           <p className="text-sm font-semibold tracking-widest text-[#f38120] uppercase">
-            Our Approach
+            Our Methodology
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-            From discovery to <br className="hidden sm:block" />
-            disciplined reviews.
+            From goal discovery <br className="hidden sm:block" />
+            to consistent portfolio reviews.
           </h2>
         </div>
 
         <p className="text-slate-600 text-base sm:text-lg flex items-center">
-          Every plan is collaborative, measurable, and supported by regular
-          checkpoints so you always know the next action.
+          Each strategy is built collaboratively, tracked with clear metrics,
+          and reviewed regularly to keep your investments aligned with your
+          goals.
         </p>
       </div>
 

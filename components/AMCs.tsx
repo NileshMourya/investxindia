@@ -8,17 +8,15 @@ const AMCs = () => {
           className="flex items-center justify-content-center mx-auto lg:w-3/4 sm:w-full"
           style={{ flexDirection: "column" }}
         >
-          <p className="text-center text-lg font-semibold text-gray-400">
-            PARTNER AMCS
+          <p className="text-center text-lg font-semibold text-[#f38120]">
+            Trusted AMC Partners
           </p>
-          <p className="text-center mt-5 text-2xl font-bold text-[#00113d]">
-            Access to 40+ Leading Asset Management Companies
-          </p>
+
           <p className="text-center text-sm md:text-base text-gray-600 leading-relaxed">
-            We provide access to top-performing mutual funds across all major
-            AMCs, ensuring diversified and research-backed investment options.
-            Partner with leading fund houses including HDFC, SBI, ICICI
-            Prudential, Axis, Kotak, and 35+ more AMCs.
+            Access a broad spectrum of mutual funds from 40+ premier Asset
+            Management Companies. Our platform partners with established fund
+            houses such as HDFC, SBI, ICICI Prudential, Axis, Kotak, along with
+            35+ others, to deliver reliable and diversified investment choices.
           </p>
         </div>
       </div>

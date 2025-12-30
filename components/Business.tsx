@@ -1,62 +1,65 @@
 import React from "react";
 
-const audiences = [
+const segments = [
   {
-    title: "Salaried Professionals",
-    desc: "Plan SIPs for retirement, tax saving, and children’s future with increasing income.",
-    cta: "Plan monthly SIP →",
+    title: "Working Professionals",
+    desc: "Build SIPs for retirement, tax efficiency, and children’s goals as your income grows over time.",
+    cta: "Start SIP Planning →",
   },
   {
-    title: "Business Owners",
-    desc: "Turn irregular cashflows into disciplined investments and contingency reserves.",
-    cta: "Map my goals →",
+    title: "Entrepreneurs & Business Owners",
+    desc: "Convert uneven business cashflows into systematic investments and emergency buffers.",
+    cta: "Structure My Goals →",
   },
   {
     title: "NRIs & Global Indians",
-    desc: "Structure India-focused portfolios while coordinating with overseas income.",
-    cta: "Explore NRI options →",
+    desc: "Design India-focused portfolios while coordinating overseas income and compliance.",
+    cta: "View NRI Solutions →",
   },
   {
-    title: "Families in Mid-Life",
-    desc: "Consolidate scattered policies, align term/health cover, and plan SWP for retirement.",
-    cta: "Review my plan →",
+    title: "Pre-Retirement Families",
+    desc: "Streamline policies, optimise insurance cover, and plan SWP for stable retirement income.",
+    cta: "Review My Strategy →",
   },
 ];
 
-const WhoWeWorkWith = () => {
+const WhoWeServe = () => {
   return (
-    <section className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-gradient-to-b from-[#f7f9fc] to-white py-16 px-4 md:px-8 mt-6 mb-6">
+      <div className="max-w-7xl mx-auto space-y-14">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
-            <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-              Who we work with
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#f38120] mb-3">
+              Who We Serve
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-              Goal-based investing for <br />
+            <h2 className="text-3xl md:text-4xl font-bold text-[#00113d] leading-tight">
+              Structured investing for <br className="hidden sm:block" />
               Indian families & professionals
             </h2>
           </div>
 
           <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-            Whether you are just starting a SIP or planning retirement income,
-            we help convert your cashflows into clear, measurable mutual fund
+            From starting your first SIP to planning dependable retirement
+            income, we help turn your cashflows into clearly defined mutual fund
             and protection strategies.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {audiences.map((item, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {segments.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,0.08)]
-                         hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)]
+              className="group bg-white rounded-3xl p-6 border border-slate-100
+                         shadow-sm hover:shadow-xl hover:-translate-y-1
                          transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-[#0b2b7f] mb-3">
+              {/* Accent line */}
+              <div className="h-1 w-10 bg-[#f38120] rounded-full mb-4" />
+
+              <h3 className="text-lg font-semibold text-[#00113d] mb-3">
                 {item.title}
               </h3>
 
@@ -64,7 +67,10 @@ const WhoWeWorkWith = () => {
                 {item.desc}
               </p>
 
-              <button className="text-sm font-semibold text-[#0b2b7f] hover:underline underline-offset-4">
+              <button
+                className="text-sm font-semibold text-[#264796]
+                                 group-hover:underline underline-offset-4"
+              >
                 {item.cta}
               </button>
             </div>
@@ -75,4 +81,4 @@ const WhoWeWorkWith = () => {
   );
 };
 
-export default WhoWeWorkWith;
+export default WhoWeServe;

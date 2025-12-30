@@ -5,39 +5,40 @@ import { Search, Target, TrendingUp, ArrowRight } from "lucide-react";
 const insights = [
   {
     label: "Mutual Fund Guide",
-    title: "How to Choose the Right Mutual Fund – Complete Guide for Beginners",
+    title: "Beginner’s Guide to Selecting the Right Mutual Fund",
     description:
-      "Learn how to choose the right mutual fund for your goals. A complete beginner’s guide covering risk assessment, fund analysis, performance review, and how structured selection helps you invest with confidence.",
+      "Discover a step-by-step approach to picking the right mutual fund. This beginner-friendly guide explains goal setting, risk evaluation, fund analysis, performance checks, and why a structured process builds investing confidence.",
     icon: <Search />,
   },
   {
     label: "Mutual Fund Guide",
-    title: "How to Choose the Right Mutual Fund for Your Goals",
+    title: "Choosing Mutual Funds That Match Your Financial Goals",
     description:
-      "Understand how to align mutual funds with goals like retirement, education, or wealth creation. Covers risk profiling, fund manager evaluation, expense ratios, and SIP-friendly recommendations.",
+      "Learn how to select mutual funds based on goals such as retirement planning, education funding, or long-term wealth creation. Includes insights on risk profiling, fund manager assessment, expense ratios, and SIP suitability.",
     icon: <Target />,
   },
   {
     label: "Mutual Fund Guide",
     title:
-      "Systematic Transfer Plan (STP) in Mutual Funds: Meaning, Benefits, Types & When to Use It",
+      "Systematic Transfer Plan (STP) Explained: Meaning, Advantages, Types & Ideal Use Cases",
     description:
-      "A detailed guide to STP in mutual funds — meaning, how it works, benefits, types of STP, and when STP makes more sense than lump sum or SIP investments.",
+      "An in-depth explanation of STP in mutual funds—how it works, key benefits, different STP options, and situations where STP may be a better choice than lump sum or SIP investing.",
     icon: <TrendingUp />,
   },
   {
     label: "Mutual Fund Guide",
-    title: "STP Mutual Funds: A Smart Way to Invest Lump Sum Gradually",
+    title:
+      "STP in Mutual Funds: A Smarter Approach to Investing Lump Sum Amounts",
     description:
-      "Simple, story-based guide to how Systematic Transfer Plan (STP) in mutual funds helps you deploy lump sum amounts gradually into equity. Real-life scenarios for bonus, FD maturity and property sale proceeds.",
+      "An easy-to-understand guide on using Systematic Transfer Plans to gradually move lump sum money into equity funds. Includes relatable examples like bonuses, fixed deposit maturity, and property sale proceeds.",
     icon: <Target />,
   },
   {
     label: "Mutual Fund Guide",
     title:
-      "Understanding IDCW in Mutual Funds: Meaning, Benefits, and When to Choose It",
+      "IDCW in Mutual Funds Explained: Meaning, Benefits & When It Makes Sense",
     description:
-      "Learn about IDCW (Income Distribution cum Capital Withdrawal) in mutual funds. Comprehensive guide on IDCW meaning, benefits, tax implications, comparison with SWP and growth plans, and when to choose IDCW for regular income from mutual funds.",
+      "A complete guide to IDCW (Income Distribution cum Capital Withdrawal) in mutual funds, covering its meaning, benefits, tax impact, comparison with SWP and growth options, and when IDCW may suit investors seeking periodic income.",
     icon: <TrendingUp />,
   },
 ];

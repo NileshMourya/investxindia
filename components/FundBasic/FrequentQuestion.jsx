@@ -7,35 +7,49 @@ import {
 
 const data = [
   {
-    question: "Is a lower NAV better? Does it mean the fund is cheaper?",
-    answer: `No, NAV alone doesn t indicate if a fund is better or cheaper. A
-            lower NAV doesn t mean better value. What matters is the fund s
-            performance, consistency, expense ratio, and alignment with your
-            goals. A ₹10 NAV and ₹100 NAV fund can both be good or bad depending
-            on their underlying portfolio and management.`,
+    question: "Is a lower NAV always better? Does it mean the fund is cheaper?",
+    answer: `No, the NAV by itself doesn’t tell you whether a fund is good or inexpensive.
+             A lower NAV does not imply better value. What really matters are factors
+             like the fund’s performance history, consistency, expense ratio, and how
+             well it fits your financial goals. A fund with a ₹10 NAV and one with a
+             ₹100 NAV can both perform well or poorly depending on their portfolio and
+             management quality.`,
   },
   {
-    question: "How often should I review my mutual fund investments?",
-    answer: `Review your portfolio at least once a year or when there are significant life changes (marriage, job change, new goals). Avoid checking NAV daily as it can lead to emotional decisions. Focus on long-term performance and whether your funds are still aligned with your goals. Regular reviews help ensure your portfolio stays on track.`,
+    question: "How frequently should I review my mutual fund portfolio?",
+    answer: `It’s advisable to review your investments at least once a year or whenever
+             there is a major life event such as marriage, a job change, or new financial
+             goals. Avoid tracking NAVs daily, as this can lead to impulsive decisions.
+             Focus instead on long-term performance and goal alignment. Periodic reviews
+             help keep your portfolio on course.`,
   },
   {
     question:
-      "What's the actual cost difference between Direct and Regular plans?",
-    answer: `The expense ratio difference typically ranges from 0.5% to 1% per year. On a ₹1 lakh investment growing at 12% annually, a 0.75% higher expense ratio could mean approximately ₹2-3 lakhs less over 20 years. However, Regular plans provide professional guidance, behavioral support, and periodic reviews that can help avoid costly mistakes. The value depends on whether you need ongoing support or can manage independently.`,
+      "What is the real cost difference between Direct and Regular mutual fund plans?",
+    answer: `The expense ratio gap is usually around 0.5% to 1% annually. For example, on a
+             ₹1 lakh investment growing at 12% per year, an extra 0.75% in expenses could
+             reduce your final corpus by roughly ₹2–3 lakhs over 20 years. That said,
+             Regular plans include advisory support, ongoing guidance, and portfolio
+             reviews that may help investors avoid costly mistakes. The right choice
+             depends on how comfortable you are managing investments on your own.`,
   },
   {
-    question: "Can I pause or stop my SIP anytime?",
-    answer: `Yes, you can pause or stop your SIP anytime. However, stopping during market downturns means missing opportunities to buy units at lower prices. SIPs work best when continued consistently over the long term. If you need to pause due to financial constraints, consider reducing the SIP amount instead of stopping completely.`,
+    question: "Is it possible to pause or discontinue a SIP whenever I want?",
+    answer: `Yes, SIPs can be paused or stopped at any time. However, discontinuing them
+             during market declines may cause you to miss the benefit of buying units
+             at lower prices. SIPs tend to work best when maintained consistently over
+             the long term. If cash flow is tight, reducing the SIP amount may be a
+             better option than stopping it entirely.`,
   },
   {
-    question: "What happens if I need money before my goal timeline?",
+    question: "What if I need funds before reaching my investment goal?",
     answer:
-      "Mutual funds offer liquidity - you can redeem your units anytime (except in certain close-ended schemes). However, redeeming equity funds within 1 year may result in short-term capital gains tax. For goals less than 3 years away, consider debt or hybrid funds. Always maintain an emergency fund separately to avoid premature redemptions.",
+      "Mutual funds are generally liquid, allowing you to redeem units whenever needed (except for certain close-ended schemes). However, withdrawing from equity funds within one year can attract short-term capital gains tax. For goals with a time horizon of under three years, debt or hybrid funds may be more suitable. Keeping a separate emergency fund can help avoid early withdrawals.",
   },
   {
-    question: "Are mutual funds safe? Can I lose all my money?",
+    question: "Are mutual funds safe, or is it possible to lose everything?",
     answer:
-      "Mutual funds are market-linked products and carry market risk. While you can lose money, especially in equity funds during market downturns, losing all your money is extremely unlikely in diversified equity funds. Debt funds carry credit and interest rate risks. The key is to invest according to your risk profile, stay invested for the long term, and diversify across fund categories and asset management companies.",
+      "Mutual funds are linked to market performance and involve varying degrees of risk. While short-term losses are possible—especially in equity funds during market downturns—losing your entire investment is highly unlikely in well-diversified funds. Debt funds also carry risks related to credit quality and interest rates. Investing according to your risk tolerance, staying invested long term, and diversifying across fund types and fund houses helps manage risk effectively.",
   },
 ];
 

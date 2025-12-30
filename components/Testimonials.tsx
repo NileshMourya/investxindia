@@ -46,18 +46,18 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
             <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-              Testimonials
+              Client Testimonials
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-              Confidence built through
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00113d] leading-tight">
+              Built on trust,
               <br className="hidden sm:block" />
-              measurable outcomes.
+              delivered through outcomes.
             </h2>
           </div>
 
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl">
-            Families across Maharashtra trust InvestX India for transparent
-            communication, disciplined execution, and on-time goal delivery.
+            InvestX India is trusted by families across Maharashtra for
+            structured planning, transparent advice, and goal-driven execution.
           </p>
         </div>
       </div>

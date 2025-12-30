@@ -5,30 +5,30 @@ import { Search, LayoutTemplate, PlayCircle, RefreshCcw } from "lucide-react";
 const steps = [
   {
     step: "Step 1",
-    title: "Discover",
+    title: "Assess",
     description:
-      "We understand your income, expenses, existing assets, liabilities, and comfort with risk.",
+      "We evaluate your income, expenses, assets, liabilities, and overall risk tolerance.",
     icon: Search,
   },
   {
     step: "Step 2",
-    title: "Design",
+    title: "Structure",
     description:
-      "We map your goals to suitable product categories and broad allocations (SIP, SWP, STP, lumpsum, protection).",
+      "We align your goals with appropriate investment categories and high-level allocations across SIP, SWP, STP, lump sum, and protection solutions.",
     icon: LayoutTemplate,
   },
   {
     step: "Step 3",
-    title: "Execute",
+    title: "Implement",
     description:
-      "We implement the plan through investxindiaE-Wealth and other regulated platforms, ensuring proper documentation.",
+      "We execute the strategy through InvestXIndia E-Wealth and other regulated platforms, with complete documentation support.",
     icon: PlayCircle,
   },
   {
     step: "Step 4",
-    title: "Review",
+    title: "Monitor & Refine",
     description:
-      "We conduct periodic reviews, rebalance where needed, and adjust to life events or goal changes.",
+      "We review performance regularly, rebalance portfolios when required, and adapt the plan to evolving life goals.",
     icon: RefreshCcw,
   },
 ];
@@ -40,14 +40,14 @@ const ProcessSection = () => {
         {/* Header */}
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold tracking-widest text-orange-500">
-            HOW WE WORK
+            OUR METHODOLOGY
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-            Our 4-Step Planning & Review Process
+            A Disciplined 4-Step Planning & Review Framework
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600">
-            Every customer follows a simple, repeatable framework so you always
-            know what we are doing and why we are doing it.
+            Each client journey is guided by a structured process designed for
+            clarity, accountability, and long-term success.
           </p>
         </div>
 

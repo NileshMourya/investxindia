@@ -3,12 +3,12 @@ import React from "react";
 import { AlertTriangle, Info } from "lucide-react";
 
 const disclosures = [
-  "investxindia currently acts as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We do not act as a SEBI registered investment adviser (RIA) as of now.",
-  "We may receive commissions and incentives from AMCs / insurers for the products you choose. We do not charge any additional planning fee unless explicitly agreed in writing.",
-  "All information, illustrations, and calculator outputs on this website are for education and awareness only. They are not a recommendation to buy, sell, or switch any specific scheme.",
-  "Mutual fund investments are subject to market risks, including possible loss of principal. Read all scheme-related documents carefully before investing. Past performance does not guarantee future returns.",
-  "Final product selection, asset allocation, and investment decisions should be taken only after a one-to-one discussion where we understand your income, expenses, risk profile, time horizon, and existing portfolio.",
-  "We do not provide intraday trading tips, guaranteed returns, or unofficial shortcuts. We never ask for your internet banking, OTP, or login credentials.",
+  "InvestX India operates as an AMFI-registered mutual fund distributor (ARN-342284) and an IRDA-authorized insurance consultant. We are not registered as a SEBI Registered Investment Adviser (RIA) at present.",
+  "We may earn commissions or incentives from asset management companies or insurers for the products selected. No separate advisory or planning fees are charged unless expressly agreed in writing.",
+  "All content, illustrations, and calculator results on this website are provided solely for educational and informational purposes and should not be construed as a recommendation to buy, sell, or switch any investment product.",
+  "Mutual fund investments are subject to market risks, including potential loss of capital. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results.",
+  "Investment choices, asset allocation, and final decisions should be made only after a personalized discussion that considers your income, expenses, risk profile, investment horizon, and existing portfolio.",
+  "We do not offer intraday trading advice, guaranteed returns, or informal investment arrangements, and we will never request your internet banking details, OTPs, or login credentials.",
 ];
 
 const RiskDisclosureSection = () => {
@@ -23,10 +23,10 @@ const RiskDisclosureSection = () => {
             </div>
             <div>
               <p className="text-xs font-semibold tracking-widest text-orange-500 mb-1">
-                IMPORTANT DISCLOSURES & RISK INFORMATION
+                IMPORTANT INFORMATION
               </p>
               <h3 className="text-lg sm:text-xl font-semibold text-slate-900">
-                Please Read Carefully Before Investing
+                Read This Before You Invest
               </h3>
             </div>
           </div>
@@ -46,8 +46,8 @@ const RiskDisclosureSection = () => {
           {/* Footer Note */}
           <div className="mt-8 rounded-xl bg-slate-100 border border-slate-200 p-4">
             <p className="text-xs sm:text-sm text-slate-600">
-              Investing involves market risks. This disclosure is provided in
-              the interest of transparency, regulatory compliance, and investor
+              All investments carry market risk. This statement is issued in the
+              interest of transparency, regulatory adherence, and investor
               awareness.
             </p>
           </div>

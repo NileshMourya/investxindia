@@ -1,90 +1,95 @@
-import Image from "next/image";
 import React from "react";
 
-const badges = [
+const stats = [
   {
-    title: "Experience",
-    subtitle: "15+ Years",
-    alt: "Banking • Finance • Investments",
+    title: "Industry Experience",
+    value: "15+ Years",
+    note: "Banking • Finance • Investments",
   },
   {
-    title: "FAMILIES GUIDED",
-    subtitle: "1000+",
-    alt: "Across India & World Wide",
+    title: "Families Supported",
+    value: "1000+",
+    note: "India & Global Clients",
   },
   {
-    title: "SOLUTION",
-    subtitle: "SIP | SWP | STP",
-    alt: "Goal-based Execution",
+    title: "Investment Solutions",
+    value: "SIP | SWP | STP",
+    note: "Goal-Oriented Execution",
   },
 ];
-const page = () => {
+
+const LocalExpertSection = () => {
   return (
-    <section className="w-full px-4 md:px-8 py-10 bg-white shadow-sm mt-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        {/* Left */}
-        <div className="rounded-xl p-6 space-y-2">
-          <p className="text-sm font-semibold text-[#f38120] uppercase">
-            Based in Mumbai
-          </p>
-          <p className="text-2xl font-semibold text-[#00113d] leading-relaxed">
-            Local expert services for Maharastra & Gujarat families, available
-            entirely online.
-          </p>
-          <p className="text-sm text-[#00113d]">
-            Most of our salaried frofessional owners and retirees across
-            Maharastra, gujarat. We combine local understanding of cashflows,
-            tax behaviour and family priorities with modern fully digital
-            execution
-          </p>
+    <section className="w-full bg-gradient-to-b from-white to-slate-50 px-4 md:px-8 py-14 mt-8">
+      <div className="max-w-7xl mx-auto space-y-12">
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Content */}
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#f38120]">
+              Mumbai-Based Advisory
+            </p>
+
+            <h3 className="text-2xl md:text-3xl font-bold text-[#00113d] leading-snug">
+              Trusted local expertise for families across Maharashtra & Gujarat
+              — delivered fully online.
+            </h3>
+
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+              We primarily work with salaried professionals, business owners,
+              and retirees across Maharashtra and Gujarat. Our approach blends
+              deep regional understanding of income patterns, taxation, and
+              family priorities with seamless digital execution.
+            </p>
+          </div>
+
+          {/* Right Info Card */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
+            <h4 className="text-sm md:text-base font-semibold text-[#00113d] mb-4">
+              Why choose a local expert over DIY platforms?
+            </h4>
+
+            <ul className="space-y-3 text-sm md:text-base text-gray-700">
+              <li>
+                • We operate in your time zone and understand local realities
+                like bonuses, ESOPs, and tax cycles.
+              </li>
+              <li>
+                • Reviews can be conducted in Marathi, Hindi, or English — in
+                person or over video.
+              </li>
+              <li>
+                • We help maintain disciplined investing during volatile
+                markets, not just fund selection during bull runs.
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Right Buttons */}
-        <div className="bg-slate-100 rounded-xl p-6">
-          <div className="grid grid-cols-1">
-            <p className="text-sm font-bold text-[#00113d] mt-5 mb-5">
-              Why a local expert instead of only DIY platforms?
-            </p>
-            <p className="text-sm font-normal text-[#00113d] mt-2 mb-2">
-              • We sit on the time zone and understand local realities like
-              bonuses. EVMs and tax timing.
-            </p>
-            <p className="text-sm font-normal text-[#00113d] mt-2 mb-2">
-              • Reviews can happen in Maharashtra, Hindi or English - at our
-              Gujarat office or over video.
-            </p>
-            <p className="text-sm font-normal text-[#00113d] mt-2 mb-2">
-              • We help keep behaviour disciplined in bad markets, not just pick
-              funds in good ones.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="w-full mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {badges.map((badge, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-4 bg-white border border-slate-200
-                         rounded-xl px-5 py-4 shadow-md hover:shadow-md
-                         hover:-translate-y-1 transition-all"
-            style={{ flexDirection: "column" }}
-          >
-            <div>
-              <p className="tetxt-sm text-[#f38120]">{badge.title}</p>
-            </div>
-            <div>
-              <p className="text-2xl font-medium text-[#00113d]">
-                {badge.subtitle}
+        {/* Stats / Badges */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white border border-slate-200 rounded-2xl px-6 py-6
+                         text-center shadow-sm hover:shadow-md hover:-translate-y-1
+                         transition-all"
+            >
+              <p className="text-xs font-semibold uppercase text-[#f38120] tracking-wide">
+                {item.title}
               </p>
+
+              <p className="mt-2 text-2xl md:text-3xl font-bold text-[#00113d]">
+                {item.value}
+              </p>
+
+              <p className="mt-1 text-sm text-gray-600">{item.note}</p>
             </div>
-            <div>
-              <p className="text-sm text-[#f38120] font-mono">{badge.alt}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default page;
+export default LocalExpertSection;

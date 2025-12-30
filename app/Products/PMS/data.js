@@ -16,102 +16,102 @@ import {
 } from "lucide-react";
 export const portfolioService = [
   {
-    title: "What is a Portfolio Management Service?",
-    text: "PMS is a SEBI-licensed investment platform that enables investing in a professionally managed portfolio of securities. The underlying securities in a portfolio can include stocks, fixed income instruments, mutual funds, and other approved securities. Unlike standardized investment products, each client's portfolio in PMS is unique and can be customized to align with specific investment objectives, risk tolerance, and financial goals.",
+    title: "What is Portfolio Management Service (PMS)?",
+    text: "Portfolio Management Service (PMS) is a SEBI-regulated investment offering that allows investors to access professionally managed portfolios. These portfolios may include equities, fixed-income instruments, mutual funds, and other SEBI-approved assets. Unlike off-the-shelf investment products, PMS portfolios are tailored to each investor’s financial goals, risk appetite, and long-term investment strategy.",
     icon: <BriefcaseBusiness />,
   },
   {
-    title: "Who is a Portfolio Manager?",
-    text: "A Portfolio Manager is a SEBI-licensed entity that offers PMS consulting services and/or manages a portfolio of securities on behalf of clients. In India, any entity offering Portfolio Management Services must be licensed by the Securities and Exchange Board of India (SEBI), ensuring regulatory compliance and adherence to stringent operational standards.",
+    title: "Who Manages a PMS Portfolio?",
+    text: "A Portfolio Manager is a SEBI-registered professional or firm authorized to provide portfolio management and advisory services. In India, only entities licensed by the Securities and Exchange Board of India (SEBI) can offer PMS, ensuring strong regulatory oversight, transparency, and investor protection.",
     icon: <User />,
   },
   {
-    title: "How Does PMS Work?",
-    text: "Investors can invest fresh capital in PMS, and the portfolio manager will construct a customized portfolio by strategically deploying those funds across various asset classes. Alternatively, investors can transfer their existing portfolios (such as mutual fund holdings) to PMS, where the portfolio manager will restructure and optimize the portfolio in alignment with the chosen investment strategy and philosophy.",
+    title: "How Does a Portfolio Management Service Operate?",
+    text: "Investors can start PMS by allocating fresh capital, which the portfolio manager then invests across selected asset classes based on a defined strategy. Alternatively, existing investments—such as equity or mutual fund holdings—can be migrated into PMS, where they are reviewed, rebalanced, and optimized to align with the chosen investment approach.",
     icon: <Settings />,
   },
 ];
 
 export const managementServices = [
   {
-    title: "Professional Portfolio Management",
-    text: "Your portfolio is managed by experienced professionals with deep market expertise and proven track records in wealth creation.",
+    title: "Expert-Led Portfolio Management",
+    text: "Your investments are overseen by seasoned professionals with strong market knowledge and a disciplined approach to long-term wealth building.",
     icon: <Badge />,
   },
   {
-    title: "Personalized Portfolio Focus",
-    text: "Each portfolio receives dedicated attention, ensuring alignment with your specific financial objectives and risk profile.",
+    title: "Investor-Centric Portfolio Design",
+    text: "Every portfolio is individually managed to reflect your financial goals, time horizon, and risk tolerance.",
     icon: <Circle />,
   },
   {
-    title: "Continuous Monitoring & Review",
-    text: "Your portfolio undergoes regular monitoring and periodic reviews to ensure it remains aligned with market conditions and your evolving financial goals.",
+    title: "Ongoing Portfolio Tracking",
+    text: "Portfolios are continuously tracked and reviewed at regular intervals to stay aligned with market dynamics and your changing financial needs.",
     icon: <Eye />,
   },
   {
-    title: "Customization & Flexibility",
-    text: "Portfolios can be fully customized based on your specific needs, investment objectives, and risk preferences.",
+    title: "Flexible & Customized Strategies",
+    text: "Investment strategies are tailored and adaptable, ensuring your portfolio matches your unique requirements and preferences.",
     icon: <Settings />,
   },
   {
-    title: "Hassle-Free Operations",
-    text: "Benefit from streamlined operations, high service standards, and complete portfolio transparency with comprehensive reporting.",
+    title: "Seamless Portfolio Operations",
+    text: "Enjoy smooth execution, transparent processes, and detailed reporting supported by high service and compliance standards.",
     icon: <Flashlight />,
   },
   {
-    title: "Controlled Risk Management",
-    text: "Robust internal processes, sophisticated systems, and a research-driven approach ensure effective risk management and portfolio protection.",
+    title: "Structured Risk Management",
+    text: "A research-backed investment framework and advanced systems help manage downside risk while aiming for consistent portfolio performance.",
     icon: <Shield />,
   },
   {
-    title: "Freedom from Investment Decisions",
-    text: "Relieve yourself from the burden of making complex investment decisions and managing portfolio administration. Our expert team handles all aspects of portfolio management, allowing you to focus on your core priorities.",
+    title: "Hands-Free Investment Experience",
+    text: "Eliminate the complexity of day-to-day investment decisions and administrative tasks. Our experts manage everything end to end, so you can stay focused on what matters most to you.",
     icon: <Clock />,
   },
 ];
 
 export const services = [
   {
-    title: "Personalized Investment Strategy",
-    text: "Your financial goals, risk tolerance, and investment horizon are unique. We create a custom portfolio aligned with your financial aspirations and risk profile, aiming to maximize returns while managing potential risks effectively.",
+    title: "Customized Investment Planning",
+    text: "Your financial goals, risk appetite, and investment timeframe are unique. We design a personalized investment strategy and portfolio tailored to your objectives, with a focus on optimizing returns while maintaining prudent risk control.",
     icon: <Circle />,
   },
   {
-    title: "Expert Portfolio Managers",
-    text: "Our portfolio managers bring decades of experience and deep market insights to every decision. Leveraging rigorous research, advanced analytics, and active management, they ensure your investments are positioned to capture opportunities and weather market volatility.",
+    title: "SEBI-Experienced Portfolio Experts",
+    text: "Our portfolio managers combine years of hands-on market experience with in-depth research and data-driven insights. Through active portfolio management and disciplined analysis, they position your investments to navigate market cycles and seize growth opportunities.",
     icon: <Badge />,
   },
   {
-    title: "Diverse Asset Allocation",
-    text: "We believe in a balanced approach. Our portfolio managers allocate assets across various classes, including equities, fixed income, alternative investments, and more, ensuring a diversified portfolio that meets your financial goals while minimizing risks.",
+    title: "Strategic Asset Diversification",
+    text: "We follow a structured asset allocation approach by spreading investments across equities, debt instruments, and other approved asset classes. This diversification helps balance risk, enhance stability, and align your portfolio with long-term financial goals.",
     icon: <Database />,
   },
   {
-    title: "Regular Performance Monitoring & Reporting",
-    text: "We keep you informed and involved in your portfolio's progress. With regular performance updates, detailed reports, and access to our team of experts, you stay connected to your investments at all times.",
+    title: "Transparent Performance Tracking",
+    text: "Stay informed with regular portfolio updates, comprehensive performance reports, and direct access to our advisory team—ensuring clarity, confidence, and complete visibility into your investments.",
     icon: <BarChart />,
   },
   {
-    title: "Focused on Long-Term Success",
-    text: "Our approach is built around long-term value creation. Through disciplined management and proactive decision-making, we focus on generating sustainable returns and growing your wealth over time.",
+    title: "Long-Term Wealth Creation Focus",
+    text: "Our investment philosophy prioritizes sustainable wealth creation over time. With disciplined execution and proactive portfolio decisions, we aim to deliver consistent, long-term growth aligned with your financial objectives.",
     icon: <ArrowBigUpDash />,
   },
 ];
 
 export const benefits = [
   {
-    title: "Professional Expertise and Insight",
-    text: "With access to experienced portfolio managers and financial analysts, your investments are managed by experts who are well-versed in navigating complex financial markets. Our team uses cutting-edge research, market insights, and data-driven analysis to make informed investment decisions on your behalf.",
+    title: "Expert-Led Investment Management",
+    text: "Your investments are guided by experienced portfolio managers and financial research professionals who understand market complexities. Using in-depth research, real-time market insights, and data-backed analysis, informed investment decisions are made to support your long-term wealth goals.",
     icon: <Badge />,
   },
   {
-    title: "Diverse Asset Allocation",
-    text: "A well-balanced portfolio is key to reducing risk and enhancing returns. Our portfolio managers allocate assets across multiple classes, such as equities, fixed income, and alternative investments, creating a diversified portfolio that adapts to market conditions and meets your long-term financial objectives.",
+    title: "Balanced & Diversified Portfolios",
+    text: "Effective diversification is essential for managing risk and improving return potential. Assets are strategically allocated across equities, debt instruments, and alternative investments to create resilient portfolios that adapt to changing market conditions and align with your financial objectives.",
     icon: <PieChart />,
   },
   {
-    title: "Tax-Efficient Strategies",
-    text: "We take a tax-efficient approach to managing your investments, optimizing returns and minimizing tax liabilities where possible, so you can keep more of what you earn and reinvest it toward achieving your financial goals.",
+    title: "Tax-Smart Investment Planning",
+    text: "A tax-efficient investment approach helps enhance post-tax returns. By structuring portfolios with tax considerations in mind, we aim to reduce unnecessary tax impact while allowing your wealth to grow more efficiently over time.",
     icon: <BarChart2 />,
   },
 ];

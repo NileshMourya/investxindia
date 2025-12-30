@@ -3,44 +3,44 @@ import React from "react";
 
 const cards = [
   {
-    tag: "WEALTH BUILDING",
-    title: "Mutual Funds – The Right Way to Build Wealth",
-    desc: "Discover the right way to build wealth through mutual funds. Learn about inflation impact and systematic investing.",
+    tag: "WEALTH CREATION",
+    title: "Mutual Funds as a Smart Path to Wealth",
+    desc: "Learn how mutual funds help grow wealth over time through disciplined and inflation-aware investing.",
     icon: "🏦",
     highlight: false,
   },
   {
-    tag: "INVESTMENT STRATEGY",
-    title: "To Achieve Your All Financial Needs",
-    desc: "Discover how SIP in Equity Mutual Funds can help you achieve goals from buying a bike to retirement.",
+    tag: "INVESTMENT PLANNING",
+    title: "Meeting Life Goals with the Right Strategy",
+    desc: "See how equity SIPs can support financial goals—from short-term needs to long-term milestones.",
     icon: "🎯",
     highlight: true,
   },
   {
-    tag: "RETIREMENT PLANNING",
-    title: "An Additional Source of Cash Flow",
-    desc: "Learn how SWP in Hybrid Mutual Funds can provide regular tax-efficient cash flow.",
+    tag: "RETIREMENT INCOME",
+    title: "Creating a Reliable Stream of Cash Flow",
+    desc: "Understand how SWPs in hybrid funds can deliver consistent and tax-efficient income.",
     icon: "💰",
     highlight: false,
   },
   {
-    tag: "CHILD EDUCATION",
-    title: "Do You Know What Your Child Wants to Become?",
-    desc: "Secure your child’s future dreams through systematic investing in Equity Mutual Funds.",
+    tag: "CHILD FUTURE PLANNING",
+    title: "Planning Today for Your Child’s Tomorrow",
+    desc: "Build a strong financial foundation for your child’s education through systematic equity investing.",
     icon: "🎓",
     highlight: false,
   },
   {
-    tag: "INVESTMENT GUIDANCE",
-    title: "With The Right Partner, The Journey Gets Easier",
-    desc: "The right financial partner makes investing simple with SIP benefits and goal-based planning.",
+    tag: "FINANCIAL ADVISORY",
+    title: "A Trusted Partner for Your Investment Journey",
+    desc: "Experience simpler investing with expert guidance, SIP discipline, and goal-based planning.",
     icon: "🤝",
     highlight: false,
   },
   {
-    tag: "PORTFOLIO MANAGEMENT",
-    title: "Asset Allocation – Diversify Your Investments",
-    desc: "Understand why 94% of portfolio performance is driven by asset allocation.",
+    tag: "PORTFOLIO STRATEGY",
+    title: "Asset Allocation for Balanced Growth",
+    desc: "Discover how strategic asset allocation plays a key role in long-term portfolio performance.",
     icon: "📊",
     highlight: false,
   },
@@ -54,19 +54,19 @@ const FinanceInsight = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
             <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-              Financial Insights
+              Market Perspectives
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-              Expert articles to guide
+            <h2 className="text-3xl md:text-4xl font-bold text-[#00113d] leading-tight">
+              Expert perspectives for
               <br />
-              your investment journey.
+              smarter investment journeys
             </h2>
           </div>
 
           <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-            Learn from our comprehensive articles covering SIP strategies,
-            retirement planning, wealth building, and more.
+            Gain clarity through expert-led articles covering SIP strategies,
+            retirement readiness, and wealth management insights.
           </p>
         </div>
       </div>
@@ -98,11 +98,6 @@ const FinanceInsight = () => {
 
               {/* Description */}
               <p className="text-sm text-slate-600 mb-6">{card.desc}</p>
-
-              {/* CTA */}
-              <button className="inline-flex items-center gap-2 text-sm font-semibold text-[#f38120] group-hover:gap-3 transition-all">
-                Read Article <ArrowRight size={16} />
-              </button>
             </div>
           ))}
         </div>

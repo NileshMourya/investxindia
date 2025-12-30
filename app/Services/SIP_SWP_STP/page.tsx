@@ -6,106 +6,119 @@ import { motion } from "framer-motion";
 const ServicesSection = () => {
   return (
     <>
-      <section className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
-        <div className="max-w-7xl mx-auto">
+      <section className="w-full bg-gradient-to-b from-[#f7f9fc] to-white py-16 px-4 md:px-8 mt-6 mb-6">
+        <div className="max-w-7xl mx-auto space-y-16">
           {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
               <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
                 Investor Education
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                SIP, SWP & STP Explained
+              <h2 className="text-3xl md:text-4xl font-bold text-[#00113d] leading-tight">
+                Understanding SIP, SWP & STP
               </h2>
             </div>
 
             <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-              SIP, SWP and STP are simply different ways of putting money into
-              or taking money out of mutual funds in a systematic manner. This
-              page explains when each method is useful and how it can fit into
-              your financial plan.
+              SIP, SWP, and STP are structured ways to invest or withdraw from
+              mutual funds over time. Each serves a different purpose depending
+              on your life stage, income pattern, and financial goals.
             </p>
           </div>
-        </div>
-        <div className="p-4 mt-2 mb-2">
-          <p className="text-2xl text-[#0b2b7f]">What is SIP?</p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            SIP (Systematic Investment Plan) is a method of investing a fixed
-            amount at regular intervals—commonly monthly—into a mutual fund
-            scheme. It is like a monthly EMI towards your future goals, but
-            instead of paying a loan, you are building assets.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Encourages disciplined investing, independent of market moods.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Averages your purchase cost over time (rupee cost averaging).
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Works best for long-term goals: retirement, children s education,
-            home, etc.
-          </p>
-          <p className="mt-5 text-xs text-[#0b2b7f]">
-            SIP does not guarantee returns. It is a convenient way to invest
-            regularly into a market-linked product. Returns will still depend on
-            the performance of the underlying scheme and markets.
-          </p>
-        </div>
 
-        <div className="p-4 mt-2 mb-2">
-          <p className="text-2xl text-[#0b2b7f]">What is SWP?</p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            SWP (Systematic Withdrawal Plan) is the reverse of SIP. Instead of
-            investing a fixed amount regularly, you withdraw a fixed amount at
-            regular intervals (for example monthly) from your mutual fund
-            investment.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Useful in retirement to generate a monthly income from your
-            corpus.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Can complement pensions, rental income and interest from FDs.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Compared to simply taking interest from an FD, SWP can be more
-            tax-efficient in certain cases—depending on holding period and tax
-            rules.
-          </p>
-          <p className="mt-5 text-xs text-[#0b2b7f]">
-            The withdrawal amount, frequency, selected scheme and your risk
-            profile need to be carefully aligned so that the corpus is not
-            exhausted too early.
-          </p>
-        </div>
+          {/* Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* SIP */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all">
+              <p className="text-lg font-bold text-[#00113d] mb-3">
+                What is SIP?
+              </p>
 
-        <div className="p-4 mt-2 mb-2">
-          <p className="text-2xl text-[#0b2b7f]">What is STP?</p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            STP (Systematic Transfer Plan) allows you to move money in parts
-            from one mutual fund scheme to another over a period of time.
-            Typically, investors park a lump sum in a relatively stable fund and
-            gradually transfer it into an equity fund.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Helpful when you have a lump sum but want to reduce timing risk in
-            equities.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Common structure: invest lump sum in a liquid / ultra-short /
-            short-duration fund, and STP to equity over 6–18 months.
-          </p>
-          <p className="mt-2 text-sm text-[#0b2b7f]">
-            • Works best when the transfer horizon matches your comfort with
-            market volatility.
-          </p>
-          <p className="mt-5 text-xs text-[#0b2b7f]">
-            STP is not a guarantee against loss. It simply spreads your entry
-            into equity over time. Suitability depends on your horizon, risk
-            profile and the nature of the lump sum (bonus, property sale,
-            inheritance, etc.).
-          </p>
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                A Systematic Investment Plan (SIP) allows you to invest a fixed
+                amount at regular intervals—usually monthly—into a mutual fund.
+                Think of it as a monthly commitment towards building long-term
+                wealth.
+              </p>
+
+              <ul className="text-sm text-gray-700 space-y-2 mb-4">
+                <li>
+                  • Promotes disciplined investing regardless of market
+                  conditions
+                </li>
+                <li>• Helps average out purchase costs over time</li>
+                <li>
+                  • Suitable for long-term goals like retirement, education, or
+                  buying a home
+                </li>
+              </ul>
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                SIPs do not assure returns. Outcomes depend on market
+                performance and the chosen mutual fund scheme.
+              </p>
+            </div>
+
+            {/* SWP */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all">
+              <p className="text-lg font-bold text-[#00113d] mb-3">
+                What is SWP?
+              </p>
+
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                A Systematic Withdrawal Plan (SWP) enables you to withdraw a
+                fixed amount from your mutual fund investment at regular
+                intervals, making it useful for generating steady income.
+              </p>
+
+              <ul className="text-sm text-gray-700 space-y-2 mb-4">
+                <li>• Commonly used during retirement for monthly cash flow</li>
+                <li>
+                  • Complements pensions, rental income, or interest earnings
+                </li>
+                <li>
+                  • May offer better tax efficiency than traditional fixed
+                  deposits in certain situations
+                </li>
+              </ul>
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Withdrawal amount and frequency must be planned carefully to
+                ensure the investment lasts through your intended time horizon.
+              </p>
+            </div>
+
+            {/* STP */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all">
+              <p className="text-lg font-bold text-[#00113d] mb-3">
+                What is STP?
+              </p>
+
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                A Systematic Transfer Plan (STP) lets you gradually move money
+                from one mutual fund scheme to another—typically from a stable
+                fund to equity.
+              </p>
+
+              <ul className="text-sm text-gray-700 space-y-2 mb-4">
+                <li>• Reduces market timing risk when investing lump sums</li>
+                <li>
+                  • Often used to transfer from liquid or debt funds into equity
+                  over time
+                </li>
+                <li>
+                  • Best suited when the transfer duration matches your risk
+                  comfort
+                </li>
+              </ul>
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                STP does not eliminate market risk. Suitability depends on your
+                goals, risk profile, and the source of funds.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -153,7 +166,7 @@ const ServicesSection = () => {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
-              Deep dive into SIP, SWP & STP with our expert articles
+              Deep dive into SIP, SWP & STP with our expert
             </h2>
 
             <p className="mt-4 text-gray-600 dark:text-gray-400">
@@ -165,7 +178,7 @@ const ServicesSection = () => {
           {/* Sub Heading */}
           <div className="mt-12 mb-8 flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold">
             <ArrowUpRight className="w-5 h-5" />
-            SIP (Systematic Investment Plan) Articles
+            SIP (Systematic Investment Plan)
           </div>
 
           {/* Cards */}
@@ -202,10 +215,6 @@ const ServicesSection = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="mt-6 flex items-center gap-2 text-orange-500 font-medium group-hover:gap-3 transition-all">
-                    Read Article
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
 
                   {/* Hover Border Glow */}
                   <span className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-orange-200 dark:group-hover:ring-orange-900 transition" />
@@ -230,7 +239,7 @@ const ServicesSection = () => {
           {/* Sub Heading */}
           <div className="mb-8 flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold">
             <ArrowUpRight className="w-5 h-5" />
-            SIP (Systematic Investment Plan) Articles
+            SIP (Systematic Investment Plan)
           </div>
 
           {/* Cards */}
@@ -266,10 +275,6 @@ const ServicesSection = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="mt-6 flex items-center gap-2 text-orange-500 font-medium group-hover:gap-3 transition-all">
-                    Read Article
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
 
                   {/* Hover Border Glow */}
                   <span className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-orange-200 dark:group-hover:ring-orange-900 transition" />
@@ -294,7 +299,7 @@ const ServicesSection = () => {
           {/* Sub Heading */}
           <div className="mb-8 flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold">
             <ArrowUpRight className="w-5 h-5" />
-            STP (Systematic Transfer Plan) Articles
+            STP (Systematic Transfer Plan)
           </div>
 
           {/* Cards */}
@@ -330,10 +335,6 @@ const ServicesSection = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="mt-6 flex items-center gap-2 text-orange-500 font-medium group-hover:gap-3 transition-all">
-                    Read Article
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
 
                   {/* Hover Border Glow */}
                   <span className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-orange-200 dark:group-hover:ring-orange-900 transition" />
@@ -343,17 +344,6 @@ const ServicesSection = () => {
           </div>
         </div>
       </section>
-
-      <div className="mt-2 mb-2 py-6 px-4  from-slate-50 to-white shadow-md rounded-2xl">
-        <p className="text-2xl font-semibold text-[#0b2b7f]">
-          What should you do next?
-        </p>
-        <p className="mt-2 text-sm text-[#0b2b7f]">
-          Use our calculators to get a feel for numbers, then speak to us before
-          committing real money so that your choices match your goals and risk
-          profile.
-        </p>
-      </div>
     </>
   );
 };

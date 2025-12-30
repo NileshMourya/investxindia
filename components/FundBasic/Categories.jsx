@@ -6,21 +6,21 @@ const categories = [
   {
     title: "Equity Funds",
     description:
-      "Invest mainly in shares of companies. Suitable for long-term goals (5+ years) with higher growth potential and higher volatility.",
+      "Primarily invest in company shares. Ideal for long-term goals (5+ years) seeking higher growth potential, though with higher volatility.",
     icon: TrendingUp,
     gradient: "from-indigo-500 to-blue-500",
   },
   {
     title: "Debt / Fixed Income Funds",
     description:
-      "Invest in bonds, government securities, and money-market instruments. Aim for stability, income, and lower risk than equity funds.",
+      "Invest in bonds, government securities, and money-market instruments. Designed for stability, regular income, and lower risk compared to equity funds.",
     icon: Landmark,
     gradient: "from-emerald-500 to-teal-500",
   },
   {
     title: "Hybrid / Balanced Funds",
     description:
-      "Invest in a mix of equity and debt to balance growth with stability. Suitable for moderate-risk investors.",
+      "Blend of equity and debt to balance growth with stability. Suitable for investors with moderate risk tolerance.",
     icon: Layers,
     gradient: "from-orange-500 to-rose-500",
   },

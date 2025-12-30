@@ -95,33 +95,33 @@ export const data = [
 
 export const cards = [
   {
-    tag: "Diversification",
-    desc: "Spread your investment across multiple securities and asset classes to reduce risk and enhance returns.",
+    tag: "Risk Diversification",
+    desc: "Invest across a wide range of securities and asset classes to manage risk and improve long-term return potential.",
     icon: <Network />,
   },
   {
-    tag: "Professional Management",
-    desc: "Expert fund managers with years of experience make informed investment decisions on your behalf.",
+    tag: "Expert Fund Management",
+    desc: "Your investments are managed by experienced professionals who research markets and make informed decisions for you.",
     icon: <BriefcaseBusiness />,
   },
   {
-    tag: "Liquidity",
-    desc: "Easy entry and exit options with open-ended fund, allowing you to redeem your investment when needed.",
+    tag: "High Liquidity",
+    desc: "Enjoy flexibility with open-ended funds that allow you to invest or redeem easily whenever funds are required.",
     icon: <ArrowLeftRight />,
   },
   {
-    tag: "Transparency",
-    desc: "Regular disclosures, daily NAV updates, and complete portfolio transparency as per SEBI regulations.",
+    tag: "Regulated Transparency",
+    desc: "Access detailed portfolio disclosures, daily NAV updates, and reporting in line with SEBI regulations.",
     icon: <Eye />,
   },
   {
-    tag: "Tax Benefits",
-    desc: "ELSS fund offer tax deduction under Section 80C up to ₹1.5 lakh, with potential for wealth creation.",
+    tag: "Tax Efficiency",
+    desc: "ELSS mutual funds provide tax deductions under Section 80C up to ₹1.5 lakh while supporting long-term growth.",
     icon: <Percent />,
   },
   {
-    tag: "Start with ₹500 SIP",
-    desc: "Begin your investment journey with as little as ₹500 per month through Systematic Investment Plans.",
+    tag: "Affordable Investing",
+    desc: "Start disciplined investing with SIPs beginning at just ₹500 per month, making wealth creation accessible to all.",
     icon: <IndianRupee />,
   },
 ];
@@ -129,203 +129,212 @@ export const cards = [
 export const card = [
   {
     tag: "AMFI Registered",
-    desc: "Spread your investment across multiple securities and asset classes to reduce risk and enhance returns.",
+    desc: "Registered with AMFI and compliant with industry standards, ensuring ethical and regulated mutual fund distribution.",
     icon: <Award />,
   },
   {
-    tag: "investxindia Business Partner",
-    desc: "Authorized business partner of investxindia, one of India's leading wealth management firms with industry expertise.",
+    tag: "Authorized investxindia Partner",
+    desc: "Official business partner of investxindia, a reputed wealth management platform trusted by investors across India.",
     icon: <Building />,
   },
   {
-    tag: "30+ Years Experience",
-    desc: "Three decades of experience in investment and financial guidance, serving clients across Gujarat and India.",
+    tag: "30+ Years of Experience",
+    desc: "Over three decades of experience in financial planning and investment guidance, serving clients nationwide.",
     icon: <Users />,
   },
   {
-    tag: "Goal-based Planning",
-    desc: "Personalized investment strategies aligned with your specific financial goals, risk profile, and time horizon.",
+    tag: "Goal-Oriented Planning",
+    desc: "Customized investment strategies designed around your goals, risk appetite, and investment time horizon.",
     icon: <Goal />,
   },
   {
-    tag: "Zero Hidden Charges",
-    desc: "Transparent fee structure with no hidden costs. We believe in building long-term relationships through trust.",
+    tag: "Complete Fee Transparency",
+    desc: "No hidden charges or surprises. Our transparent approach focuses on trust and long-term client relationships.",
     icon: <BookCheck />,
   },
   {
-    tag: "Regular Reviews",
-    desc: "Ongoing portfolio monitoring and regular reviews in Gujarati, Hindi, and English to keep you informed.",
+    tag: "Ongoing Portfolio Reviews",
+    desc: "Regular portfolio tracking and review discussions available in Gujarati, Hindi, and English for your convenience.",
     icon: <StarHalf />,
   },
 ];
 
 export const categories = [
   {
-    tag: "Large Cap",
-    desc: "Invests in India's top 100 companies by market capitalization. Lower risk with stable returns.",
+    tag: "Large Cap Funds",
+    desc: "Invest in India’s top 100 companies by market capitalization, offering relatively stable returns with lower volatility.",
     icon: <TrendingUp />,
-    textReturn: "Typical Returns",
-    return: "12-15% CAGR",
+    textReturn: "Indicative Returns",
+    return: "12–15% CAGR",
   },
   {
-    tag: "Flexi Cap",
-    desc: "Flexible allocation across large, mid, and small-cap stocks based on market opportunities.",
+    tag: "Flexi Cap Funds",
+    desc: "Dynamically invest across large, mid, and small-cap stocks to capture opportunities across market cycles.",
     icon: <ChartColumnDecreasing />,
-    textReturn: "Typical Returns",
-    return: "13-16% CAGR",
+    textReturn: "Indicative Returns",
+    return: "13–16% CAGR",
   },
   {
-    tag: "Mid Cap",
-    desc: "Focuses on companies ranked 101-250 by market cap. Higher growth potential with moderate risk.",
+    tag: "Mid Cap Funds",
+    desc: "Focus on emerging companies ranked roughly between 101–250 by market capitalization, offering higher growth potential with moderate risk.",
     icon: <ChartPie />,
-    textReturn: "Typical Returns",
-    return: "14-18% CAGR",
+    textReturn: "Indicative Returns",
+    return: "14–18% CAGR",
   },
   {
-    tag: "Small Cap",
-    desc: "Invests in companies beyond top 250. Highest growth potential with higher volatility.",
+    tag: "Small Cap Funds",
+    desc: "Invest in smaller companies beyond the top 250, carrying higher volatility but strong long-term growth potential.",
     icon: <Shell />,
-    textReturn: "Typical Returns",
-    return: "15-20% CAGR",
+    textReturn: "Indicative Returns",
+    return: "15–20% CAGR",
   },
   {
-    tag: "ELSS (Tax Saving)",
-    desc: "Equity Linked Saving Scheme with 3-year lock-in. Tax deduction under Section 80C up to ₹1.5 lakh.",
+    tag: "ELSS (Tax-Saving Funds)",
+    desc: "Equity-linked savings schemes with a mandatory 3-year lock-in, offering tax deductions under Section 80C up to ₹1.5 lakh.",
     icon: <Shield />,
-    textReturn: "Typical Returns",
-    return: "12-16% CAGR",
+    textReturn: "Indicative Returns",
+    return: "12–16% CAGR",
   },
   {
-    tag: "Balanced Advantage/Hybrid",
-    desc: "Dynamic allocation between equity and debt based on market valuations. Balanced risk-return profile.",
+    tag: "Balanced Advantage / Hybrid Funds",
+    desc: "Use dynamic allocation between equity and debt based on market valuations to balance growth and stability.",
     icon: <Database />,
-    textReturn: "Typical Returns",
-    return: "10-13% CAGR",
+    textReturn: "Indicative Returns",
+    return: "10–13% CAGR",
   },
   {
-    tag: "Debt/Liquid",
-    desc: "Invests in fixed-income securities and money market instruments. Lower risk with stable returns.",
+    tag: "Debt & Liquid Funds",
+    desc: "Invest in bonds and money market instruments to provide capital protection, liquidity, and predictable returns.",
     icon: <Wallet />,
-    textReturn: "Typical Returns",
-    return: "6-8% CAGR",
+    textReturn: "Indicative Returns",
+    return: "6–8% CAGR",
   },
   {
-    tag: "Index Fund",
-    desc: "Passive fund tracking market indices like Nifty 50, Sensex. Low expense ratio with market-matching returns.",
+    tag: "Index Funds",
+    desc: "Passive funds that track market indices such as Nifty 50 or Sensex, offering low-cost, market-linked returns.",
     icon: <Network />,
-    textReturn: "Typical Returns",
-    return: "11-14% CAGR",
+    textReturn: "Indicative Returns",
+    return: "11–14% CAGR",
   },
 ];
 
 export const goals = [
   {
-    title: "Retirement corpus",
-    tag1: "Best for 15+ yrs",
-    tag2: "Risk: Moderate–High",
-    tag3: "Tax: Long-term capital gains",
+    title: "Retirement Planning & Wealth Creation",
+    tag1: "Ideal for 15+ year horizon",
+    tag2: "Risk Level: Moderate to High",
+    tag3: "Taxation: Long-term capital gains",
     label:
-      "• Accumulation phase: Flexi Cap, Large & Mid Cap, Index / Multi-cap Fund",
+      "• Wealth accumulation phase: Flexi Cap, Large & Mid Cap, Index and Multi-cap Mutual Funds",
     label1:
-      "• Near retirement: Hybrid / Balanced Advantage, Short-duration Debt",
+      "• Pre-retirement phase: Gradual allocation to Hybrid / Balanced Advantage and Short-Duration Debt Funds",
     label2:
-      "Example: For a 35-year-old targeting ₹2 Cr in 25 years, a SIP in diversified equity fund plus a gradual shift to hybrid and debt 5–7 years before retirement.",
-    button: "Plan retirement →",
-    button1: "Retirement assessment",
+      "Example: A 35-year-old planning a ₹2 crore retirement corpus in 25 years can start SIPs in diversified equity funds and shift progressively to hybrid and debt funds 5–7 years before retirement.",
+    button: "Plan your retirement →",
+    button1: "Free retirement assessment",
   },
   {
-    title: "Child education & marriage",
-    tag1: "Best for 8–18 yrs",
-    tag2: "Risk: Moderate–High",
-    tag3: "Tax: ELSS / LTCG mix",
+    title: "Child Education & Marriage Planning",
+    tag1: "Ideal for 8–18 year goals",
+    tag2: "Risk Level: Moderate to High",
+    tag3: "Taxation: ELSS + LTCG benefits",
     label:
-      "• Long horizon: Flexi Cap, Mid Cap, Child / Thematic education Fund",
-    label1: "• Final 3–5 years: Gradual shift to Hybrid & Short-Term Debt",
+      "• Long-term growth phase: Flexi Cap, Mid Cap, and Child Education / Thematic Mutual Funds",
+    label1:
+      "• Final phase (last 3–5 years): Systematic shift to Hybrid and Short-Term Debt Funds",
     label2:
-      "Example: For a 5-year-old targeting engineering in 2038, combine equity SIPs with Sukanya / PPF and de-risk the corpus 3–4 years before admission.",
-    button: "Child education plan →",
-    button1: "Goal calculator",
+      "Example: For a 5-year-old child planning higher education in 2038, equity SIPs can be combined with Sukanya Samriddhi or PPF, with gradual de-risking before college admission.",
+    button: "Plan child’s future →",
+    button1: "Goal planning calculator",
   },
   {
-    title: "Tax saving & emergency corpus",
-    tag1: "Best for 3–7 yrs",
-    tag2: "Risk: Low–Moderate",
-    tag3: "Tax: 80C + efficient withdrawals",
-    label: "• Tax saving: ELSS fund for 80C along with PPF / NPS",
-    label1: "• Emergency: Liquid / Money Market / Short Duration Debt Fund",
+    title: "Tax Saving & Emergency Fund Planning",
+    tag1: "Ideal for 3–7 year horizon",
+    tag2: "Risk Level: Low to Moderate",
+    tag3: "Taxation: Section 80C + efficient withdrawals",
+    label:
+      "• Tax saving investments: ELSS Mutual Funds along with PPF or NPS for Section 80C benefits",
+    label1:
+      "• Emergency fund allocation: Liquid Funds, Money Market Funds, and Short-Duration Debt Funds",
     label2:
-      "Example: Combine an ELSS SIP of ₹5,000/month for tax saving with a 3–6 month emergency corpus parked in liquid and low-duration debt fund.",
-    button: "Tax planning help →",
-    button1: "Try SIP calculator",
+      "Example: An ELSS SIP of ₹5,000 per month for tax saving combined with a 3–6 month emergency fund invested in liquid and low-duration debt funds.",
+    button: "Tax planning support →",
+    button1: "SIP calculator",
   },
 ];
 
 export const journey = [
   {
-    title: "Tax saving & emergency corpus",
-    tag: "Best for 3–7 yrs",
-
-    label: "• Tax saving: ELSS fund for 80C along with PPF / NPS",
-    label1: "• Emergency: Liquid / Money Market / Short Duration Debt Fund",
-    label2: "• Review annually, increase SIPs as income grows.",
+    title: "Tax Saving & Emergency Fund Planning",
+    tag: "Ideal for 3–7 year horizon",
+    label:
+      "• Tax-efficient investing through ELSS mutual funds under Section 80C, supported by PPF or NPS.",
+    label1:
+      "• Emergency fund allocation in Liquid, Money Market, or Short-Duration Debt Funds for easy access.",
+    label2:
+      "• Annual portfolio reviews with incremental SIP increases as income grows.",
   },
   {
-    title: "Business owner – using lump sum + STP for future SWP income",
-    tag: "Age 45 · Property sale surplus",
-
-    label: "• Park lump sum in liquid / debt fund first.",
-    label1: "• STP gradually into equity / hybrid fund for growth.",
-    label2: "• Later convert to SWP for retirement income.",
+    title: "Business Owner Strategy: Lump Sum, STP & Future SWP Income",
+    tag: "Age 45 · Surplus from property sale",
+    label:
+      "• Temporarily park lump-sum proceeds in liquid or low-risk debt funds.",
+    label1:
+      "• Use Systematic Transfer Plan (STP) to gradually move funds into equity or hybrid funds for growth.",
+    label2:
+      "• Transition to a Systematic Withdrawal Plan (SWP) later to generate regular retirement income.",
   },
   {
-    title: "Tax saving & emergency corpus",
-    tag: "Best for 3–7 yrs",
-
-    label: "• Tax saving: ELSS fund for 80C along with PPF / NPS",
-    label1: "• Emergency: Liquid / Money Market / Short Duration Debt Fund",
-    label2: "• Coordinate with CA on NRI taxation and DTAA.",
+    title: "NRI Tax Planning & Emergency Corpus",
+    tag: "Ideal for 3–7 year horizon",
+    label:
+      "• Utilize ELSS funds, PPF, or NPS for tax-efficient long-term savings where applicable.",
+    label1:
+      "• Maintain emergency reserves in liquid and short-duration debt funds for liquidity.",
+    label2:
+      "• Align investments with CA guidance on NRI taxation rules and DTAA benefits.",
   },
 ];
 
 export const accountData = [
   {
-    tag: "Simple",
-    desc: "Your entire financial portfolio neatly organised at one place.",
+    tag: "Simple & Organized",
+    desc: "View and manage your complete financial portfolio from a single, well-organized dashboard.",
     icon: <NotepadTextDashed />,
   },
   {
-    tag: "100% Online",
-    desc: "Experience industry leading paperless transaction features/solutions in one app. Any time, anywhere transaction.",
+    tag: "Fully Online Experience",
+    desc: "Enjoy a seamless, paperless investment journey with anytime, anywhere access through a secure digital platform.",
     icon: <Smartphone />,
   },
   {
-    tag: "Dedicated Distributor",
-    desc: "Dedicated mutual fund distributor (investxindia) to guide you in your investment journey.",
+    tag: "Dedicated Investment Support",
+    desc: "Get personalized guidance from a dedicated mutual fund distributor (investxindia) throughout your investment journey.",
     icon: <Users />,
   },
   {
-    tag: "Access to Wide Product Basket",
-    desc: "Access to wide product basket under single roof.",
+    tag: "Wide Product Access",
+    desc: "Invest across a broad range of financial products conveniently available under one platform.",
     icon: <ShoppingCart />,
   },
   {
-    tag: "Multiple Payment Modes",
-    desc: "Net banking, NEFT, RTGS, ACH - Mandate, UPI, etc.",
+    tag: "Multiple Payment Options",
+    desc: "Convenient payment modes including Net Banking, NEFT, RTGS, UPI, and ACH mandates.",
     icon: <CreditCard />,
   },
   {
-    tag: "Ready MF Scheme Portfolios",
-    desc: "Ready MF scheme portfolios to match diverse risk profiles and investment objectives.",
+    tag: "Curated Mutual Fund Portfolios",
+    desc: "Pre-built mutual fund portfolios designed to suit different risk profiles and investment goals.",
     icon: <StickyNote />,
   },
   {
-    tag: "Multiple Transaction Modes",
-    desc: "Mobile Application, Email, SMS and Call & Transact.",
+    tag: "Flexible Transaction Channels",
+    desc: "Transact through mobile app, email, SMS, or assisted call-based support as per your convenience.",
     icon: <Building2 />,
   },
   {
-    tag: "Multiple Banks Support",
-    desc: "Flexibility to add Multiple Banks to a single account.",
+    tag: "Multi-Bank Integration",
+    desc: "Easily link and manage multiple bank accounts within a single investment account.",
     icon: <CreditCard />,
   },
 ];

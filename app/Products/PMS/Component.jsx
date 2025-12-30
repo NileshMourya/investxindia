@@ -4,24 +4,43 @@ const Component = ({ card, id }) => {
   return (
     <div
       key={id}
-      className={`group shadow-md cursor-pointer relative rounded-2xl p-5 backdrop-blur-xl transition-all duration-300
-                          hover:-translate-y-2 hover:shadow-xl bg-white/80`}
+      className="relative group rounded-3xl p-6 bg-gradient-to-br from-white to-slate-50 
+                 border border-slate-100 shadow-sm 
+                 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
     >
-      {/* Gradient Hover Glow */}
-      <div className="absolute inset-0 rounded-2xl from-orange-400/0 via-orange-400/10 to-orange-400/0 opacity-0 group-hover:opacity-100 transition" />
+      {/* Left Accent Bar */}
+      <div
+        className="absolute left-0 top-6 h-14 w-1 rounded-full bg-gradient-to-b from-orange-400 to-orange-200 
+                      opacity-60 group-hover:opacity-100 transition"
+      />
 
-      {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-xl mb-4 text-[#f38120] hover:bg-[#f38120] hover:text-white">
+      {/* Floating Icon */}
+      <div
+        className="absolute -top-6 right-6 w-12 h-12 rounded-2xl 
+                      bg-gradient-to-br from-orange-400 to-orange-500 
+                      text-white flex items-center justify-center text-xl 
+                      shadow-lg group-hover:scale-110 transition"
+      >
         {card.icon}
       </div>
 
-      {/* Tag */}
-      <p className="text-xs font-semibold tracking-wide text-[#f38120] mb-2">
-        {card?.title?.toLocaleUpperCase()}
-      </p>
+      {/* Content */}
+      <div className="pt-6 space-y-3">
+        <p className="text-xs font-bold tracking-wider text-orange-500 uppercase">
+          {card?.title}
+        </p>
 
-      {/* Description */}
-      <p className="text-sm text-slate-600 mb-6">{card.text}</p>
+        <p className="text-sm text-slate-600 leading-relaxed">{card.text}</p>
+      </div>
+
+      {/* Bottom CTA Indicator */}
+      <div
+        className="mt-6 flex items-center gap-2 text-xs font-semibold text-orange-500 opacity-0 
+                      group-hover:opacity-100 transition"
+      >
+        <span>Learn more</span>
+        <span className="group-hover:translate-x-1 transition">→</span>
+      </div>
     </div>
   );
 };

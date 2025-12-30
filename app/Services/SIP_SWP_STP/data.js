@@ -23,83 +23,83 @@ import {
 export const quickComparison = [
   {
     header: "SIP",
-    title: "Money flows: INTO fund",
-    text: "Fixed amount invested regularly. Best for salaried and others with predictable income building long-term wealth.",
+    title: "Investment Flow: Into the Fund",
+    text: "A fixed amount invested at regular intervals. Ideal for individuals with steady income aiming for long-term wealth creation.",
   },
   {
     header: "SWP",
-    title: "Money flows: OUT OF fund",
-    text: "Fixed amount withdrawn regularly. Suits retirees or those needing a planned income from an accumulated corpus.",
+    title: "Investment Flow: From the Fund",
+    text: "A fixed amount withdrawn periodically. Suitable for retirees or investors seeking a structured income from their corpus.",
   },
   {
     header: "STP",
-    title: "Money flows: BETWEEN funds",
-    text: "Transfers from one scheme to another over time. Useful for deploying a lump sum into equity gradually.",
+    title: "Investment Flow: Between Funds",
+    text: "Systematic transfer of money from one scheme to another. Helps deploy lump-sum investments into equity in a phased manner.",
     icon: <Settings />,
   },
 ];
 
 export const SIP = [
   {
-    tag: "SIP BASICS",
-    title: "Understanding SIP in Mutual Funds: Meaning & Benefits",
+    tag: "SIP FUNDAMENTALS",
+    title: "SIP in Mutual Funds: Meaning, How It Works & Key Benefits",
     description:
-      "Complete guide to SIP meaning, how it works, key benefits, and when to choose SIP over lump sum investing.",
+      "A comprehensive guide explaining what SIP is, how it works, its advantages, and when to choose SIP over lump-sum investing.",
     icon: <TrendingUp />,
   },
   {
-    tag: "WEALTH BUILDING",
-    title: "From Zero to Crores: How SIP Can Transform Your Financial Future",
+    tag: "LONG-TERM WEALTH",
+    title: "From Small Investments to Long-Term Wealth with SIP",
     description:
-      "Discover how starting a small SIP today can help you build significant wealth over time through the power of compounding.",
+      "Learn how disciplined SIP investing, even with modest amounts, can create substantial wealth through compounding over time.",
     icon: <ArrowUpRight />,
   },
   {
-    tag: "GOAL PLANNING",
-    title: "To Achieve Your All Financial Needs",
+    tag: "GOAL-BASED INVESTING",
+    title: "Achieving Life Goals Through Systematic Investment Planning",
     description:
-      "Learn how SIP in Equity Mutual Funds can help you achieve all your financial goals – from buying a bike to retirement planning.",
+      "Understand how equity SIPs help you plan for multiple financial goals—from short-term purchases to retirement.",
     icon: <Target />,
   },
 ];
 
 export const SWP = [
   {
-    tag: "SWP Guide",
-    title: "SWP (Systematic Withdrawal Plan) - Complete Guide",
+    tag: "SWP FUNDAMENTALS",
+    title: "Systematic Withdrawal Plan (SWP): Complete Guide",
     description:
-      "Comprehensive guide to SWP: how it works, benefits, tax implications, and how to use it for retirement income.",
+      "An in-depth guide explaining what SWP is, how it works, its benefits, tax treatment, and its role in retirement income planning.",
     icon: <ArrowDown />,
   },
   {
-    tag: "Retirement Income",
-    title: "An Additional Source of Cash Flow is No Longer a Luxury",
+    tag: "RETIREMENT INCOME",
+    title: "Creating a Reliable Source of Post-Retirement Cash Flow",
     description:
-      "Learn how SWP in Hybrid Mutual Funds can provide you with regular cash flow during retirement with tax efficiency.",
+      "Understand how SWPs in hybrid mutual funds can deliver steady, tax-efficient income throughout retirement.",
     icon: <IndianRupee />,
   },
   {
-    tag: "Tax Efficiency",
-    title: "SWP for Senior Citizens: Tax-Efficient Income",
+    tag: "TAX-SMART INVESTING",
+    title: "SWP for Senior Citizens: Generating Tax-Efficient Income",
     description:
-      "Discover how senior citizens can use SWP to generate tax-efficient monthly income from their mutual fund investments.",
+      "Learn how senior citizens can use SWPs to receive regular monthly income while optimizing tax efficiency.",
     icon: <IndianRupeeIcon />,
   },
 ];
 
 export const STP = [
   {
-    tag: "STP Strategy",
-    title: "STP in Mutual Funds: Smart Way to Invest Lump Sum Gradually",
+    tag: "STP STRATEGY",
+    title: "STP in Mutual Funds: A Smarter Way to Invest Lump Sum Gradually",
     description:
-      "Learn how STP helps you deploy lump sum money gradually into equity with real-life stories and practical scenarios.",
+      "Learn how Systematic Transfer Plans help phase lump-sum investments into equity through practical use cases and real-world scenarios.",
     icon: <ArrowDown />,
   },
   {
-    tag: "STP Guide",
-    title: "Systematic Transfer Plan (STP) in Mutual Funds: Complete Guide",
+    tag: "STP FUNDAMENTALS",
+    title: "Systematic Transfer Plan (STP): Meaning, Benefits, and Use Cases",
     description:
-      "Understand STP meaning, how it works, key benefits, different types, and when it makes sense to use STP.",
+      "Understand what STP is, how it works, its advantages, available types, and when using STP makes strategic sense.",
     icon: <IndianRupee />,
   },
 ];

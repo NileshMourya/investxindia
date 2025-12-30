@@ -20,14 +20,12 @@ const ContactUs = () => {
         className="lg:w-1/2 sm:w-full text-center mx-auto p-2"
         style={{ flexDirection: "column" }}
       >
-        <p className="text-2xl font-bold">
-          Follow Us On Our Social Media Handler
-        </p>
+        <p className="text-2xl font-bold">Connect With Us</p>
         <br />
-        <p className="mt-5 text-sm sm:text-xs">
-          Stay connected with investxindia for the latest insights, updates, and
-          financial planning tips. Follow us across all our social media
-          platforms.
+        <p className="mt-5 lg:text-sm sm:text-xs">
+          Be part of the InvestX India community for expert perspectives,
+          regular updates, and valuable financial planning insights across our
+          social channels.
         </p>
       </div>
       <div className="w-full grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-2 gap-5 mt-5 mb-5">

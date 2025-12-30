@@ -1,170 +1,200 @@
 import React from "react";
-
+import Header from "@/components/Headers";
+import { headers } from "next/headers";
 export const goals = [
   {
-    title: "Term Insurance (Income Protection)",
-    tag1: "Best for",
-    tag2: "Earning members with dependants",
+    title: "Term Life Insurance (Income Security)",
+    tag1: "Ideal for",
+    tag2: "Working professionals with family dependents",
     tag3: "",
-    label: "• Replaces your income if you are not around",
-    label1: "• Typical cover: 10–20× annual income + loans",
-    label2: "• Premiums usually lower when taken early",
+    label: "• Ensures your family’s income continuity in your absence",
+    label1: "• Recommended cover: 10–20× annual income including liabilities",
+    label2: "• Lower premiums when purchased at a younger age",
     label3:
-      "Example: 35-year-old with ₹15L income and ₹30L home loan may need ₹2–3 Cr term cover for 25–30 years to secure family goals.",
-    button: "Assess my term need →",
+      "Example: A 35-year-old earning ₹15L annually with a ₹30L home loan may require ₹2–3 Cr term insurance for 25–30 years to safeguard long-term family goals.",
+    button: "Check my term insurance need →",
   },
   {
-    title: "Health & Critical Illness Cover",
-    tag1: "Best for",
-    tag2: "Everyone; must-have",
-    tag3: "Tax: 80D deduction",
-    label: "• Covers hospitalization and major illnesses",
-    label1: "• Keeps your SIPs and long-term investments untouched",
-    label2: "• Family floater + top-up cover often most efficient",
+    title: "Health Insurance & Critical Illness Protection",
+    tag1: "Ideal for",
+    tag2: "All individuals and families",
+    tag3: "Tax benefit: Section 80D",
+    label: "• Covers hospitalization costs and serious medical conditions",
+    label1:
+      "• Protects your SIPs and long-term investments from medical expenses",
+    label2: "• Family floater plans with super top-ups offer optimal coverage",
     label3:
-      "Example: For a young family of four in a metro, a ₹10–15L base cover with ₹25–50L super top-up balances premium and protection well.",
-    button: "Review my health cover →",
+      "Example: A young metro-based family of four can balance cost and coverage with a ₹10–15L base policy plus a ₹25–50L super top-up.",
+    button: "Evaluate my health coverage →",
   },
   {
-    title: "Goal-linked & Asset Protection",
-    tag1: "• Mortgage protection for home and large loans",
-    tag2: "• Key-person insurance for businesses",
-    tag3: "Tax: 80C + efficient withdrawals",
-    label: "• Tax saving: ELSS funds for 80C along with PPF / NPS",
-    label1: "• Emergency: Liquid / Money Market / Short Duration Debt funds",
-    label2: "• Riders for accidental disability / income protection",
+    title: "Goal-Based Planning & Asset Protection",
+    tag1: "• Loan and mortgage protection strategies",
+    tag2: "• Business continuity and key-person insurance",
+    tag3: "Tax efficiency: 80C and optimized withdrawals",
+    label: "• Tax planning using ELSS funds along with PPF or NPS",
+    label1:
+      "• Emergency readiness through liquid, money market, or short-term debt funds",
+    label2:
+      "• Optional riders for accidental disability and income replacement",
     label3:
-      "Example: Match loan outstanding with decreasing term cover so family keeps the home and investments stay dedicated to goals like education and retirement.",
-    button: "Map my risks →",
+      "Example: Align a reducing term insurance cover with your loan balance so your family retains assets while investments remain focused on education and retirement goals.",
+    button: "Analyze my financial risks →",
   },
 ];
+
+const product = {
+  header: "Insurance product discovery",
+  title: "Align your life risks with",
+  title1: "the right insurance solutions",
+  text: `This section is designed as an educational guide. The final insurance
+         product, coverage amount, and insurer are selected together after a
+         detailed review of your income, expenses, and existing insurance
+         policies.`,
+};
+
 const page = () => {
   return (
     <>
       <section className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-                Product discovery
-              </p>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                Map your life risks to
-                <br />
-                the right insurance products
-              </h2>
-            </div>
-
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-              Use this as an education guide. Exact product, sum assured, and
-              insurer are finalized together after reviewing your cashflows and
-              existing policies.
-            </p>
-          </div>
+          <Header details={product} />
 
           {/* Cards */}
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {goals.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,0.08)]
-                             hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)]
-                             transition-all duration-300"
+                className="relative bg-gradient-to-b from-white to-gray-50 rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-[#0b2b7f] mb-3">
-                  {item.title}
-                </h3>
+                {/* Decorative Top Accent */}
+                <div className="absolute top-0 left-0 w-full h-1 rounded-t-3xl bg-gradient-to-r from-[#f38120] via-[#ff9c3b] to-[#fcd270]"></div>
 
-                <div
-                  className="flex flex-wrap"
-                  style={{ flexDirection: "row", columnGap: "10px" }}
-                >
-                  <p className="text-gray-600 leading-relaxed p-1 rounded-lg bg-blue-50 mb-2 text-xs">
-                    {item.tag1}
-                  </p>
+                {/* Title with optional Icon */}
+                <div className="flex items-center mb-4 space-x-3">
+                  {/* Example Icon placeholder, you can replace with real icons */}
+                  <div className="w-8 h-8 bg-[#f38120] rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#00113d]">
+                    {item.title}
+                  </h3>
+                </div>
 
-                  <p className="text-gray-600 leading-relaxed p-1 rounded-lg bg-green-50 mb-2 text-xs">
-                    {item.tag2}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed p-1 rounded-lg bg-orange-50 mb-2 text-xs">
-                    {item.tag3}
-                  </p>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {item.tag1 && (
+                    <span className="px-3 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full shadow-sm">
+                      {item.tag1}
+                    </span>
+                  )}
+                  {item.tag2 && (
+                    <span className="px-3 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full shadow-sm">
+                      {item.tag2}
+                    </span>
+                  )}
+                  {item.tag3 && (
+                    <span className="px-3 py-1 text-xs font-medium text-orange-800 bg-orange-100 rounded-full shadow-sm">
+                      {item.tag3}
+                    </span>
+                  )}
                 </div>
-                <div className="mt-2">
-                  <p className="text-sm text-[#0b2b7f] text-wrap">
-                    {item.label}
-                  </p>
-                  <p className="text-sm text-[#0b2b7f] text-wrap">
-                    {item.label1}
-                  </p>
-                  <p className="text-sm text-[#0b2b7f] text-wrap">
-                    {item.label2}
-                  </p>
-                  <p className="text-xs text-gray-500 text-wrap mt-2">
-                    {item.label3}
-                  </p>
+
+                {/* Description */}
+                <div className="space-y-2 mb-4">
+                  {item.label && (
+                    <p className="text-sm md:text-base text-gray-800">
+                      {item.label}
+                    </p>
+                  )}
+                  {item.label1 && (
+                    <p className="text-sm md:text-base text-gray-800">
+                      {item.label1}
+                    </p>
+                  )}
+                  {item.label2 && (
+                    <p className="text-sm md:text-base text-gray-800">
+                      {item.label2}
+                    </p>
+                  )}
+                  {item.label3 && (
+                    <p className="text-xs text-gray-500">{item.label3}</p>
+                  )}
                 </div>
-                <div
-                  className="flex flex-wrap mt-4"
-                  style={{ flexDirection: "row", columnGap: "10px" }}
-                >
-                  <button className="p-2 text-xs font-semibold bg-[#f38120] text-white rounded-lg">
-                    {item.button}
-                  </button>
-                </div>
+
+                {/* Action Button */}
+                {item.button && (
+                  <div>
+                    <button className="w-full md:w-auto px-5 py-2 bg-gradient-to-r from-[#f38120] to-[#ff9c3b] text-white text-sm font-semibold rounded-full shadow-md hover:scale-105 transition-transform">
+                      {item.button}
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
-        <div className="max-w-7xl mx-auto">
+      <section className="w-full bg-gradient-to-b from-[#f7f9fc] to-white py-16 px-4 md:px-8 mt-6 mb-6">
+        <div className="max-w-7xl mx-auto space-y-16">
           {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-                Product education
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-5">
+              <p className="text-xs tracking-widest font-bold text-[#f38120] uppercase">
+                Product Education
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                Grow with mutual funds,
-                <br />
-                protect with insurance.
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#00113d] leading-snug">
+                Grow with Mutual Funds, <br />
+                Protect with Insurance
               </h2>
 
-              <p className="text-xs md:text-base text-gray-600 leading-relaxed max-w-xl mt-5">
-                We never mix investment and insurance in a single product.
-                Instead, we keep growth in mutual funds / SIPs and use pure
-                protection products (term & health) to ring-fence your goals.
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-xl">
+                We keep wealth creation and risk protection separate. Mutual
+                funds / SIPs focus on long-term growth, while term and health
+                insurance safeguard your financial goals.
               </p>
             </div>
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 sm:grid-col-1 gap-4">
-              <div className="p-2 bg-white shadow-md rounded-md">
-                <p className="text-sm font-semibold text-[#f38120]">
-                  For growth
+
+            {/* Product Cards */}
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8 lg:mt-0">
+              {/* Growth Card */}
+              <div className="relative bg-gradient-to-tr from-blue-50 to-blue-100 rounded-3xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all">
+                <div className="absolute top-4 right-4 w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold text-lg">
+                  💰
+                </div>
+                <p className="text-sm font-semibold text-[#0b2b7f] mb-4">
+                  For Growth
                 </p>
-                <p className="text-xs text-[#0b2b7f] mt-2">
-                  • Mutual funds / SIPs for all long-term goals (retirement,
-                  education, wealth).
-                </p>
-                <p className="text-xs text-[#0b2b7f] mt-2">
-                  • Tax planning via ELSS, NPS, and asset allocation.
-                </p>
+                <ul className="text-xs md:text-sm text-[#00113d] space-y-2 list-disc list-inside">
+                  <li>
+                    Mutual funds / SIPs for long-term goals (retirement,
+                    education, wealth)
+                  </li>
+                  <li>
+                    Tax-efficient investing via ELSS, NPS, and strategic asset
+                    allocation
+                  </li>
+                </ul>
               </div>
-              <div className="p-2 bg-white shadow-md rounded-md">
-                <p className="text-sm font-semibold text-[#f38120]">
-                  For protection
+
+              {/* Protection Card */}
+              <div className="relative bg-gradient-to-tr from-yellow-50 to-yellow-100 rounded-3xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all">
+                <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 font-bold text-lg">
+                  🛡️
+                </div>
+                <p className="text-sm font-semibold text-[#f38120] mb-4">
+                  For Protection
                 </p>
-                <p className="text-xs text-[#0b2b7f] mt-2">
-                  • Term and health cover purely for risk management.
-                </p>
-                <p className="text-xs text-[#0b2b7f] mt-2">
-                  • Riders / add-ons only when they enhance real protection, not
-                  as investment.
-                </p>
+                <ul className="text-xs md:text-sm text-[#00113d] space-y-2 list-disc list-inside">
+                  <li>Term and health insurance solely for risk coverage</li>
+                  <li>
+                    Add-ons or riders only when they enhance actual protection,
+                    not as investment
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

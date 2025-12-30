@@ -6,53 +6,73 @@ import {
   goals,
   journey,
 } from "@/components/details";
+import Header from "@/components/Headers";
+import { headers } from "next/headers";
+const goalBased = {
+  header: " Goal-Based Investment Guidance",
+  title: "Which mutual fund categories",
+  title1: "align with your financial goals?",
+  text: `Simple, high-level insights to help you match your life goals with
+              the right mutual fund categories. Final fund selection is always
+              personalized through a one-to-one discussion with your advisor.`,
+};
 
+const benefit = {
+  header: "KEY BENEFITS",
+  title: "Why Invest in Mutual Funds?",
+  title1: "",
+  text: `Discover the advantages that make mutual funds a preferred choice for
+          smart investors`,
+};
+
+const option = {
+  header: "Why Choose Us",
+  title: " Why Invest in Mutual Funds?",
+  title1: "",
+  text: `Trusted financial experts committed to your mutual fund investment
+          success`,
+};
 const page = () => {
   return (
     <div className="p-2 mt-5 bg-white">
-      <div className="w-full mt-5 mb-5 shadow-lg p-4 rounded-lg sm:w-full lg:max-w-3/4 mx-auto">
-        <p className="text-md text-[#f38120]">
-          Why Mutual Funds are Ideal for Indian Investors
-        </p>
-        <p className="mt-3 text-sm text-gray-500">
-          Mutual funds have emerged as one of the most preferred investment
-          vehicles for Indian investors, offering a perfect blend of
-          professional management, diversification, and accessibility. By
-          pooling resources from multiple investors, mutual funds provide access
-          to professionally managed portfolios that would otherwise require
-          significant capital and expertise to build individually.
-        </p>
-        <p className="mt-3 text-sm text-gray-500">
-          The power of diversification helps mitigate risk by spreading
-          investments across multiple securities and asset classes. Professional
-          fund managers with years of market experience make informed investment
-          decisions, saving you time and research efforts. Systematic Investment
-          Plans (SIPs) enable rupee cost averaging, allowing you to invest
-          regularly regardless of market conditions, which helps in building
-          wealth over time.
-        </p>
-        <p className="mt-3 text-sm text-gray-500">
-          Tax benefits under Section 80C through ELSS funds, combined with the
-          potential for long-term wealth creation, make mutual funds an
-          attractive option for achieving various financial goals such as
-          retirement planning, child education, home purchase, and wealth
-          accumulation. With options starting from just ₹500 per month, mutual
-          funds democratize wealth creation for investors across all income
-          levels.
-        </p>
-      </div>
-      <div className="w-full py-10 px-4">
-        <p className="text-sm text-[#f38120] text-center mt-2">KEY BENEFITS</p>
-        <p className="text-2xl font-semibold text-[#f38120] text-center mt-4">
-          Why Invest in Mutual Funds?
-        </p>
-        <p className="text-sm text-center mt-2">
-          Discover the advantages that make mutual funds a preferred choice for
-          smart investors
-        </p>
-      </div>
+      <section className="w-full py-16 px-4 md:px-8 mt-6 mb-6">
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-10 space-y-6">
+          <p className="text-md md:text-lg font-semibold text-[#f38120]">
+            Why Mutual Funds Make Sense for Indian Investors
+          </p>
+
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+            Mutual funds have become a preferred investment choice in India,
+            combining professional management, diversification, and convenience.
+            By pooling resources from multiple investors, mutual funds allow you
+            to access well-structured portfolios that would be difficult to
+            create independently.
+          </p>
+
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+            Diversification across sectors, companies, and asset classes helps
+            manage risk effectively. Experienced fund managers continuously
+            monitor markets and make informed investment decisions on your
+            behalf, saving you time and effort. Systematic Investment Plans
+            (SIPs) let you invest regularly, benefit from rupee cost averaging,
+            and maintain discipline across market cycles.
+          </p>
+
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+            Mutual funds also provide tax-saving opportunities through ELSS
+            under Section 80C, along with strong potential for long-term wealth
+            creation. Whether your goal is retirement, funding a child’s
+            education, buying a home, or building wealth, mutual funds offer
+            flexible solutions. With investments starting as low as ₹500 per
+            month, disciplined investing is accessible to investors of all
+            income levels.
+          </p>
+        </div>
+      </section>
+
       <section className="py-6 px-4  from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <Header details={benefit} />
+        <div className="mt-4 max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, i) => (
             <div
               key={i}
@@ -79,18 +99,9 @@ const page = () => {
         </div>
       </section>
 
-      <div className="w-full py-10 px-4">
-        <p className="text-sm text-[#f38120] text-center mt-2">Why Choose Us</p>
-        <p className="text-2xl font-semibold text-[#f38120] text-center mt-4">
-          Why Invest in Mutual Funds?
-        </p>
-        <p className="text-sm text-center mt-2">
-          Trusted financial experts committed to your mutual fund investment
-          success
-        </p>
-      </div>
       <section className="py-6 px-4  from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <Header details={option} />
+        <div className="mt-4 max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {card.map((card, i) => (
             <div
               key={i}
@@ -173,24 +184,7 @@ const page = () => {
       <section className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
-                Goal-based suggestions
-              </p>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                Which mutual funds <br />
-                suit which financial goals?
-              </h2>
-            </div>
-
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-              High-level guidance to connect your life goals with suitable
-              mutual fund categories. Final fund selection is done one-to-one
-              with your expert.
-            </p>
-          </div>
+          <Header details={goalBased} />
 
           {/* Cards */}
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -305,21 +299,26 @@ const page = () => {
         </div>
       </section>
 
-      <div className="w-full py-10 px-4">
-        <p className="text-sm text-[#f38120] text-center mt-2">
-          Investment Platform
-        </p>
-        <p className="text-2xl font-semibold text-[#f38120] text-center mt-4">
-          investxindia MF Account
-        </p>
-        <p className="text-sm text-center mt-2">
-          One of the most comprehensive platforms for managing investments in
-          India. Some of its features are unique in the industry, only offered
-          by NJ.
-        </p>
-      </div>
       <section className="py-6 px-4  from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <p className="text-xs tracking-widest font-semibold text-[#f38120] uppercase mb-3">
+              Smart Investment Platform in India
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
+              InvestXIndia Mutual
+              <br /> Fund Account
+            </h2>
+          </div>
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
+            A powerful and easy-to-use investment management platform designed
+            for Indian investors. InvestXIndia offers industry-leading tools,
+            exclusive features, and seamless portfolio tracking to help you
+            invest smarter and grow your wealth with confidence.
+          </p>
+        </div>
+        <div className="mt-4 max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {accountData.map((card, i) => (
             <div
               key={i}

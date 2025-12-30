@@ -4,22 +4,23 @@ import ProcessSection from "@/components/Disclosures/ProcessSection";
 import RiskDisclosureSection from "@/components/Disclosures/RiskDisclosures";
 const data = [
   {
-    title: "Our Regulatory Role",
+    title: "Our Regulatory Capacity",
     message:
-      "investxindia currently operates as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We are not registered as a SEBI Investment Adviser (RIA) at present.",
+      "investxindia operates as an AMFI-registered Mutual Fund Distributor (ARN-346230) and an IRDA-authorized insurance consultant. At present, we are not registered as a SEBI Registered Investment Adviser (RIA).",
     message1:
-      "Our primary role is to help you understand products, map them to your goals and risk profile, and execute transactions through regulated platforms such as investxindiaE-Wealth.",
+      "Our role is limited to explaining financial products, aligning them with your goals and risk profile, and facilitating transactions through regulated platforms such as investxindiaE-Wealth.",
   },
   {
-    title: "How We Are Compensated",
+    title: "Compensation & Fees",
     message:
-      "• We may receive commissions and trail income from AMCs and insurers on products you choose to invest in through us.",
+      "• We may earn commissions or trail income from asset management companies (AMCs) and insurers for products you choose through our platform.",
     message1:
-      "• We do not charge any separate planning fee unless explicitly agreed with you in writing.",
+      "• We do not levy any separate advisory or planning fees unless expressly agreed upon in writing.",
     message2:
-      "• Wherever possible, we explain different options, costs, and trade-offs so you can make an informed choice.",
+      "• Wherever applicable, we disclose product options, associated costs, and trade-offs to help you make well-informed decisions.",
   },
 ];
+
 const page = () => {
   return (
     <>
@@ -33,14 +34,15 @@ const page = () => {
               </p>
 
               <h2 className="text-3xl md:text-4xl font-bold text-[#0b2b7f] leading-tight">
-                Disclosures & How We Work
+                Disclosures & Our Working Framework
               </h2>
             </div>
 
             <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-xl">
-              This page explains our role, how we are compensated, what you can
-              expect from our relationship, and where the boundaries are. We
-              want every customer to make informed, confident decisions.
+              This section outlines our regulatory position, compensation
+              structure, and scope of services. It also clarifies expectations
+              and limitations, helping you make well-informed and confident
+              financial decisions.
             </p>
           </div>
           <div className="p-4 grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-10">
