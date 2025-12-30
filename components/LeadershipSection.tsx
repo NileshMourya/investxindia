@@ -39,7 +39,7 @@ const directors: Director[] = [
     role: "Vice President",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
     image: "/ketki.jpeg",
-    linkedin: "https://www.linkedin.com/in/ketki-pathak",
+    linkedin: "https://www.linkedin.com/in/ketki-pathak-a3a3a065/",
     description: [
       "Ketki Pathak is the Vice President at Investxindia Corporate Distribution Pvt. Ltd., bringing over 15 years of experience in the Indian financial services industry.",
       "Her professional journey includes 13+ years with HDFC Bank and 2 years with IndusInd Bank, working extensively with NRI and Foreign Investment clients.",

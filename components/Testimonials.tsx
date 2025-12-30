@@ -11,30 +11,51 @@ const data = [
   {
     message:
       "My experience with InvestX India has been professional and well-structured. The team took time to understand my financial goals and risk profile before discussing mutual fund options...",
+    name: "Mr. Matish Parmeshwar",
+    profile: "CFO",
+    company: "-LCS Electrical And Mechanical Contractors Ltd",
   },
   {
     message:
       "As a first-time investor, I had limited understanding of financial products. InvestX India helped me understand the basics in a simple and patient manner...",
+    name: "",
+    profile: "",
+    company: "",
   },
   {
     message:
       "I approached InvestX India for information regarding PMS and AIF products. The team explained the structure, eligibility criteria, risks, and documentation involved...",
+    name: "",
+    profile: "",
+    company: "",
   },
   {
     message:
       "InvestX India provided me with relevant information regarding fixed-income products such as bonds and deposits...",
+    name: "",
+    profile: "",
+    company: "",
   },
   {
     message:
       "My interactions with InvestX India have been smooth. They provided regular updates and responded promptly to my queries.",
+    name: "",
+    profile: "",
+    company: "",
   },
   {
     message:
       "My experience with InvestX India has been satisfactory. They explained mutual fund options clearly and helped me choose products suitable to my financial objectives.",
+    name: "",
+    profile: "",
+    company: "",
   },
   {
     message:
       "The onboarding process through InvestX India was smooth and well-guided. I received assistance at every step.",
+    name: "",
+    profile: "",
+    company: "",
   },
 ];
 
@@ -81,9 +102,11 @@ const Testimonials = () => {
                   {/* Author */}
                   <div className="mt-6 text-right">
                     <p className="text-sm font-semibold text-[#f38120]">
-                      Client Name
+                      {item.name}
                     </p>
-                    <p className="text-xs text-gray-400">City Name</p>
+                    <p className="text-xs text-gray-400">
+                      <b className="text-sm">{item.profile} </b> {item.company}
+                    </p>
                   </div>
                 </CardContent>
               </Card>

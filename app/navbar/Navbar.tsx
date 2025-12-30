@@ -197,6 +197,7 @@ const Navbar = () => {
                     key={item.name}
                     href={item.link}
                     className="block text-sm"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -220,6 +221,7 @@ const Navbar = () => {
                     key={item.name}
                     href={item.url}
                     className="block text-sm"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -243,6 +245,7 @@ const Navbar = () => {
                     key={item.name}
                     href={item.url}
                     className="block text-sm"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -266,6 +269,7 @@ const Navbar = () => {
                     key={item.name}
                     href={item.url}
                     className="block text-sm"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {item.name}
                   </Link>
