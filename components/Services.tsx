@@ -67,10 +67,10 @@ const Page = () => {
         {/* Description */}
         <div className="max-w-3xl mt-5">
           <p className="text-sm md:text-base text-[#00113d] leading-relaxed">
-            With 30+ years of banking, finance & investment experience, HRP
-            Wealth is your trusted partner for comprehensive wealth management.
-            We simplify financial decision-making with a long-term, goal-driven
-            approach.
+            With 30+ years of banking, finance & investment experience,
+            investxindia is your trusted partner for comprehensive wealth
+            management. We simplify financial decision-making with a long-term,
+            goal-driven approach.
           </p>
         </div>
 

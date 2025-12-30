@@ -3,7 +3,7 @@ import React from "react";
 import { AlertTriangle, Info } from "lucide-react";
 
 const disclosures = [
-  "HRP Wealth currently acts as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We do not act as a SEBI registered investment adviser (RIA) as of now.",
+  "investxindia currently acts as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We do not act as a SEBI registered investment adviser (RIA) as of now.",
   "We may receive commissions and incentives from AMCs / insurers for the products you choose. We do not charge any additional planning fee unless explicitly agreed in writing.",
   "All information, illustrations, and calculator outputs on this website are for education and awareness only. They are not a recommendation to buy, sell, or switch any specific scheme.",
   "Mutual fund investments are subject to market risks, including possible loss of principal. Read all scheme-related documents carefully before investing. Past performance does not guarantee future returns.",

@@ -6,7 +6,7 @@ const data = [
   {
     title: "Our Regulatory Role",
     message:
-      "HRP Wealth currently operates as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We are not registered as a SEBI Investment Adviser (RIA) at present.",
+      "investxindia currently operates as an AMFI registered mutual fund distributor (ARN-342284) and IRDA authorized insurance consultant. We are not registered as a SEBI Investment Adviser (RIA) at present.",
     message1:
       "Our primary role is to help you understand products, map them to your goals and risk profile, and execute transactions through regulated platforms such as investxindiaE-Wealth.",
   },

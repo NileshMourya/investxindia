@@ -10,7 +10,7 @@ import {
 const page = () => {
   return (
     <div className="p-2 mt-5 bg-white">
-      <div className="w-full mt-5 mb-5 shadow-lg p-4 rounded-lg max-w-3/4 sm:max-w-2xl lg:max-w-3/4 mx-auto">
+      <div className="w-full mt-5 mb-5 shadow-lg p-4 rounded-lg sm:w-full lg:max-w-3/4 mx-auto">
         <p className="text-md text-[#f38120]">
           Why Mutual Funds are Ideal for Indian Investors
         </p>

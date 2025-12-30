@@ -49,8 +49,8 @@ const page = () => {
               management.
             </p>
             <p className="text-sm text-[#0b2b7f] mt-2">
-              At HRP Wealth, we act as a mutual fund distributor and facilitator
-              for investxindiaPMS / investxindiaNDPMS. We are not
+              At investxindia, we act as a mutual fund distributor and
+              facilitator for investxindiaPMS / investxindiaNDPMS. We are not
               SEBI-registered portfolio managers ourselves. Final PMS selection,
               suitability and documentation are always discussed one-to-one
               based on your net worth, risk profile and existing holdings.

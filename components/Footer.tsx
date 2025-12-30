@@ -65,9 +65,7 @@ export function Component() {
             </div>
             <div className="flex gap-2 items-center mt-4">
               <div className="flex gap-1">
-                <p className="text-gray-600 font-semibold text-sm">
-                  AMFI ARN:{" "}
-                </p>
+                <p className="text-gray-600 font-semibold text-sm">AMFI ARN:</p>
                 <p className="text-sm text-gray-600">346230</p>
               </div>
               <b>|</b>
@@ -92,10 +90,6 @@ export function Component() {
               <p className="text-gray-600 font-semibold text-sm">Help Desk:</p>
               <p className="text-sm text-gray-600">+91 98924 40999</p>
             </div>
-            <i className="mt-5 text-sm text-gray-500 absolute bottom-0 text-wrap">
-              Mutual fund investments are subject to market risks, read all
-              scheme related documents carefully.
-            </i>
           </div>
 
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
@@ -141,13 +135,14 @@ export function Component() {
               </FooterLinkGroup>
             </div>
             <div>
-              <FooterTitle title="Calculator" />
+              <FooterTitle title="Calculators" />
               <FooterLinkGroup col>
                 {calLinks.map((item, id) => (
                   <Link
                     key={id}
                     href={item.links}
                     style={{ lineHeight: "10px" }}
+                    className="text-nowrap"
                   >
                     {item.name}
                   </Link>
@@ -169,10 +164,15 @@ export function Component() {
         </div>
         <FooterDivider className="mt-5" />
         <div className="w-full sm:flex sm:items-center sm:justify-between mt-5 mb-5">
+          <p className="text-xs text-gray-400 p-2">
+            Mutual fund investments are subject to market risks, read all scheme
+            related documents carefully.
+          </p>
           <p className="text-sm text-gray-400 p-2">
             © Investxindia Corporate Distribution Private Limited. All Rights
             Reserved.
           </p>
+
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <FooterIcon
               href="https://www.facebook.com/investxindia"

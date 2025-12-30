@@ -5,7 +5,7 @@ const AMCs = () => {
     <div>
       <div className="w-full bg-[#f7f9fc] py-16 px-4 md:px-8 mt-5 mb-5">
         <div
-          className="flex items-center justify-content-center mx-auto w-3/4"
+          className="flex items-center justify-content-center mx-auto lg:w-3/4 sm:w-full"
           style={{ flexDirection: "column" }}
         >
           <p className="text-center text-lg font-semibold text-gray-400">

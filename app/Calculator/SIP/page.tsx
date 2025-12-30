@@ -23,9 +23,14 @@ export default function SipCalculator() {
   const formatCurrency = (value: number) =>
     `₹ ${Math.round(value).toLocaleString("en-IN")}`;
 
+  const getRangeBg = (value: number, min: number, max: number) => {
+    const percent = ((value - min) / (max - min)) * 100;
+    return `linear-gradient(to right, #0b2b7f ${percent}%, #e5e7eb ${percent}%)`;
+  };
+
   return (
     <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="lg:max-w-5xl sm:w-full mx-auto">
         <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10 grid gap-10 md:grid-cols-2">
           {/* Left - Inputs */}
           <div>
@@ -45,8 +50,12 @@ export default function SipCalculator() {
                 step={500}
                 value={monthlyInvestment}
                 onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
-                className="w-full mt-2 "
+                style={{
+                  background: getRangeBg(monthlyInvestment, 500, 100000),
+                }}
+                className="range-slider w-full mt-2"
               />
+
               <p className="mt-1 text-[#f38120] font-semibold">
                 {formatCurrency(monthlyInvestment)}
               </p>
@@ -64,8 +73,12 @@ export default function SipCalculator() {
                 step={0.5}
                 value={annualRate}
                 onChange={(e) => setAnnualRate(Number(e.target.value))}
-                className="w-full mt-2"
+                style={{
+                  background: getRangeBg(annualRate, 1, 30),
+                }}
+                className="range-slider w-full mt-2"
               />
+
               <p className="mt-1 text-[#f38120] font-semibold">
                 {annualRate} %
               </p>
@@ -83,8 +96,12 @@ export default function SipCalculator() {
                 step={1}
                 value={years}
                 onChange={(e) => setYears(Number(e.target.value))}
-                className="w-full mt-2"
+                style={{
+                  background: getRangeBg(years, 1, 40),
+                }}
+                className="range-slider w-full mt-2"
               />
+
               <p className="mt-1 text-[#f38120] font-semibold">{years} Years</p>
             </div>
           </div>
