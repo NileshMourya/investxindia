@@ -47,7 +47,7 @@ const mainLinks = [
 const calMeanu = [
   { name: "SIP Calculator", link: "/Calculator/SIP" },
   { name: "Lumpsum Calculator", link: "/Calculator/Lumpsum" },
-  { name: "STP Calculator", link: "/Calculator/STP" },
+  { name: "SWP Calculator", link: "/Calculator/SWP" },
 ];
 
 const Navbar = () => {

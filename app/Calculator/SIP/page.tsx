@@ -9,14 +9,18 @@ export default function SipCalculator() {
   const [years, setYears] = useState<number>(10);
 
   const months = years * 12;
-  const monthlyRate = annualRate / 12 / 100;
+
+  // ✅ Correct compounded monthly rate
+  const monthlyRate = Math.pow(1 + annualRate / 100, 1 / 12) - 1;
 
   const investedAmount = monthlyInvestment * months;
 
   const maturityAmount =
-    monthlyInvestment *
-    ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
-    (1 + monthlyRate);
+    monthlyRate === 0
+      ? investedAmount
+      : monthlyInvestment *
+        ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
+        (1 + monthlyRate);
 
   const estimatedReturns = maturityAmount - investedAmount;
 
