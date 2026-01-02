@@ -3,7 +3,7 @@ import React from "react";
 import { AlertTriangle, Info } from "lucide-react";
 
 const disclosures = [
-  "InvestX India operates as an AMFI-registered mutual fund distributor (ARN-342284) and an IRDA-authorized insurance consultant. We are not registered as a SEBI Registered Investment Adviser (RIA) at present.",
+  "InvestX India operates as an AMFI-registered mutual fund distributor (ARN-346230) and an IRDA-authorized insurance consultant. We are not registered as a SEBI Registered Investment Adviser (RIA) at present.",
   "We may earn commissions or incentives from asset management companies or insurers for the products selected. No separate advisory or planning fees are charged unless expressly agreed in writing.",
   "All content, illustrations, and calculator results on this website are provided solely for educational and informational purposes and should not be construed as a recommendation to buy, sell, or switch any investment product.",
   "Mutual fund investments are subject to market risks, including potential loss of capital. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results.",

@@ -7,7 +7,7 @@ interface SipPieChartProps {
   returns: number;
 }
 
-const COLORS = ["#f38120", "#0b2b7f"];
+const COLORS = ["#0b2b7f", "#4f9943"];
 
 export default function SipPieChart({
   investedAmount,

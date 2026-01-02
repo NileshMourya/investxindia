@@ -1,187 +1,186 @@
-// "use client";
+"use client";
 
-// import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import SipPieChart from "../SipPieChart";
 
-// const formatCurrency = (value: number) =>
-//   value.toLocaleString("en-IN", {
-//     style: "currency",
-//     currency: "INR",
-//     maximumFractionDigits: 0,
-//   });
+export default function SwpCalculator() {
+  const [initialInvestment, setInitialInvestment] = useState<number>(500000);
+  const [monthlyWithdrawal, setMonthlyWithdrawal] = useState<number>(10000);
+  const [annualRate, setAnnualRate] = useState<number>(8);
+  const [years, setYears] = useState<number>(5);
 
-// export default function SWPCalculator() {
-//   const [investment, setInvestment] = useState(500000);
-//   const [withdrawal, setWithdrawal] = useState(10000);
-//   const [rate, setRate] = useState(8);
-//   const [years, setYears] = useState(5);
+  const months = years * 12;
+  const monthlyRate = Math.pow(1 + annualRate / 100, 1 / 12) - 1;
 
-//   const result = useMemo(() => {
-//     const monthlyRate = rate / 100 / 12;
-//     const months = years * 12;
+  const { totalWithdrawal, profit, remainingAmount } = useMemo(() => {
+    let balance = initialInvestment;
 
-//     let balance = investment;
-//     let totalWithdrawn = 0;
+    for (let i = 0; i < months; i++) {
+      balance = balance + balance * monthlyRate - monthlyWithdrawal;
+    }
 
-//     for (let i = 0; i < months; i++) {
-//       balance = balance * (1 + monthlyRate) - withdrawal;
-//       totalWithdrawn += withdrawal;
-//       if (balance <= 0) {
-//         balance = 0;
-//         break;
-//       }
-//     }
+    const remaining = Math.round(balance);
+    const withdrawn = monthlyWithdrawal * months;
+    const profitValue = withdrawn + remaining - initialInvestment;
 
-//     return {
-//       totalWithdrawn,
-//       finalValue: Math.round(balance),
-//     };
-//   }, [investment, withdrawal, rate, years]);
+    return {
+      totalWithdrawal: withdrawn,
+      profit: profitValue,
+      remainingAmount: remaining,
+    };
+  }, [initialInvestment, monthlyWithdrawal, annualRate, years]);
 
-//   return (
-//     <section className="w-full max-w-5xl mx-auto px-4 py-10">
-//       <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-6 md:p-10">
-//         <h2 className="text-2xl md:text-3xl font-bold text-[#0b2b7f] mb-8">
-//           SWP (Systematic Withdrawal Plan) Calculator
-//         </h2>
+  const formatCurrency = (value: number) =>
+    `₹ ${Math.round(value).toLocaleString("en-IN")}`;
 
-//         {/* Inputs */}
-//         <div className="grid md:grid-cols-2 gap-8">
-//           <RangeInput
-//             label="Total Investment"
-//             value={investment}
-//             min={100000}
-//             max={5000000}
-//             step={50000}
-//             display={formatCurrency(investment)}
-//             onChange={setInvestment}
-//           />
+  const getRangeBg = (value: number, min: number, max: number) => {
+    const percent = ((value - min) / (max - min)) * 100;
+    return `linear-gradient(to right, #0b2b7f ${percent}%, #e5e7eb ${percent}%)`;
+  };
 
-//           <RangeInput
-//             label="Withdrawal per Month"
-//             value={withdrawal}
-//             min={1000}
-//             max={100000}
-//             step={1000}
-//             display={formatCurrency(withdrawal)}
-//             onChange={setWithdrawal}
-//           />
-
-//           <RangeInput
-//             label="Expected Return Rate (p.a)"
-//             value={rate}
-//             min={1}
-//             max={15}
-//             step={0.5}
-//             display={`${rate}%`}
-//             onChange={setRate}
-//           />
-
-//           <RangeInput
-//             label="Time Period"
-//             value={years}
-//             min={1}
-//             max={30}
-//             step={1}
-//             display={`${years} Years`}
-//             onChange={setYears}
-//           />
-//         </div>
-
-//         {/* Results */}
-//         <div className="mt-10 grid sm:grid-cols-3 gap-6">
-//           <ResultCard
-//             title="Total Investment"
-//             value={formatCurrency(investment)}
-//           />
-//           <ResultCard
-//             title="Total Withdrawal"
-//             value={formatCurrency(result.totalWithdrawn)}
-//           />
-//           <ResultCard
-//             highlight
-//             title="Final Value"
-//             value={formatCurrency(result.finalValue)}
-//           />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// /* ---------- Reusable Components ---------- */
-
-// function RangeInput({
-//   label,
-//   value,
-//   min,
-//   max,
-//   step,
-//   display,
-//   onChange,
-// }: {
-//   label: string;
-//   value: number;
-//   min: number;
-//   max: number;
-//   step: number;
-//   display: string;
-//   onChange: (val: number) => void;
-// }) {
-//   return (
-//     <div>
-//       <div className="flex justify-between items-center mb-2">
-//         <p className="text-sm font-medium text-gray-700">{label}</p>
-//         <span className="text-sm font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">
-//           {display}
-//         </span>
-//       </div>
-
-//       <input
-//         type="range"
-//         min={min}
-//         max={max}
-//         step={step}
-//         value={value}
-//         onChange={(e) => onChange(Number(e.target.value))}
-//         className="w-full accent-emerald-500 cursor-pointer"
-//       />
-//     </div>
-//   );
-// }
-
-// function ResultCard({
-//   title,
-//   value,
-//   highlight,
-// }: {
-//   title: string;
-//   value: string;
-//   highlight?: boolean;
-// }) {
-//   return (
-//     <div
-//       className={`rounded-2xl p-5 text-center shadow-md ${
-//         highlight
-//           ? "bg-gradient-to-br from-emerald-500 to-green-600 text-white"
-//           : "bg-gray-50"
-//       }`}
-//     >
-//       <p className={`text-sm ${highlight ? "text-white/80" : "text-gray-500"}`}>
-//         {title}
-//       </p>
-//       <p className="text-xl md:text-2xl font-bold mt-1">{value}</p>
-//     </div>
-//   );
-// }
-
-import React from "react";
-import UnderMaintenance from "@/components/ui/Maintanance";
-const page = () => {
   return (
-    <div>
-      <UnderMaintenance />
-    </div>
-  );
-};
+    <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16 px-4">
+      <div className="lg:max-w-5xl mx-auto">
+        <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10 grid gap-10 md:grid-cols-2">
+          {/* Left - Inputs */}
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              SWP Calculator
+            </h2>
 
-export default page;
+            {/* Initial Investment */}
+            <div className="mb-6">
+              <label className="text-sm font-medium text-gray-700">
+                Initial Investment
+              </label>
+              <input
+                type="range"
+                min={100000}
+                max={10000000}
+                step={50000}
+                value={initialInvestment}
+                onChange={(e) => setInitialInvestment(Number(e.target.value))}
+                style={{
+                  background: getRangeBg(initialInvestment, 100000, 10000000),
+                }}
+                className="range-slider w-full mt-2"
+              />
+              <p className="mt-1 text-[#f38120] font-semibold">
+                {formatCurrency(initialInvestment)}
+              </p>
+            </div>
+
+            {/* Monthly Withdrawal */}
+            <div className="mb-6">
+              <label className="text-sm font-medium text-gray-700">
+                Monthly Withdrawal (SWP)
+              </label>
+              <input
+                type="range"
+                min={5000}
+                max={200000}
+                step={1000}
+                value={monthlyWithdrawal}
+                onChange={(e) => setMonthlyWithdrawal(Number(e.target.value))}
+                style={{
+                  background: getRangeBg(monthlyWithdrawal, 5000, 200000),
+                }}
+                className="range-slider w-full mt-2"
+              />
+              <p className="mt-1 text-[#f38120] font-semibold">
+                {formatCurrency(monthlyWithdrawal)}
+              </p>
+            </div>
+
+            {/* Annual Return */}
+            <div className="mb-6">
+              <label className="text-sm font-medium text-gray-700">
+                Expected Annual Return (%)
+              </label>
+              <input
+                type="range"
+                min={1}
+                max={20}
+                step={0.5}
+                value={annualRate}
+                onChange={(e) => setAnnualRate(Number(e.target.value))}
+                style={{
+                  background: getRangeBg(annualRate, 1, 20),
+                }}
+                className="range-slider w-full mt-2"
+              />
+              <p className="mt-1 text-[#f38120] font-semibold">
+                {annualRate} %
+              </p>
+            </div>
+
+            {/* Duration */}
+            <div>
+              <label className="text-sm font-medium text-gray-700">
+                Withdrawal Duration (Years)
+              </label>
+              <input
+                type="range"
+                min={1}
+                max={30}
+                step={1}
+                value={years}
+                onChange={(e) => setYears(Number(e.target.value))}
+                style={{
+                  background: getRangeBg(years, 1, 30),
+                }}
+                className="range-slider w-full mt-2"
+              />
+              <p className="mt-1 text-[#f38120] font-semibold">{years} Years</p>
+            </div>
+          </div>
+
+          {/* Right - Results */}
+          <div className="bg-orange-50 rounded-2xl p-6 flex flex-col justify-center">
+            <h3 className="text-lg font-semibold text-gray-800 mb-6">
+              SWP Summary
+            </h3>
+
+            <SipPieChart
+              investedAmount={initialInvestment}
+              returns={totalWithdrawal - initialInvestment}
+            />
+
+            <div className="space-y-4 text-sm">
+              <div className="flex justify-between">
+                <span className="text-[#0b2b7f]">Total Withdrawn</span>
+                <span className="font-semibold">
+                  {formatCurrency(totalWithdrawal)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[#0b2b7f]">Investment</span>
+                <span className="font-semibold">
+                  {formatCurrency(initialInvestment)}
+                </span>
+              </div>
+
+              <div className="flex justify-between">
+                <span className="text-gray-600">Profit</span>
+                <span className="font-semibold text-green-600">
+                  {formatCurrency(remainingAmount)}
+                </span>
+              </div>
+
+              <hr />
+
+              <div className="flex justify-between text-base">
+                <span className="font-semibold text-gray-800">
+                  Total Profit
+                </span>
+                <span className="font-bold text-[#f38120]">
+                  {formatCurrency(profit)}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
