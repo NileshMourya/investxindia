@@ -1,23 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
 
+type investment = { investment: number; annualRate: number; years: number };
 export default function LumpsumCalculator() {
-  const [investment, setInvestment] = useState<number>(500000);
-  const [annualRate, setAnnualRate] = useState<number>(12);
-  const [years, setYears] = useState<number>(5);
-
+  const [values, setValues] = useState<investment>({
+    investment: 10000,
+    annualRate: 12,
+    years: 5,
+  });
   const n = 1; // Compounded yearly
-  const r = annualRate / 100;
+  const r = values.annualRate / 100;
 
   // Lumpsum Formula
-  const maturityAmount = investment * Math.pow(1 + r / n, n * years);
+  const maturityAmount =
+    values.investment * Math.pow(1 + r / n, n * values.years);
 
-  const estimatedReturns = maturityAmount - investment;
+  const estimatedReturns = maturityAmount - values.investment;
 
-  const formatCurrency = (value: number) =>
-    `₹ ${Math.round(value).toLocaleString("en-IN")}`;
+  const formatCurrency = (value: number) => value.toLocaleString("en-IN");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const rawValue = value.replace(/,/g, "");
+    const numericValue = Number(rawValue);
+
+    if (isNaN(numericValue)) return;
+
+    setValues((prev) => ({
+      ...prev,
+      [name]: numericValue,
+    }));
+  };
 
   const getRangeBg = (value: number, min: number, max: number) => {
     const percent = ((value - min) / (max - min)) * 100;
@@ -44,15 +60,22 @@ export default function LumpsumCalculator() {
                 min={10000}
                 max={10000000}
                 step={10000}
-                value={investment}
-                onChange={(e) => setInvestment(Number(e.target.value))}
+                value={values.investment}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(investment, 10000, 10000000),
+                  background: getRangeBg(values.investment, 10000, 10000000),
                 }}
                 className="range-slider w-full mt-2"
               />
               <p className="mt-1 text-[#f38120] font-semibold">
-                {formatCurrency(investment)}
+                ₹
+                <input
+                  type="text"
+                  value={formatCurrency(values.investment)}
+                  name="investment"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -66,15 +89,21 @@ export default function LumpsumCalculator() {
                 min={1}
                 max={30}
                 step={0.5}
-                value={annualRate}
-                onChange={(e) => setAnnualRate(Number(e.target.value))}
+                value={values.annualRate}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(annualRate, 1, 30),
+                  background: getRangeBg(values.annualRate, 1, 30),
                 }}
                 className="range-slider w-full mt-2"
               />
               <p className="mt-1 text-[#f38120] font-semibold">
-                {annualRate} %
+                <input
+                  type="text"
+                  value={formatCurrency(values.annualRate)}
+                  name="annualRate"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -88,14 +117,22 @@ export default function LumpsumCalculator() {
                 min={1}
                 max={40}
                 step={1}
-                value={years}
-                onChange={(e) => setYears(Number(e.target.value))}
+                value={values.years}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(years, 1, 40),
+                  background: getRangeBg(values.years, 1, 40),
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">{years} Years</p>
+              <p className="mt-1 text-[#f38120] font-semibold">
+                <input
+                  type="text"
+                  value={formatCurrency(values.years)}
+                  name="years"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
+              </p>
             </div>
           </div>
 
@@ -106,7 +143,7 @@ export default function LumpsumCalculator() {
             </h3>
 
             <SipPieChart
-              investedAmount={investment}
+              investedAmount={values.investment}
               returns={estimatedReturns}
             />
 
@@ -114,7 +151,7 @@ export default function LumpsumCalculator() {
               <div className="flex justify-between">
                 <span className="text-[#0b2b7f]">Invested Amount</span>
                 <span className="font-semibold">
-                  {formatCurrency(investment)}
+                  {formatCurrency(values.investment)}
                 </span>
               </div>
 

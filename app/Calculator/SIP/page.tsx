@@ -1,31 +1,52 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
 
-export default function SipCalculator() {
-  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(5000);
-  const [annualRate, setAnnualRate] = useState<number>(12);
-  const [years, setYears] = useState<number>(10);
+type investment = {
+  monthlyInvestment: number;
+  annualRate: number;
+  years: number;
+};
 
-  const months = years * 12;
+export default function SipCalculator() {
+  const [values, setValues] = useState<investment>({
+    monthlyInvestment: 10000,
+    annualRate: 12,
+    years: 5,
+  });
+
+  const months = values.years * 12;
 
   // ✅ Correct compounded monthly rate
-  const monthlyRate = Math.pow(1 + annualRate / 100, 1 / 12) - 1;
+  const monthlyRate = Math.pow(1 + values.annualRate / 100, 1 / 12) - 1;
 
-  const investedAmount = monthlyInvestment * months;
+  const investedAmount = values.monthlyInvestment * months;
 
   const maturityAmount =
     monthlyRate === 0
       ? investedAmount
-      : monthlyInvestment *
+      : values.monthlyInvestment *
         ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
         (1 + monthlyRate);
 
   const estimatedReturns = maturityAmount - investedAmount;
 
-  const formatCurrency = (value: number) =>
-    `₹ ${Math.round(value).toLocaleString("en-IN")}`;
+  const formatCurrency = (value: number) => value.toLocaleString("en-IN");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const rawValue = value.replace(/,/g, "");
+    const numericValue = Number(rawValue);
+
+    if (isNaN(numericValue)) return;
+
+    setValues((prev) => ({
+      ...prev,
+      [name]: numericValue,
+    }));
+  };
 
   const getRangeBg = (value: number, min: number, max: number) => {
     const percent = ((value - min) / (max - min)) * 100;
@@ -52,16 +73,23 @@ export default function SipCalculator() {
                 min={500}
                 max={100000}
                 step={500}
-                value={monthlyInvestment}
-                onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+                value={values.monthlyInvestment}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(monthlyInvestment, 500, 100000),
+                  background: getRangeBg(values.monthlyInvestment, 500, 100000),
                 }}
                 className="range-slider w-full mt-2"
               />
 
               <p className="mt-1 text-[#f38120] font-semibold">
-                {formatCurrency(monthlyInvestment)}
+                ₹
+                <input
+                  type="text"
+                  value={formatCurrency(values.monthlyInvestment)}
+                  name="monthlyInvestment"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -75,16 +103,22 @@ export default function SipCalculator() {
                 min={1}
                 max={30}
                 step={0.5}
-                value={annualRate}
-                onChange={(e) => setAnnualRate(Number(e.target.value))}
+                value={values.annualRate}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(annualRate, 1, 30),
+                  background: getRangeBg(values.annualRate, 1, 30),
                 }}
                 className="range-slider w-full mt-2"
               />
 
               <p className="mt-1 text-[#f38120] font-semibold">
-                {annualRate} %
+                <input
+                  type="text"
+                  value={formatCurrency(values.annualRate)}
+                  name="annualRate"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -98,15 +132,23 @@ export default function SipCalculator() {
                 min={1}
                 max={40}
                 step={1}
-                value={years}
-                onChange={(e) => setYears(Number(e.target.value))}
+                value={values.years}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(years, 1, 40),
+                  background: getRangeBg(values.years, 1, 40),
                 }}
                 className="range-slider w-full mt-2"
               />
 
-              <p className="mt-1 text-[#f38120] font-semibold">{years} Years</p>
+              <p className="mt-1 text-[#f38120] font-semibold">
+                <input
+                  type="text"
+                  value={formatCurrency(values.years)}
+                  name="years"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
+              </p>
             </div>
           </div>
 

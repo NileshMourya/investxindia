@@ -1,37 +1,64 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import SipPieChart from "../SipPieChart";
 
-export default function SwpCalculator() {
-  const [initialInvestment, setInitialInvestment] = useState<number>(500000);
-  const [monthlyWithdrawal, setMonthlyWithdrawal] = useState<number>(10000);
-  const [annualRate, setAnnualRate] = useState<number>(8);
-  const [years, setYears] = useState<number>(5);
+type investment = {
+  initialInvestment: number;
+  monthlyWithdrawal: number;
+  annualRate: number;
+  years: number;
+};
 
-  const months = years * 12;
-  const monthlyRate = Math.pow(1 + annualRate / 100, 1 / 12) - 1;
+export default function SwpCalculator() {
+  const [values, setValues] = useState<investment>({
+    initialInvestment: 500000,
+    monthlyWithdrawal: 10000,
+    annualRate: 8,
+    years: 5,
+  });
+
+  const months = values.years * 12;
+  const monthlyRate = Math.pow(1 + values.annualRate / 100, 1 / 12) - 1;
 
   const { totalWithdrawal, profit, remainingAmount } = useMemo(() => {
-    let balance = initialInvestment;
+    let balance = values.initialInvestment;
 
     for (let i = 0; i < months; i++) {
-      balance = balance + balance * monthlyRate - monthlyWithdrawal;
+      balance = balance + balance * monthlyRate - values.monthlyWithdrawal;
     }
 
     const remaining = Math.round(balance);
-    const withdrawn = monthlyWithdrawal * months;
-    const profitValue = withdrawn + remaining - initialInvestment;
+    const withdrawn = values.monthlyWithdrawal * months;
+    const profitValue = withdrawn + remaining - values.initialInvestment;
 
     return {
       totalWithdrawal: withdrawn,
       profit: profitValue,
       remainingAmount: remaining,
     };
-  }, [initialInvestment, monthlyWithdrawal, annualRate, years]);
+  }, [
+    values.initialInvestment,
+    values.monthlyWithdrawal,
+    values.annualRate,
+    values.years,
+  ]);
 
-  const formatCurrency = (value: number) =>
-    `₹ ${Math.round(value).toLocaleString("en-IN")}`;
+  const formatCurrency = (value: number) => value.toLocaleString("en-IN");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const rawValue = value.replace(/,/g, "");
+    const numericValue = Number(rawValue);
+
+    if (isNaN(numericValue)) return;
+
+    setValues((prev) => ({
+      ...prev,
+      [name]: numericValue,
+    }));
+  };
 
   const getRangeBg = (value: number, min: number, max: number) => {
     const percent = ((value - min) / (max - min)) * 100;
@@ -58,15 +85,26 @@ export default function SwpCalculator() {
                 min={100000}
                 max={10000000}
                 step={50000}
-                value={initialInvestment}
-                onChange={(e) => setInitialInvestment(Number(e.target.value))}
+                value={values.initialInvestment}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(initialInvestment, 100000, 10000000),
+                  background: getRangeBg(
+                    values.initialInvestment,
+                    100000,
+                    10000000
+                  ),
                 }}
                 className="range-slider w-full mt-2"
               />
               <p className="mt-1 text-[#f38120] font-semibold">
-                {formatCurrency(initialInvestment)}
+                ₹
+                <input
+                  type="text"
+                  value={formatCurrency(values.initialInvestment)}
+                  name="initialInvestment"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -80,15 +118,25 @@ export default function SwpCalculator() {
                 min={5000}
                 max={200000}
                 step={1000}
-                value={monthlyWithdrawal}
-                onChange={(e) => setMonthlyWithdrawal(Number(e.target.value))}
+                value={values.monthlyWithdrawal}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(monthlyWithdrawal, 5000, 200000),
+                  background: getRangeBg(
+                    values.monthlyWithdrawal,
+                    5000,
+                    200000
+                  ),
                 }}
                 className="range-slider w-full mt-2"
               />
               <p className="mt-1 text-[#f38120] font-semibold">
-                {formatCurrency(monthlyWithdrawal)}
+                <input
+                  type="text"
+                  value={formatCurrency(values.monthlyWithdrawal)}
+                  name="monthlyWithdrawal"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -102,15 +150,21 @@ export default function SwpCalculator() {
                 min={1}
                 max={20}
                 step={0.5}
-                value={annualRate}
-                onChange={(e) => setAnnualRate(Number(e.target.value))}
+                value={values.annualRate}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(annualRate, 1, 20),
+                  background: getRangeBg(values.annualRate, 1, 20),
                 }}
                 className="range-slider w-full mt-2"
               />
               <p className="mt-1 text-[#f38120] font-semibold">
-                {annualRate} %
+                <input
+                  type="text"
+                  value={formatCurrency(values.annualRate)}
+                  name="annualRate"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
               </p>
             </div>
 
@@ -124,14 +178,22 @@ export default function SwpCalculator() {
                 min={1}
                 max={30}
                 step={1}
-                value={years}
-                onChange={(e) => setYears(Number(e.target.value))}
+                value={values.years}
+                onChange={handleChange}
                 style={{
-                  background: getRangeBg(years, 1, 30),
+                  background: getRangeBg(values.years, 1, 30),
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">{years} Years</p>
+              <p className="mt-1 text-[#f38120] font-semibold">
+                <input
+                  type="text"
+                  value={formatCurrency(values.years)}
+                  name="years"
+                  onChange={handleChange}
+                  className="p-1 rounded-md"
+                ></input>
+              </p>
             </div>
           </div>
 
@@ -142,8 +204,8 @@ export default function SwpCalculator() {
             </h3>
 
             <SipPieChart
-              investedAmount={initialInvestment}
-              returns={totalWithdrawal - initialInvestment}
+              investedAmount={values.initialInvestment}
+              returns={totalWithdrawal - values.initialInvestment}
             />
 
             <div className="space-y-4 text-sm">
@@ -156,7 +218,7 @@ export default function SwpCalculator() {
               <div className="flex justify-between">
                 <span className="text-[#0b2b7f]">Investment</span>
                 <span className="font-semibold">
-                  {formatCurrency(initialInvestment)}
+                  {formatCurrency(values.initialInvestment)}
                 </span>
               </div>
 
