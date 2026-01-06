@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
+import React from "react";
 
 type investment = {
   monthlyInvestment: number;
@@ -70,6 +71,7 @@ export default function SipCalculator() {
               </label>
               <input
                 type="range"
+                name="monthlyInvestment"
                 min={500}
                 max={100000}
                 step={500}
@@ -100,6 +102,7 @@ export default function SipCalculator() {
               </label>
               <input
                 type="range"
+                name="annualRate"
                 min={1}
                 max={30}
                 step={0.5}
@@ -129,6 +132,7 @@ export default function SipCalculator() {
               </label>
               <input
                 type="range"
+                name="years"
                 min={1}
                 max={40}
                 step={1}

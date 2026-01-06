@@ -82,6 +82,7 @@ export default function SwpCalculator() {
               </label>
               <input
                 type="range"
+                name="initialInvestment"
                 min={100000}
                 max={10000000}
                 step={50000}
@@ -115,6 +116,7 @@ export default function SwpCalculator() {
               </label>
               <input
                 type="range"
+                name="monthlyWithdrawal"
                 min={5000}
                 max={200000}
                 step={1000}
@@ -147,6 +149,7 @@ export default function SwpCalculator() {
               </label>
               <input
                 type="range"
+                name="annualRate"
                 min={1}
                 max={20}
                 step={0.5}
@@ -175,6 +178,7 @@ export default function SwpCalculator() {
               </label>
               <input
                 type="range"
+                name="years"
                 min={1}
                 max={30}
                 step={1}

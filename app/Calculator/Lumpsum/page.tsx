@@ -57,6 +57,7 @@ export default function LumpsumCalculator() {
               </label>
               <input
                 type="range"
+                name="investment"
                 min={10000}
                 max={10000000}
                 step={10000}
@@ -86,6 +87,7 @@ export default function LumpsumCalculator() {
               </label>
               <input
                 type="range"
+                name="annualRate"
                 min={1}
                 max={30}
                 step={0.5}
@@ -114,6 +116,7 @@ export default function LumpsumCalculator() {
               </label>
               <input
                 type="range"
+                name="years"
                 min={1}
                 max={40}
                 step={1}
