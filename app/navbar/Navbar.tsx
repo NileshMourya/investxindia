@@ -177,7 +177,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow px-4 py-3 space-y-3">
+        <div className="md:hidden sm:h-screen sm:overflow-scroll bg-white shadow px-4 py-3 space-y-3">
           {mainLinks.map((link) => (
             <Link
               key={link.name}
