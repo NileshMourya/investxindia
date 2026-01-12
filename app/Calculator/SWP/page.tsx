@@ -97,16 +97,16 @@ export default function SwpCalculator() {
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">
-                ₹
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.initialInvestment)}
                   name="initialInvestment"
+                  value={formatCurrency(values.initialInvestment)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">₹</span>
+              </div>
             </div>
 
             {/* Monthly Withdrawal */}
@@ -131,15 +131,18 @@ export default function SwpCalculator() {
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.monthlyWithdrawal)}
                   name="monthlyWithdrawal"
+                  value={formatCurrency(values.monthlyWithdrawal)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                {/* <span className="text-sm text-gray-500">
+                  Monthly Withdrawal
+                </span> */}
+              </div>
             </div>
 
             {/* Annual Return */}
@@ -160,15 +163,16 @@ export default function SwpCalculator() {
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.annualRate)}
                   name="annualRate"
+                  value={formatCurrency(values.annualRate)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">%</span>
+              </div>
             </div>
 
             {/* Duration */}
@@ -189,15 +193,16 @@ export default function SwpCalculator() {
                 }}
                 className="range-slider w-full mt-2"
               />
-              <p className="mt-1 text-[#f38120] font-semibold">
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.years)}
                   name="years"
+                  value={formatCurrency(values.years)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">Years</span>
+              </div>
             </div>
           </div>
 
@@ -226,21 +231,11 @@ export default function SwpCalculator() {
                 </span>
               </div>
 
-              <div className="flex justify-between">
-                <span className="text-gray-600">Profit</span>
-                <span className="font-semibold text-green-600">
-                  {formatCurrency(remainingAmount)}
-                </span>
-              </div>
-
               <hr />
-
-              <div className="flex justify-between text-base">
-                <span className="font-semibold text-gray-800">
-                  Total Profit
-                </span>
-                <span className="font-bold text-[#f38120]">
-                  {formatCurrency(profit)}
+              <div className="flex justify-between">
+                <span className="text-gray-600">Final Value</span>
+                <span className="font-semibold text-[#f38120]">
+                  {formatCurrency(remainingAmount)}
                 </span>
               </div>
             </div>

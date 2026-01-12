@@ -1,32 +1,48 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useMemo } from "react";
 import SipPieChart from "../SipPieChart";
 
-type investment = { investment: number; annualRate: number; years: number };
-export default function LumpsumCalculator() {
-  const [values, setValues] = useState<investment>({
-    investment: 10000,
-    annualRate: 12,
-    years: 5,
+type Investment = {
+  monthlyInvestment: number;
+  annualRate: number;
+  years: number;
+};
+
+export default function RDCalculator() {
+  const [values, setValues] = useState<Investment>({
+    monthlyInvestment: 5000,
+    annualRate: 8,
+    years: 1,
   });
-  const n = 1; // Compounded yearly
-  const r = values.annualRate / 100;
 
-  // Lumpsum Formula
-  const maturityAmount =
-    values.investment * Math.pow(1 + r / n, n * values.years);
+  const N = 4; // Quarterly compounding
+  const R = values.annualRate / 100;
+  const totalMonths = values.years * 12;
 
-  const estimatedReturns = maturityAmount - values.investment;
+  /** RD Maturity Calculation */
+  const maturityAmount = useMemo(() => {
+    let total = 0;
 
-  const formatCurrency = (value: number) => value.toLocaleString("en-IN");
+    for (let month = 1; month <= totalMonths; month++) {
+      const remainingMonths = totalMonths - month + 1;
+      total +=
+        values.monthlyInvestment *
+        Math.pow(1 + R / N, (N * remainingMonths) / 12);
+    }
+
+    return total;
+  }, [values, R]);
+
+  const investedAmount = values.monthlyInvestment * totalMonths;
+  const estimatedReturns = maturityAmount - investedAmount;
+
+  const formatCurrency = (value: number) =>
+    value.toLocaleString("en-IN", { maximumFractionDigits: 2 });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
-    const rawValue = value.replace(/,/g, "");
-    const numericValue = Number(rawValue);
-
+    const numericValue = Number(value.replace(/,/g, ""));
     if (isNaN(numericValue)) return;
 
     setValues((prev) => ({
@@ -47,32 +63,32 @@ export default function LumpsumCalculator() {
           {/* Left - Inputs */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Lumpsum Calculator
+              RD Calculator
             </h2>
 
-            {/* Investment Amount */}
+            {/* Monthly Investment */}
             <div className="mb-6">
               <label className="text-sm font-medium text-gray-700">
-                Total Investment
+                Monthly Investment
               </label>
               <input
                 type="range"
-                name="investment"
-                min={10000}
-                max={10000000}
-                step={10000}
-                value={values.investment}
+                name="monthlyInvestment"
+                min={500}
+                max={100000}
+                step={500}
+                value={values.monthlyInvestment}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.investment, 10000, 10000000),
+                  background: getRangeBg(values.monthlyInvestment, 500, 100000),
                 }}
                 className="range-slider w-full mt-2"
               />
               <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  name="investment"
-                  value={formatCurrency(values.investment)}
+                  name="monthlyInvestment"
+                  value={formatCurrency(values.monthlyInvestment)}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -80,21 +96,21 @@ export default function LumpsumCalculator() {
               </div>
             </div>
 
-            {/* Annual Return */}
+            {/* Annual Interest */}
             <div className="mb-6">
               <label className="text-sm font-medium text-gray-700">
-                Expected Annual Return (%)
+                Interest Rate (%)
               </label>
               <input
                 type="range"
                 name="annualRate"
                 min={1}
-                max={30}
-                step={0.5}
+                max={15}
+                step={0.25}
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 30),
+                  background: getRangeBg(values.annualRate, 1, 15),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -113,18 +129,18 @@ export default function LumpsumCalculator() {
             {/* Duration */}
             <div>
               <label className="text-sm font-medium text-gray-700">
-                Investment Duration (Years)
+                Duration (Years)
               </label>
               <input
                 type="range"
                 name="years"
                 min={1}
-                max={40}
+                max={10}
                 step={1}
                 value={values.years}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.years, 1, 40),
+                  background: getRangeBg(values.years, 1, 10),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -136,7 +152,7 @@ export default function LumpsumCalculator() {
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
-                <span className="text-sm text-gray-500">Years</span>
+                <span className="text-sm text-gray-500">₹</span>
               </div>
             </div>
           </div>
@@ -144,26 +160,26 @@ export default function LumpsumCalculator() {
           {/* Right - Results */}
           <div className="bg-orange-50 rounded-2xl p-6 flex flex-col justify-center">
             <h3 className="text-lg font-semibold text-gray-800 mb-6">
-              Investment Summary
+              RD Investment Summary
             </h3>
 
             <SipPieChart
-              investedAmount={values.investment}
+              investedAmount={investedAmount}
               returns={estimatedReturns}
             />
 
             <div className="space-y-4 text-sm">
               <div className="flex justify-between">
-                <span className="text-[#0b2b7f]">Invested Amount</span>
+                <span className="text-[#0b2b7f]">Total Investment</span>
                 <span className="font-semibold">
-                  {formatCurrency(values.investment)}
+                  ₹{formatCurrency(investedAmount)}
                 </span>
               </div>
 
               <div className="flex justify-between">
                 <span className="text-gray-600">Estimated Returns</span>
                 <span className="font-semibold text-[#f38120]">
-                  {formatCurrency(estimatedReturns)}
+                  ₹{formatCurrency(estimatedReturns)}
                 </span>
               </div>
 
@@ -172,7 +188,7 @@ export default function LumpsumCalculator() {
               <div className="flex justify-between text-base">
                 <span className="font-semibold text-gray-800">Total Value</span>
                 <span className="font-bold text-[#f38120]">
-                  {formatCurrency(maturityAmount)}
+                  ₹{formatCurrency(maturityAmount)}
                 </span>
               </div>
             </div>

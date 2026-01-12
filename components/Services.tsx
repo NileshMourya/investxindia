@@ -67,7 +67,7 @@ const ServicesSection = () => {
           </h3>
 
           <p className="max-w-3xl text-sm md:text-base text-gray-700 leading-relaxed">
-            Backed by over three decades of experience in banking, finance, and
+            Backed by over 15+ Years of experience in banking, finance, and
             investments, InvestX India delivers structured, goal-oriented wealth
             management solutions designed for long-term success.
           </p>

@@ -48,6 +48,13 @@ const calMeanu = [
   { name: "SIP Calculator", link: "/Calculator/SIP" },
   { name: "Lumpsum Calculator", link: "/Calculator/Lumpsum" },
   { name: "SWP Calculator", link: "/Calculator/SWP" },
+  { name: "RD Calculator", link: "/Calculator/RD" },
+  { name: "NPS Calculator", link: "/Calculator/NPS" },
+  { name: "FD Calculator", link: "/Calculator/FD" },
+  { name: "PPF Calculator", link: "/Calculator/PPF" },
+  { name: "EMI Calculator", link: "/Calculator/EMI" },
+  { name: "Car Loan Calculator", link: "/Calculator/CarLoan" },
+  { name: "Home Loan Calculator", link: "/Calculator/HomeLoan" },
 ];
 
 const Navbar = () => {

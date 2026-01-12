@@ -10,7 +10,7 @@ const data = [
   },
   { icon: "/facebook.png", link: "https://www.facebook.com/investxindia" },
   { icon: "/whatsapp.png", link: "" },
-  { icon: "/x.jpg", link: "https://x.com/investxindia" },
+  { icon: "/x.jpg", link: "https://x.com/investxindia0" },
 ];
 
 const ContactUs = () => {

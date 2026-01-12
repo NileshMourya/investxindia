@@ -31,13 +31,16 @@ const links = [
 ];
 
 const calLinks = [
-  { name: "SIP Calculator", links: "/Calculator/SIP" },
-  { name: "Retirement Calculator", links: "" },
-  { name: "Goal Calculator", links: "" },
-  { name: "Tax Saving Calculator", links: "" },
-  { name: "Term Plan Calculator", links: "" },
-  { name: "Health Insurance Calculator", links: "" },
-  { name: "Emergency Fund Calculator", links: "" },
+  { name: "SIP Calculator", link: "/Calculator/SIP" },
+  { name: "Lumpsum Calculator", link: "/Calculator/Lumpsum" },
+  { name: "SWP Calculator", link: "/Calculator/SWP" },
+  { name: "RD Calculator", link: "/Calculator/RD" },
+  { name: "NPS Calculator", link: "/Calculator/NPS" },
+  { name: "FD Calculator", link: "/Calculator/FD" },
+  { name: "PPF Calculator", link: "/Calculator/PPF" },
+  { name: "EMI Calculator", link: "/Calculator/EMI" },
+  { name: "Car Loan Calculator", link: "/Calculator/CarLoan" },
+  { name: "Home Loan Calculator", link: "/Calculator/HomeLoan" },
 ];
 
 export function Component() {
@@ -50,6 +53,12 @@ export function Component() {
               <Image src="/logo.png" alt="Image" height={70} width={150} />
             </Link>
             <div className="mt-4">
+              <p className="text-sm font-semibold text-gray-700">
+                Investxindia Corporate Distribution Private Limited.
+              </p>
+              <p className="text-sm mb-2 font-semibold text-gray-700">
+                CIN No. U66309MH2025PTC460880
+              </p>
               <p className="text-sm font-semibold text-gray-700">
                 Registered & Corporate Office:
               </p>
@@ -89,6 +98,24 @@ export function Component() {
             <div className="flex gap-1 mb-4">
               <p className="text-gray-600 font-semibold text-sm">Help Desk:</p>
               <p className="text-sm text-gray-600">+91 98924 40999</p>
+            </div>
+            <div className="flex gap-3 items-center">
+              <Link href="https://play.google.com/store/apps/details?id=com.investxindia.investxindia">
+                <Image
+                  src="/googleplay.png"
+                  height={30}
+                  width={100}
+                  alt="playstore"
+                ></Image>
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.investxindia.investxindia">
+                <Image
+                  src="/appStore.png"
+                  height={30}
+                  width={100}
+                  alt="playstore"
+                ></Image>
+              </Link>
             </div>
           </div>
 
@@ -140,7 +167,7 @@ export function Component() {
                 {calLinks.map((item, id) => (
                   <Link
                     key={id}
-                    href={item.links}
+                    href={item.link}
                     style={{ lineHeight: "10px" }}
                     className="text-nowrap"
                   >

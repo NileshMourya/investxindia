@@ -83,16 +83,16 @@ export default function SipCalculator() {
                 className="range-slider w-full mt-2"
               />
 
-              <p className="mt-1 text-[#f38120] font-semibold">
-                ₹
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.monthlyInvestment)}
                   name="monthlyInvestment"
+                  value={formatCurrency(values.monthlyInvestment)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">₹</span>
+              </div>
             </div>
 
             {/* Interest Rate */}
@@ -114,15 +114,16 @@ export default function SipCalculator() {
                 className="range-slider w-full mt-2"
               />
 
-              <p className="mt-1 text-[#f38120] font-semibold">
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.annualRate)}
                   name="annualRate"
+                  value={formatCurrency(values.annualRate)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">%</span>
+              </div>
             </div>
 
             {/* Time Period */}
@@ -144,15 +145,16 @@ export default function SipCalculator() {
                 className="range-slider w-full mt-2"
               />
 
-              <p className="mt-1 text-[#f38120] font-semibold">
+              <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  value={formatCurrency(values.years)}
                   name="years"
+                  value={formatCurrency(values.years)}
                   onChange={handleChange}
-                  className="p-1 rounded-md"
-                ></input>
-              </p>
+                  className="w-40 px-3 py-2 border rounded-lg text-sm"
+                />
+                <span className="text-sm text-gray-500">Years</span>
+              </div>
             </div>
           </div>
 
@@ -177,7 +179,7 @@ export default function SipCalculator() {
 
               <div className="flex justify-between">
                 <span className="text-gray-600">Estimated Returns</span>
-                <span className="font-semibold text-green-600">
+                <span className="font-semibold text-[#f38120]">
                   {formatCurrency(estimatedReturns)}
                 </span>
               </div>
@@ -188,7 +190,7 @@ export default function SipCalculator() {
                 <span className="font-semibold text-gray-800">
                   Maturity Value
                 </span>
-                <span className="font-bold text-[#f38120]">
+                <span className="font-bold text-gray-600">
                   {formatCurrency(maturityAmount)}
                 </span>
               </div>

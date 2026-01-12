@@ -14,8 +14,8 @@ export default function SipPieChart({
   returns,
 }: SipPieChartProps) {
   const data = [
-    { name: "Invested", value: investedAmount },
-    { name: "Returns", value: returns },
+    { name: "Loan Amount", value: investedAmount },
+    { name: "Intrest", value: returns },
   ];
 
   const formatCurrency = (value: number) =>

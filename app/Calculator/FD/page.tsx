@@ -3,26 +3,41 @@
 import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
 
-type investment = { investment: number; annualRate: number; years: number };
-export default function LumpsumCalculator() {
-  const [values, setValues] = useState<investment>({
-    investment: 10000,
-    annualRate: 12,
+type FDValues = {
+  principal: number;
+  rate: number;
+  years: number;
+};
+
+export default function FDCalculator() {
+  const [values, setValues] = useState<FDValues>({
+    principal: 100000,
+    rate: 10,
     years: 5,
   });
-  const n = 1; // Compounded yearly
-  const r = values.annualRate / 100;
 
-  // Lumpsum Formula
+  const n = 4; // quarterly compounding
+
   const maturityAmount =
-    values.investment * Math.pow(1 + r / n, n * values.years);
+    values.principal * Math.pow(1 + values.rate / (100 * n), n * values.years);
 
-  const estimatedReturns = maturityAmount - values.investment;
+  const estimatedReturns = maturityAmount - values.principal;
 
-  const formatCurrency = (value: number) => value.toLocaleString("en-IN");
+  const formatCurrency = (value: number) =>
+    value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
+
+    if (name === "fdType") {
+      setValues((prev) => ({
+        ...prev,
+        fdType: value as "simple" | "compound",
+      }));
+      return;
+    }
 
     const rawValue = value.replace(/,/g, "");
     const numericValue = Number(rawValue);
@@ -42,37 +57,38 @@ export default function LumpsumCalculator() {
 
   return (
     <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16 px-4">
-      <div className="lg:max-w-5xl sm:w-full mx-auto">
+      <div className="lg:max-w-5xl mx-auto">
         <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10 grid gap-10 md:grid-cols-2">
           {/* Left - Inputs */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Lumpsum Calculator
+              Fixed Deposit Calculator
             </h2>
 
-            {/* Investment Amount */}
+            {/* Principal */}
             <div className="mb-6">
               <label className="text-sm font-medium text-gray-700">
-                Total Investment
+                Deposit Amount
               </label>
               <input
                 type="range"
-                name="investment"
+                name="principal"
                 min={10000}
                 max={10000000}
                 step={10000}
-                value={values.investment}
+                value={values.principal}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.investment, 10000, 10000000),
+                  background: getRangeBg(values.principal, 10000, 10000000),
                 }}
                 className="range-slider w-full mt-2"
               />
+
               <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  name="investment"
-                  value={formatCurrency(values.investment)}
+                  name="principal"
+                  value={formatCurrency(values.principal)}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -80,29 +96,29 @@ export default function LumpsumCalculator() {
               </div>
             </div>
 
-            {/* Annual Return */}
+            {/* Interest Rate */}
             <div className="mb-6">
               <label className="text-sm font-medium text-gray-700">
-                Expected Annual Return (%)
+                Interest Rate (% p.a.)
               </label>
               <input
                 type="range"
-                name="annualRate"
+                name="rate"
                 min={1}
-                max={30}
-                step={0.5}
-                value={values.annualRate}
+                max={15}
+                step={0.25}
+                value={values.rate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 30),
+                  background: getRangeBg(values.rate, 1, 15),
                 }}
                 className="range-slider w-full mt-2"
               />
               <div className="flex items-center gap-3 mt-2">
                 <input
                   type="text"
-                  name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  name="rate"
+                  value={values.rate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -110,21 +126,21 @@ export default function LumpsumCalculator() {
               </div>
             </div>
 
-            {/* Duration */}
-            <div>
+            {/* Tenure */}
+            <div className="mb-6">
               <label className="text-sm font-medium text-gray-700">
-                Investment Duration (Years)
+                Tenure (Years)
               </label>
               <input
                 type="range"
                 name="years"
                 min={1}
-                max={40}
+                max={10}
                 step={1}
                 value={values.years}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.years, 1, 40),
+                  background: getRangeBg(values.years, 1, 10),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -132,7 +148,7 @@ export default function LumpsumCalculator() {
                 <input
                   type="text"
                   name="years"
-                  value={formatCurrency(values.years)}
+                  value={values.years}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -144,35 +160,37 @@ export default function LumpsumCalculator() {
           {/* Right - Results */}
           <div className="bg-orange-50 rounded-2xl p-6 flex flex-col justify-center">
             <h3 className="text-lg font-semibold text-gray-800 mb-6">
-              Investment Summary
+              FD Summary
             </h3>
 
             <SipPieChart
-              investedAmount={values.investment}
+              investedAmount={values.principal}
               returns={estimatedReturns}
             />
 
             <div className="space-y-4 text-sm">
               <div className="flex justify-between">
-                <span className="text-[#0b2b7f]">Invested Amount</span>
+                <span className="text-[#0b2b7f]">Principal Amount</span>
                 <span className="font-semibold">
-                  {formatCurrency(values.investment)}
+                  ₹{formatCurrency(values.principal)}
                 </span>
               </div>
 
               <div className="flex justify-between">
-                <span className="text-gray-600">Estimated Returns</span>
+                <span className="text-gray-600">Interest Earned</span>
                 <span className="font-semibold text-[#f38120]">
-                  {formatCurrency(estimatedReturns)}
+                  ₹{formatCurrency(estimatedReturns)}
                 </span>
               </div>
 
               <hr />
 
               <div className="flex justify-between text-base">
-                <span className="font-semibold text-gray-800">Total Value</span>
+                <span className="font-semibold text-gray-800">
+                  Maturity Amount
+                </span>
                 <span className="font-bold text-[#f38120]">
-                  {formatCurrency(maturityAmount)}
+                  ₹{formatCurrency(maturityAmount)}
                 </span>
               </div>
             </div>
