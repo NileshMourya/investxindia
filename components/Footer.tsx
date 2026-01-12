@@ -108,7 +108,7 @@ export function Component() {
                   alt="playstore"
                 ></Image>
               </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.investxindia.investxindia">
+              <Link href="https://apps.apple.com/us/app/investxindia/id6757598740">
                 <Image
                   src="/appStore.png"
                   height={30}
