@@ -15,7 +15,7 @@ const productMenu = [
 ];
 
 const serviceMenu = [
-  { name: "SIP SWP & SWP", url: "/Services/SIP_SWP_STP" },
+  { name: "SIP SWP & STP", url: "/Services/SIP_SWP_STP" },
   { name: "Mutual Fund Basic", url: "/Services/MutualFundBasic" },
   {
     name: "Disclosures & How We Work",

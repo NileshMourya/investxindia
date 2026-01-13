@@ -102,7 +102,7 @@ export function Component() {
             <div className="flex gap-3 items-center">
               <Link href="https://play.google.com/store/apps/details?id=com.investxindia.investxindia">
                 <Image
-                  src="/googleplay.png"
+                  src="/googlePlay.png"
                   height={30}
                   width={100}
                   alt="playstore"
