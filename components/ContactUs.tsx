@@ -6,7 +6,7 @@ const data = [
   { icon: "/instagram.png", link: "https://www.instagram.com/investxindia" },
   {
     icon: "/linkedin.png",
-    link: "https://www.linkedin.com/company/investxindia",
+    link: "https://www.linkedin.com/company/investxindia-corporate-distribution-private-limited",
   },
   { icon: "/facebook.png", link: "https://www.facebook.com/investxindia" },
   { icon: "/whatsapp.png", link: "" },
@@ -31,7 +31,7 @@ const ContactUs = () => {
       <div className="w-full grid grid-cols-1 lg:grid-cols-5 sm:grid-cols-2 gap-5 mt-5 mb-5">
         {data.map((item, id) => (
           <div key={id} className="p-2 flex justify-center ">
-            <Link href={item.link}>
+            <Link href={item.link} target="_blank">
               <Image
                 src={item.icon}
                 alt="icon link"

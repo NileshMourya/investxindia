@@ -11,7 +11,7 @@ const directors: Director[] = [
     role: "Founder - MD",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
     image: "/rahual.jpeg",
-    linkedin: "https://www.linkedin.com/in/rahulcnvmoney/",
+    linkedin: "https://www.linkedin.com/in/rahulinvestx",
     description: [
       "Founded under the leadership of Rahul Pandey, our organization is driven by deep industry expertise and a strong commitment to delivering reliable financial solutions. Rahul Pandey brings over 12+ years of experience in the financial services industry, with a proven track record of building, managing, and scaling businesses across multiple verticals.",
       "Over the course of his career, he has held key leadership positions including Manager at Prudent Corporate Advisory Services Limited, Business Head at CNVMONEY Fintech Pvt. Ltd., and CEO at CNVEST Insurance Brokers Pvt. Ltd. These roles have enabled him to develop extensive knowledge across wealth management, fintech, insurance distribution, and corporate advisory services.",

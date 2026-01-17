@@ -54,6 +54,10 @@ export function Component() {
             </Link>
             <div className="mt-4">
               <p className="text-sm font-semibold text-gray-700">
+                AMFI Registered Mutual Fund Distributor
+              </p>
+
+              <p className="text-sm font-semibold text-gray-700">
                 Investxindia Corporate Distribution Private Limited.
               </p>
               <p className="text-sm mb-2 font-semibold text-gray-700">
