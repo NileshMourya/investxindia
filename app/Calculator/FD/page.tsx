@@ -5,7 +5,7 @@ import SipPieChart from "../SipPieChart";
 
 type FDValues = {
   principal: number;
-  rate: number;
+  rate: number | string;
   years: number;
 };
 
@@ -18,35 +18,32 @@ export default function FDCalculator() {
 
   const n = 4; // quarterly compounding
 
+  const annualRateNumber = Number(values.rate) || 0;
   const maturityAmount =
-    values.principal * Math.pow(1 + values.rate / (100 * n), n * values.years);
+    values.principal *
+    Math.pow(1 + annualRateNumber / (100 * n), n * values.years);
 
   const estimatedReturns = maturityAmount - values.principal;
 
   const formatCurrency = (value: number) =>
     value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type } = e.target;
 
-    if (name === "fdType") {
+    // Allow typing decimals for text input
+    if (type === "text") {
       setValues((prev) => ({
         ...prev,
-        fdType: value as "simple" | "compound",
+        [name]: value,
       }));
       return;
     }
 
-    const rawValue = value.replace(/,/g, "");
-    const numericValue = Number(rawValue);
-
-    if (isNaN(numericValue)) return;
-
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -88,7 +85,7 @@ export default function FDCalculator() {
                 <input
                   type="text"
                   name="principal"
-                  value={formatCurrency(values.principal)}
+                  value={values.principal}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -106,11 +103,11 @@ export default function FDCalculator() {
                 name="rate"
                 min={1}
                 max={15}
-                step={0.25}
+                step={0.1}
                 value={values.rate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.rate, 1, 15),
+                  background: getRangeBg(annualRateNumber, 1, 15),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -187,7 +184,7 @@ export default function FDCalculator() {
 
               <div className="flex justify-between text-base">
                 <span className="font-semibold text-gray-800">
-                  Maturity Amount
+                  Expected Market Value
                 </span>
                 <span className="font-bold text-[#f38120]">
                   ₹{formatCurrency(maturityAmount)}

@@ -5,7 +5,7 @@ import SipPieChart from "../SipPieChart";
 
 type NPSInvestment = {
   monthlyContribution: number;
-  annualRate: number;
+  annualRate: number | string;
   age: number;
 };
 const RETIREMENT_AGE = 60;
@@ -18,8 +18,8 @@ export default function NPSCalculator() {
 
   const yearsToInvest = RETIREMENT_AGE - values.age;
   const months = yearsToInvest * 12;
-
-  const monthlyRate = values.annualRate / 100 / 12;
+  const annualRateNumber = Number(values.annualRate);
+  const monthlyRate = annualRateNumber / 100 / 12;
 
   const maturityAmount = useMemo(() => {
     return (
@@ -38,13 +38,21 @@ export default function NPSCalculator() {
     value.toLocaleString("en-IN", { maximumFractionDigits: 2 });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const numericValue = Number(value.replace(/,/g, ""));
-    if (isNaN(numericValue)) return;
+    const { name, value, type } = e.target;
 
+    // Allow typing decimals for text input
+    if (type === "text") {
+      setValues((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
+
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -80,7 +88,7 @@ export default function NPSCalculator() {
                   background: getRangeBg(
                     values.monthlyContribution,
                     500,
-                    50000
+                    50000,
                   ),
                 }}
                 className="range-slider w-full mt-2"
@@ -89,7 +97,7 @@ export default function NPSCalculator() {
                 <input
                   type="text"
                   name="monthlyContribution"
-                  value={formatCurrency(values.monthlyContribution)}
+                  value={values.monthlyContribution}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -111,7 +119,7 @@ export default function NPSCalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 6, 14),
+                  background: getRangeBg(annualRateNumber, 6, 14),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -119,7 +127,7 @@ export default function NPSCalculator() {
                 <input
                   type="text"
                   name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  value={values.annualRate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -149,7 +157,7 @@ export default function NPSCalculator() {
                 <input
                   type="text"
                   name="age"
-                  value={formatCurrency(values.age)}
+                  value={values.age}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -181,7 +189,7 @@ export default function NPSCalculator() {
               </div>
 
               <div className="flex justify-between font-semibold">
-                <span>Maturity amount</span>
+                <span>Expected Market Value</span>
                 <span>₹{formatCurrency(maturityAmount)}</span>
               </div>
 

@@ -85,7 +85,7 @@ const Navbar = () => {
               key={link.name}
               href={link.url}
               className={`text-sm font-medium hover:text-[#f38120] ${activeClass(
-                link.url
+                link.url,
               )}`}
             >
               {link.name}

@@ -3,7 +3,11 @@
 import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
 
-type investment = { investment: number; annualRate: number; years: number };
+type investment = {
+  investment: number;
+  annualRate: number | string;
+  years: number;
+};
 export default function LumpsumCalculator() {
   const [values, setValues] = useState<investment>({
     investment: 10000,
@@ -11,7 +15,8 @@ export default function LumpsumCalculator() {
     years: 5,
   });
   const n = 1; // Compounded yearly
-  const r = values.annualRate / 100;
+  const annualRateNumber = Number(values.annualRate) || 0;
+  const r = annualRateNumber / 100;
 
   // Lumpsum Formula
   const maturityAmount =
@@ -22,16 +27,21 @@ export default function LumpsumCalculator() {
   const formatCurrency = (value: number) => value.toLocaleString("en-IN");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
 
-    const rawValue = value.replace(/,/g, "");
-    const numericValue = Number(rawValue);
+    // Allow typing decimals for text input
+    if (type === "text") {
+      setValues((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
 
-    if (isNaN(numericValue)) return;
-
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -72,7 +82,7 @@ export default function LumpsumCalculator() {
                 <input
                   type="text"
                   name="investment"
-                  value={formatCurrency(values.investment)}
+                  value={values.investment}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -94,7 +104,7 @@ export default function LumpsumCalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 30),
+                  background: getRangeBg(annualRateNumber, 1, 30),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -102,7 +112,7 @@ export default function LumpsumCalculator() {
                 <input
                   type="text"
                   name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  value={values.annualRate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -132,7 +142,7 @@ export default function LumpsumCalculator() {
                 <input
                   type="text"
                   name="years"
-                  value={formatCurrency(values.years)}
+                  value={values.years}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />

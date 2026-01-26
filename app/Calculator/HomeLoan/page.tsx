@@ -5,7 +5,7 @@ import EmiChart from "../EmiChart";
 
 type EMIValues = {
   loanAmount: number;
-  annualRate: number;
+  annualRate: number | string;
   years: number;
 };
 
@@ -17,7 +17,8 @@ export default function CarLoanCalculator() {
   });
 
   // Monthly calculations
-  const monthlyRate = values.annualRate / (12 * 100);
+  const annualRateNumber = Number(values.annualRate) || 0;
+  const monthlyRate = annualRateNumber / (12 * 100);
   const totalMonths = values.years * 12;
 
   // EMI Formula
@@ -116,7 +117,7 @@ export default function CarLoanCalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 6, 18),
+                  background: getRangeBg(annualRateNumber, 6, 18),
                 }}
                 className="range-slider w-full mt-3"
               />

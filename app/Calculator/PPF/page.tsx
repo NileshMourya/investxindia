@@ -91,7 +91,7 @@ export default function PPFCalculator() {
                 <input
                   type="text"
                   name="yearlyInvestment"
-                  value={formatCurrency(values.yearlyInvestment)}
+                  value={values.yearlyInvestment}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -121,7 +121,7 @@ export default function PPFCalculator() {
                 <input
                   type="text"
                   name="years"
-                  value={formatCurrency(values.years)}
+                  value={values.years}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -170,7 +170,7 @@ export default function PPFCalculator() {
               <hr />
 
               <div className="flex justify-between font-bold">
-                <span>Maturity Value</span>
+                <span>Expected Market Value</span>
                 <span className="text-[#f38120]">
                   ₹{formatCurrency(maturityValue)}
                 </span>

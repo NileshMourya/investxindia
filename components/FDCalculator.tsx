@@ -86,7 +86,7 @@ export default function FDCalculator() {
             </div>
 
             <div className="border-t border-slate-700 pt-4 flex justify-between text-base">
-              <span>Maturity Amount</span>
+              <span>Expected Market Value</span>
               <span className="font-semibold text-indigo-400">
                 ₹ {formatINR(maturityAmount)}
               </span>

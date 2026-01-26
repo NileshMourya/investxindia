@@ -2,11 +2,10 @@
 
 import { ChangeEvent, useState } from "react";
 import SipPieChart from "../SipPieChart";
-import React from "react";
 
 type investment = {
   monthlyInvestment: number;
-  annualRate: number;
+  annualRate: number | string;
   years: number;
 };
 
@@ -20,7 +19,9 @@ export default function SipCalculator() {
   const months = values.years * 12;
 
   // ✅ Correct compounded monthly rate
-  const monthlyRate = Math.pow(1 + values.annualRate / 100, 1 / 12) - 1;
+  const annualRateNumber = Number(values.annualRate) || 0;
+
+  const monthlyRate = Math.pow(1 + annualRateNumber / 100, 1 / 12) - 1;
 
   const investedAmount = values.monthlyInvestment * months;
 
@@ -36,16 +37,21 @@ export default function SipCalculator() {
   const formatCurrency = (value: number) => value.toLocaleString("en-IN");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
 
-    const rawValue = value.replace(/,/g, "");
-    const numericValue = Number(rawValue);
+    // Allow typing decimals for text input
+    if (type === "text") {
+      setValues((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
 
-    if (isNaN(numericValue)) return;
-
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -87,7 +93,7 @@ export default function SipCalculator() {
                 <input
                   type="text"
                   name="monthlyInvestment"
-                  value={formatCurrency(values.monthlyInvestment)}
+                  value={values.monthlyInvestment}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -105,11 +111,11 @@ export default function SipCalculator() {
                 name="annualRate"
                 min={1}
                 max={30}
-                step={0.5}
+                step={0.1}
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 30),
+                  background: getRangeBg(annualRateNumber, 1, 30),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -118,7 +124,7 @@ export default function SipCalculator() {
                 <input
                   type="text"
                   name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  value={values.annualRate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -149,7 +155,7 @@ export default function SipCalculator() {
                 <input
                   type="text"
                   name="years"
-                  value={formatCurrency(values.years)}
+                  value={values.years}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -188,7 +194,7 @@ export default function SipCalculator() {
 
               <div className="flex justify-between text-base">
                 <span className="font-semibold text-gray-800">
-                  Maturity Value
+                  Expected Market Value
                 </span>
                 <span className="font-bold text-gray-600">
                   {formatCurrency(maturityAmount)}

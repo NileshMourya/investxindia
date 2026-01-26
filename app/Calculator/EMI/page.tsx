@@ -5,7 +5,7 @@ import EmiChart from "../EmiChart";
 
 type EMIValues = {
   loanAmount: number;
-  annualRate: number;
+  annualRate: number | string;
   years: number;
 };
 
@@ -17,7 +17,8 @@ export default function EMICalculator() {
   });
 
   // Monthly calculations
-  const monthlyRate = values.annualRate / (12 * 100);
+  const annualRateNumber = Number(values.annualRate) || 0;
+  const monthlyRate = annualRateNumber / (12 * 100);
   const totalMonths = values.years * 12;
 
   // EMI Formula
@@ -32,13 +33,21 @@ export default function EMICalculator() {
     value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const numericValue = Number(value.replace(/,/g, ""));
-    if (isNaN(numericValue)) return;
+    const { name, value, type } = e.target;
 
+    // Allow typing decimals for text input
+    if (type === "text") {
+      setValues((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
+
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -78,7 +87,7 @@ export default function EMICalculator() {
                 <input
                   type="text"
                   name="loanAmount"
-                  value={formatCurrency(values.loanAmount)}
+                  value={values.loanAmount}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -100,7 +109,7 @@ export default function EMICalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 15),
+                  background: getRangeBg(annualRateNumber, 1, 15),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -108,7 +117,7 @@ export default function EMICalculator() {
                 <input
                   type="text"
                   name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  value={values.annualRate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />

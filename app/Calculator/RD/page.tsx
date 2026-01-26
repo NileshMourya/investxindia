@@ -5,7 +5,7 @@ import SipPieChart from "../SipPieChart";
 
 type Investment = {
   monthlyInvestment: number;
-  annualRate: number;
+  annualRate: number | string;
   years: number;
 };
 
@@ -17,7 +17,8 @@ export default function RDCalculator() {
   });
 
   const N = 4; // Quarterly compounding
-  const R = values.annualRate / 100;
+  const annualRateNumber = Number(values.annualRate) || 0;
+  const R = annualRateNumber / 100;
   const totalMonths = values.years * 12;
 
   /** RD Maturity Calculation */
@@ -88,7 +89,7 @@ export default function RDCalculator() {
                 <input
                   type="text"
                   name="monthlyInvestment"
-                  value={formatCurrency(values.monthlyInvestment)}
+                  value={values.monthlyInvestment}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -110,7 +111,7 @@ export default function RDCalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 1, 15),
+                  background: getRangeBg(annualRateNumber, 1, 15),
                 }}
                 className="range-slider w-full mt-2"
               />
@@ -118,7 +119,7 @@ export default function RDCalculator() {
                 <input
                   type="text"
                   name="annualRate"
-                  value={formatCurrency(values.annualRate)}
+                  value={values.annualRate}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />
@@ -148,7 +149,7 @@ export default function RDCalculator() {
                 <input
                   type="text"
                   name="years"
-                  value={formatCurrency(values.years)}
+                  value={values.years}
                   onChange={handleChange}
                   className="w-40 px-3 py-2 border rounded-lg text-sm"
                 />

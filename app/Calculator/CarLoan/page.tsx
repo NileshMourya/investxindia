@@ -5,7 +5,7 @@ import EmiChart from "../EmiChart";
 
 type EMIValues = {
   loanAmount: number;
-  annualRate: number;
+  annualRate: number | string;
   years: number;
 };
 
@@ -17,7 +17,8 @@ export default function CarLoanCalculator() {
   });
 
   // Monthly calculations
-  const monthlyRate = values.annualRate / (12 * 100);
+  const annualRateNumber = Number(values.annualRate) || 0;
+  const monthlyRate = annualRateNumber / (12 * 100);
   const totalMonths = values.years * 12;
 
   // EMI Formula
@@ -32,13 +33,21 @@ export default function CarLoanCalculator() {
     value.toLocaleString("en-IN", { maximumFractionDigits: 0 });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const numericValue = Number(value.replace(/,/g, ""));
-    if (isNaN(numericValue)) return;
+    const { name, value, type } = e.target;
 
+    // Allow typing decimals for text input
+    if (type === "text") {
+      setValues((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
+
+    // Range inputs stay numeric
     setValues((prev) => ({
       ...prev,
-      [name]: numericValue,
+      [name]: Number(value),
     }));
   };
 
@@ -98,7 +107,6 @@ export default function CarLoanCalculator() {
               <div className="flex items-center gap-3 mt-2">
                 <input
                   type="number"
-                  step="0.1"
                   name="annualRate"
                   value={values.annualRate}
                   onChange={handleChange}
@@ -116,7 +124,7 @@ export default function CarLoanCalculator() {
                 value={values.annualRate}
                 onChange={handleChange}
                 style={{
-                  background: getRangeBg(values.annualRate, 6, 18),
+                  background: getRangeBg(annualRateNumber, 6, 18),
                 }}
                 className="range-slider w-full mt-3"
               />
