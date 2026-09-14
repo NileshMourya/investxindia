@@ -54,11 +54,10 @@ export function Component() {
             </Link>
             <div className="mt-4">
               <p className="text-sm font-semibold text-gray-700">
-                AMFI Registered Mutual Fund Distributor
-              </p>
-
-              <p className="text-sm font-semibold text-gray-700">
                 Investxindia Corporate Distribution Private Limited.
+              </p>
+              <p className="text-sm font-semibold text-gray-700">
+                AMFI Registered Mutual Fund Distributor
               </p>
               <p className="text-sm mb-2 font-semibold text-gray-700">
                 CIN No. U66309MH2025PTC460880
@@ -122,7 +121,27 @@ export function Component() {
               </Link>
             </div>
           </div>
-
+          
+            <div className="flex flex-wrap sm:flex-row items-center" style={{flexDirection:'column',gap:4}}>
+             <div className="mt-4">
+                <Image
+                  src="/ISO1.png"
+                  alt="APMI"
+                  height={90}
+                  width={90}
+                ></Image>
+              </div>
+              <div className="mt-4">
+                <Image
+                  src="/ISO2.png"
+                  alt="APMI"
+                  height={90}
+                  width={90}
+                ></Image>
+              </div>
+              <p className="text-xs text-black font-bold text-nowrap mb-4">AN ISO 9001:2015 CERTIFIED COMPANY</p>
+              </div>
+        
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <FooterTitle title="Register Under" />
@@ -145,27 +164,20 @@ export function Component() {
               <div className="mt-4">
                 <Image
                   src="/BSE.png"
-                  alt="APMI"
+                  alt="BSE"
                   height={50}
                   width={100}
                 ></Image>
               </div>
               <div className="mt-4">
                 <Image
-                  src="/ISO1.png"
-                  alt="APMI"
+                  src="/NSE.png"
+                  alt="NSE"
                   height={50}
-                  width={50}
+                  width={100}
                 ></Image>
               </div>
-              <div className="mt-4">
-                <Image
-                  src="/ISO2.png"
-                  alt="APMI"
-                  height={50}
-                  width={50}
-                ></Image>
-              </div>
+              
             </div>
             <div>
               <FooterTitle title="Quick Link" />
