@@ -289,6 +289,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          {/* mobile view Added */}
            <div
               onClick={() => setLoginOpen(!loginOpen)}
               className="w-full flex justify-between text-sm font-medium"
