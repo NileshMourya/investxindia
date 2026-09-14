@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const images = ["/1.png", "/2.png", "/3.png", "/4.png"];
+const images = ["/1.png", "/2.png", "/3.png", "/4.png","/5.png","/6.png"];
 
 export default function HeroCarousel() {
   const [api, setApi] = React.useState<CarouselApi | null>(null);

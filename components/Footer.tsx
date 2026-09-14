@@ -150,6 +150,22 @@ export function Component() {
                   width={100}
                 ></Image>
               </div>
+              <div className="mt-4">
+                <Image
+                  src="/ISO1.png"
+                  alt="APMI"
+                  height={50}
+                  width={50}
+                ></Image>
+              </div>
+              <div className="mt-4">
+                <Image
+                  src="/ISO2.png"
+                  alt="APMI"
+                  height={50}
+                  width={50}
+                ></Image>
+              </div>
             </div>
             <div>
               <FooterTitle title="Quick Link" />

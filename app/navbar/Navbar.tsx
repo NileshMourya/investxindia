@@ -164,6 +164,11 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+          <div className="text-sm py-2 px-4 shadow-lg cursor-pointer bg-[#0b2b7f] rounded-lg text-white font-medium hover:bg-[#f38120] hover:text-white">
+            <a href="https://forms.gle/TdK9FCF7BY2MKags9" target="blank" >
+              Sign up
+            </a>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -284,6 +289,14 @@ const Navbar = () => {
               </div>
             )}
           </div>
+           <div
+              onClick={() => setLoginOpen(!loginOpen)}
+              className="w-full flex justify-between text-sm font-medium"
+            >
+              <a href="https://forms.gle/TdK9FCF7BY2MKags9" target="blank" >
+              Sign Up
+            </a>
+            </div>
         </div>
       )}
     </header>

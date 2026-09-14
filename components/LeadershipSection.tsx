@@ -10,7 +10,7 @@ const directors: Director[] = [
     name: "Rahul Pandey",
     role: "Founder - MD",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
-    image: "/rahual.jpeg",
+    image: "/rahual.png",
     linkedin: "https://www.linkedin.com/in/rahulinvestx",
     description: [
       "Founded under the leadership of Rahul Pandey, our organization is driven by deep industry expertise and a strong commitment to delivering reliable financial solutions. Rahul Pandey brings over 12+ years of experience in the financial services industry, with a proven track record of building, managing, and scaling businesses across multiple verticals.",
@@ -24,7 +24,7 @@ const directors: Director[] = [
     name: "Manali Rahul Pandey",
     role: "Co-Founder & CEO",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
-    image: "/manaali.jpeg",
+    image: "/manaali.png",
     linkedin: "https://www.linkedin.com/in/manalipandey/",
     description: [
       "Co-founded and led by Manali Pandey, our organization is backed by strong financial governance and compliance expertise. Manali Pandey brings over 10+ years of experience in the financial industry, with a solid academic foundation as Inter CA, Inter CS, and M.Com.",
@@ -38,7 +38,7 @@ const directors: Director[] = [
     name: "Ketki Pathak",
     role: "Vice President",
     company: "Investxindia Corporate Distribution Pvt. Ltd.",
-    image: "/ketki.jpeg",
+    image: "/ketki.png",
     linkedin: "https://www.linkedin.com/in/ketki-pathak-a3a3a065/",
     description: [
       "Ketki Pathak is the Vice President at Investxindia Corporate Distribution Pvt. Ltd., bringing over 15 years of experience in the Indian financial services industry.",
