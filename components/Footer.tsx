@@ -123,17 +123,9 @@ export function Component() {
           </div>
           
             <div className="flex flex-wrap sm:flex-row items-center" style={{flexDirection:'column',gap:4}}>
-             <div className="mt-4">
-                <Image
-                  src="/ISO1.png"
-                  alt="APMI"
-                  height={90}
-                  width={90}
-                ></Image>
-              </div>
               <div className="mt-4">
                 <Image
-                  src="/ISO2.png"
+                  src="/ISO1.png"
                   alt="APMI"
                   height={90}
                   width={90}

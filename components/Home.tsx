@@ -6,42 +6,54 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const images = ["/1.png", "/2.png", "/3.png", "/4.png","/5.png","/6.png"];
+const images = [
+  "/1.png",
+  "/2.png",
+  "/3.png",
+  "/4.png",
+  "/5.png",
+  "/6.png",
+];
 
 export default function HeroCarousel() {
   const [api, setApi] = React.useState<CarouselApi | null>(null);
 
   return (
-    <section className="w-full">
+    <section className="w-full overflow-hidden">
       <Carousel
         setApi={setApi}
-        plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
-        className="relative w-full overflow-hidden"
+        opts={{
+          loop: true,
+          align: "start",
+        }}
+        plugins={[
+          Autoplay({
+            delay: 4000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false,
+          }),
+        ]}
+        className="w-full"
       >
-        <CarouselContent>
+        <CarouselContent className="ml-0">
           {images.map((img, index) => (
-            <CarouselItem key={index}>
-              <div
-                className="relative w-full   h-[45vh]
-                  sm:h-[55vh]
-                  md:h-[65vh]
-                  lg:h-[80vh]
-                  xl:h-[90vh]"
-              >
-                {/* Image */}
+            <CarouselItem
+              key={img}
+              className="basis-full pl-0"
+            >
+              <div className="relative w-full">
                 <Image
                   src={img}
-                  alt={`slide-${index}`}
-                  fill
+                  alt={`Hero banner ${index + 1}`}
+                  width={1942}
+                  height={809}
                   priority={index === 0}
                   sizes="100vw"
-                  className="object-contain"
+                  className="block w-full h-auto"
                 />
               </div>
             </CarouselItem>
