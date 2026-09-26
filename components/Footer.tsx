@@ -2,24 +2,14 @@
 
 import {
   Footer,
-  FooterBrand,
-  FooterCopyright,
   FooterDivider,
   FooterIcon,
-  FooterLink,
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 const links = [
   { name: "Home", link: "/" },
@@ -28,19 +18,11 @@ const links = [
   { name: "Privacy Policy", link: "/PrivacyPolicy" },
   { name: "Terms of Conditions", link: "/Terms&Condition" },
   { name: "Disclaimers", link: "/Disclaimers" },
-];
-
-const calLinks = [
-  { name: "SIP Calculator", link: "/Calculator/SIP" },
-  { name: "Lumpsum Calculator", link: "/Calculator/Lumpsum" },
-  { name: "SWP Calculator", link: "/Calculator/SWP" },
-  { name: "RD Calculator", link: "/Calculator/RD" },
-  { name: "NPS Calculator", link: "/Calculator/NPS" },
-  { name: "FD Calculator", link: "/Calculator/FD" },
-  { name: "PPF Calculator", link: "/Calculator/PPF" },
-  { name: "EMI Calculator", link: "/Calculator/EMI" },
-  { name: "Car Loan Calculator", link: "/Calculator/CarLoan" },
-  { name: "Home Loan Calculator", link: "/Calculator/HomeLoan" },
+  { name: "Code Of Conduct", link: "/CodeofConduct" },
+  { name: "Commission Disclosures", link: "/CommissionDisclosures" },
+  { name: "Website & App Disclaimer", link: "/website&appdisclaimer" },
+  { name: "Risk Disclosures", link: "/riskDisclosures" },
+  { name: "Grievance Redressal Policy", link: "/grievance" },
 ];
 
 export function Component() {
@@ -56,8 +38,14 @@ export function Component() {
               <p className="text-sm font-semibold text-gray-700">
                 Investxindia Corporate Distribution Private Limited.
               </p>
+              <p className="text-sm font-semibold text-gray-700 text-wrap">
+                AMFI Registered Mutual Fund
+              </p>
+              <p className="text-sm font-semibold text-gray-700 text-wrap">
+                Specialized Investment Fund (SIF) Distributor
+              </p>
               <p className="text-sm font-semibold text-gray-700">
-                AMFI Registered Mutual Fund Distributor
+                APMI Registered PMS Distributor
               </p>
               <p className="text-sm mb-2 font-semibold text-gray-700">
                 CIN No. U66309MH2025PTC460880
@@ -121,20 +109,50 @@ export function Component() {
               </Link>
             </div>
           </div>
-          
-            <div className="flex flex-wrap sm:flex-row items-center" style={{flexDirection:'column',gap:4}}>
-              <div className="mt-4">
-                <Image
-                  src="/ISO1.png"
-                  alt="APMI"
-                  height={90}
-                  width={90}
-                ></Image>
-              </div>
-              <p className="text-xs text-black font-bold text-nowrap mb-4">AN ISO 9001:2015 CERTIFIED COMPANY</p>
-              </div>
-        
-          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+
+          <div
+            className="w-100 flex flex-wrap sm:flex-row items-center"
+            style={{ flexDirection: "column", gap: 4 }}
+          >
+            <div className="text-xs leading-6 text-gray-600">
+              <p>
+                <span className="font-semibold text-gray-800">
+                  AMFI Reg No.:
+                </span>{" "}
+                ARN-346230{" "}
+                <span className="text-gray-500">
+                  (Date of initial Registration: 25 November 2025; Current
+                  validity of ARN: 24 November 2028)
+                </span>
+              </p>
+
+              <p>
+                <span className="font-semibold text-gray-800">
+                  APMI Reg No.:
+                </span>{" "}
+                APRN-07831{" "}
+                <span className="text-gray-500">
+                  (Date of initial Registration: 31 October 2022; Current
+                  validity of APRN: 30 October 2028)
+                </span>
+              </p>
+
+              <p>
+                <span className="font-semibold text-gray-800">
+                  BSE Member Id:
+                </span>{" "}
+                65516
+              </p>
+            </div>
+            <div className="mt-4">
+              <Image src="/ISO1.png" alt="APMI" height={90} width={90}></Image>
+            </div>
+            <p className="text-xs text-black font-bold text-nowrap mb-2">
+              AN ISO 9001:2015 CERTIFIED COMPANY
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2">
             <div>
               <FooterTitle title="Register Under" />
               <div className="mt-2">
@@ -154,22 +172,11 @@ export function Component() {
                 ></Image>
               </div>
               <div className="mt-4">
-                <Image
-                  src="/BSE.png"
-                  alt="BSE"
-                  height={50}
-                  width={100}
-                ></Image>
+                <Image src="/BSE.png" alt="BSE" height={50} width={100}></Image>
               </div>
               <div className="mt-4">
-                <Image
-                  src="/NSE.png"
-                  alt="NSE"
-                  height={50}
-                  width={100}
-                ></Image>
+                <Image src="/NSE.png" alt="NSE" height={50} width={100}></Image>
               </div>
-              
             </div>
             <div>
               <FooterTitle title="Quick Link" />
@@ -183,32 +190,24 @@ export function Component() {
                     {item.name}
                   </Link>
                 ))}
-              </FooterLinkGroup>
-            </div>
-            <div>
-              <FooterTitle title="Calculators" />
-              <FooterLinkGroup col>
-                {calLinks.map((item, id) => (
-                  <Link
-                    key={id}
-                    href={item.link}
-                    style={{ lineHeight: "10px" }}
-                    className="text-nowrap"
+                <li className="mb-1">
+                  <a
+                    href="https://www.sebi.gov.in/filings/mutual-funds.html"
+                    target="blank"
+                    className="hover:underline text-sm"
                   >
-                    {item.name}
-                  </Link>
-                ))}
-              </FooterLinkGroup>
-            </div>
-            <div>
-              <FooterTitle title="Resources" />
-              <FooterLinkGroup col>
-                <FooterLink href="/Services/MutualFundBasic">
-                  Mutual Fund Basics
-                </FooterLink>
-                <FooterLink href="//Services/SIP_SWP_STP">
-                  SIP / SWP / STP Guide
-                </FooterLink>
+                    SID / SAI / KIM Sheets
+                  </a>
+                </li>
+                <li className="mb-1">
+                  <a
+                    href="https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=7&smid=0"
+                    target="blank"
+                    className="hover:underline text-sm"
+                  >
+                    Risk Factor
+                  </a>
+                </li>
               </FooterLinkGroup>
             </div>
           </div>
@@ -219,9 +218,9 @@ export function Component() {
             Mutual fund investments are subject to market risks, read all scheme
             related documents carefully.
           </p>
-          <p className="text-sm text-gray-400 p-2">
-            © Investxindia Corporate Distribution Private Limited. All Rights
-            Reserved.
+          <p className="text-xs text-gray-400 p-2">
+            Copyright © 2026 Investxindia Corporate Distribution Private
+            Limited. All Rights Reserved.
           </p>
 
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
