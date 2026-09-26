@@ -239,7 +239,7 @@ const ServicesSection = () => {
           {/* Sub Heading */}
           <div className="mb-8 flex items-center gap-2 text-blue-700 dark:text-blue-400 font-semibold">
             <ArrowUpRight className="w-5 h-5" />
-            SIP (Systematic Investment Plan)
+            SWP (Systematic Withdrawal Plan)
           </div>
 
           {/* Cards */}

@@ -52,7 +52,7 @@ export default function CodeOfConduct() {
     if (!value) return amcs;
 
     return amcs.filter(([name, registrationNumber]) =>
-      `${name} ${registrationNumber}`.toLowerCase().includes(value)
+      `${name} ${registrationNumber}`.toLowerCase().includes(value),
     );
   }, [search]);
 
@@ -128,8 +128,8 @@ export default function CodeOfConduct() {
                 <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
                   Pursuant to Chapter 15 of the SEBI Master Circular and Clause
                   15.7 of the SEBI Mutual Funds Framework, all entities engaged
-                  in the distribution and marketing of mutual fund units must
-                  be formally registered with AMFI, hold a valid ARN/EUIN code
+                  in the distribution and marketing of mutual fund units must be
+                  formally registered with AMFI, hold a valid ARN/EUIN code
                   mapping, and strictly fulfill the operational boundaries of
                   the industry Code of Conduct.
                 </p>
@@ -138,37 +138,36 @@ export default function CodeOfConduct() {
 
             {/* Section I */}
             <section className="mb-12">
-              <SectionHeading>
-                I. Purpose and Scope of the Code
-              </SectionHeading>
+              <SectionHeading>I. Purpose and Scope of the Code</SectionHeading>
 
               <div className="space-y-5 text-sm leading-7 text-slate-700 sm:text-base">
                 <p>
                   <strong className="text-slate-900">a.</strong> This Code of
-                  Conduct ("Code") requires Mutual Fund Distributors to
+                  Conduct {`("Code")`} requires Mutual Fund Distributors to
                   demonstrate the core values of being a fiduciary by
-                  establishing professional standards in their dealings with
-                  the investors, Asset Management Companies ("AMCs"), and other
+                  establishing professional standards in their dealings with the
+                  investors, Asset Management Companies {`("AMCs")`}, and other
                   distributors so as to exemplify the values of transparency,
                   competency, fairness, integrity and thereby seek to inspire
-                  and maintain trustworthiness in the profession of
-                  distribution of Mutual Fund schemes.
+                  and maintain trustworthiness in the profession of distribution
+                  of Mutual Fund schemes.
                 </p>
 
                 <p>
                   <strong className="text-slate-900">b.</strong> This Code
                   applies to all persons and entities who are registered with
-                  the Association of Mutual Funds in India (AMFI) as mutual
-                  fund distributors i.e. holders of AMFI Registration Number
-                  ("ARN") (referred to as "MFDs" in this Code) and is binding on
-                  all the Directors/partners, members, sub-distributors,
-                  employees and representatives of the MFDs (collectively
-                  referred to as "Representatives" in this Code).
+                  the Association of Mutual Funds in India (AMFI) as mutual fund
+                  distributors i.e. holders of AMFI Registration Number{" "}
+                  {`("ARN")`}
+                  (referred to as {`"MFDs"`} in this Code) and is binding on all
+                  the Directors/partners, members, sub-distributors, employees
+                  and representatives of the MFDs (collectively referred to as
+                  {`"Representatives"`} in this Code).
                 </p>
 
                 <p>
-                  The term "MFDs" is deemed to include the sales personnel of
-                  the MFDs engaged in marketing, sale and distribution of
+                  The term {`"MFDs"`} is deemed to include the sales personnel
+                  of the MFDs engaged in marketing, sale and distribution of
                   mutual fund products.
                 </p>
               </div>
@@ -176,9 +175,7 @@ export default function CodeOfConduct() {
 
             {/* Section II */}
             <section className="mb-12">
-              <SectionHeading>
-                II. Obligations of the MFDs
-              </SectionHeading>
+              <SectionHeading>II. Obligations of the MFDs</SectionHeading>
 
               {/* 1 */}
               <SubSectionHeading>
@@ -228,14 +225,12 @@ export default function CodeOfConduct() {
                 <p>
                   Intermediaries must strictly abstain from market manipulation
                   setups, including over-transacting, asset churning to
-                  accumulate transaction codes, splitting applications to
-                  bypass systematic thresholds, or participating in parameter
-                  defaults or misrepresentative layout disclosures.
+                  accumulate transaction codes, splitting applications to bypass
+                  systematic thresholds, or participating in parameter defaults
+                  or misrepresentative layout disclosures.
                 </p>
 
-                <p>
-                  MFDs shall not collude or undertake malpractices such as:
-                </p>
+                <p>MFDs shall not collude or undertake malpractices such as:</p>
 
                 <BulletList
                   items={[
@@ -255,10 +250,10 @@ export default function CodeOfConduct() {
 
               <BulletList
                 items={[
-                  "MFDs shall adhere to Securities and Exchange Board of India (Mutual Funds) Regulations, 1996 (\"Mutual Fund Regulations\") and guidelines/circulars issued by SEBI and AMFI from time to time, pertaining to distributors, selling, distribution and advertising practices and code of conduct.",
+                  'MFDs shall adhere to Securities and Exchange Board of India (Mutual Funds) Regulations, 1996 ("Mutual Fund Regulations") and guidelines/circulars issued by SEBI and AMFI from time to time, pertaining to distributors, selling, distribution and advertising practices and code of conduct.',
                   "MFDs must also adhere to restrictions prescribed under other SEBI Regulations as may be applicable to their marketing, selling and distribution activities.",
-                  "MFDs shall comply with the Know Your Distributor (\"KYD\") norms prescribed by AMFI.",
-                  "MFDs should endeavor to be fully conversant with the key provisions of the Scheme Information Document (\"SID\"), Statement of Additional Information (\"SAI\") and Key Information Memorandum (\"KIM\").",
+                  'MFDs shall comply with the Know Your Distributor ("KYD") norms prescribed by AMFI.',
+                  'MFDs should endeavor to be fully conversant with the key provisions of the Scheme Information Document ("SID"), Statement of Additional Information ("SAI") and Key Information Memorandum ("KIM").',
                   "MFDs should seek information from their clients about their financial status, investment experience and investment objectives in order to assess suitability.",
                   "MFDs shall ensure that their Representatives have the necessary education and experience to perform their respective services.",
                   "MFDs and their Representatives shall maintain confidentiality of all information relating to the AMCs and investors.",
@@ -279,8 +274,8 @@ export default function CodeOfConduct() {
                     MFDs should maintain necessary infrastructure to support the
                     AMCs in maintaining high service standards to investors and
                     ensure that critical operations such as
-                    forwarding/submission of forms and cheques etc. to
-                    AMCs/RTAs are appropriately supported.
+                    forwarding/submission of forms and cheques etc. to AMCs/RTAs
+                    are appropriately supported.
                   </p>
                 </ContentBlock>
 
@@ -299,11 +294,11 @@ export default function CodeOfConduct() {
                 <ContentBlock title="Internal Control, Financial and Operational Resources">
                   <p>
                     The MFDs should have internal control procedures and
-                    financial and operational systems and processes which can
-                    be reasonably expected to detect and prevent mis-selling as
-                    well as mitigate financial loss arising from fraud and
-                    other dishonest acts, professional misconduct or omissions,
-                    theft, or force majeure events.
+                    financial and operational systems and processes which can be
+                    reasonably expected to detect and prevent mis-selling as
+                    well as mitigate financial loss arising from fraud and other
+                    dishonest acts, professional misconduct or omissions, theft,
+                    or force majeure events.
                   </p>
                 </ContentBlock>
 
@@ -361,9 +356,7 @@ export default function CodeOfConduct() {
               </ContentBlock>
 
               {/* 5 */}
-              <SubSectionHeading>
-                5. Other Obligations
-              </SubSectionHeading>
+              <SubSectionHeading>5. Other Obligations</SubSectionHeading>
 
               <BulletList
                 items={[
@@ -377,7 +370,7 @@ export default function CodeOfConduct() {
                   "MFDs shall immediately notify AMC and AMFI if any Representative has committed an act amounting to moral turpitude or financial irregularities.",
                   "MFDs shall not use terms such as Adviser, Advisor, Financial Adviser, Investment Adviser, Wealth Adviser, Wealth Manager or similar names unless registered with SEBI as an Investment Adviser.",
                   "The name of an MFD should reflect the registration held by the entity and should not create an impression of performing a role for which the entity is not registered.",
-                  "MFDs shall mention/display the tagline \"AMFI-registered Mutual Fund Distributor\" along with or below their name in all forms of communication.",
+                  'MFDs shall mention/display the tagline "AMFI-registered Mutual Fund Distributor" along with or below their name in all forms of communication.',
                 ]}
               />
 
@@ -405,7 +398,7 @@ export default function CodeOfConduct() {
               <p className="mb-6 text-sm leading-7 text-slate-600 sm:text-base">
                 In adherence to multiple alliance visibility directives, below
                 is a directory containing active SEBI identification markers
-                across primary Indian fund houses empanelled with Credit & Vault.
+                across primary Indian fund houses empanelled with Investxindia.
               </p>
 
               {/* Search */}
@@ -481,7 +474,7 @@ export default function CodeOfConduct() {
                                 {registrationNumber}
                               </td>
                             </tr>
-                          )
+                          ),
                         )
                       ) : (
                         <tr>
@@ -603,9 +596,7 @@ function BulletList({ items, nested = false }) {
   return (
     <ul
       className={`space-y-3 text-sm leading-7 text-slate-700 sm:text-base ${
-        nested
-          ? "ml-5 list-[circle] sm:ml-7"
-          : "ml-5 list-disc sm:ml-7"
+        nested ? "ml-5 list-[circle] sm:ml-7" : "ml-5 list-disc sm:ml-7"
       }`}
     >
       {items.map((item, index) => (

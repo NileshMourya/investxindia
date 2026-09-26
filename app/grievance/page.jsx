@@ -328,9 +328,9 @@ function RiskList({ items }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-700"
+          className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-600"
         >
-          <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" />
+          <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
           <span>{item}</span>
         </li>
       ))}
@@ -342,7 +342,7 @@ function ContactItem({ icon: Icon, label, value }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4">
       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
-        <Icon className="h-4 w-4 text-emerald-600" />
+        <Icon className="h-4 w-4 text-amber-600" />
         {label}
       </div>
 
@@ -355,11 +355,11 @@ function ContactItem({ icon: Icon, label, value }) {
 
 function InfoBox({ title, children }) {
   return (
-    <div className="my-5 overflow-hidden rounded-2xl border border-emerald-200 bg-emerald-50/60">
-      <div className="flex items-center gap-2 border-b border-emerald-100 bg-emerald-50 px-4 py-3">
-        <ShieldCheck className="h-4 w-4 text-emerald-700" />
+    <div className="my-5 overflow-hidden rounded-2xl border border-amber-200 bg-amber-50/60">
+      <div className="flex items-center gap-2 border-b border-amber-100 bg-amber-50 px-4 py-3">
+        <ShieldCheck className="h-4 w-4 text-amber-600" />
 
-        <span className="text-sm font-semibold text-emerald-900">{title}</span>
+        <span className="text-sm font-semibold text-amber-900">{title}</span>
       </div>
 
       <div className="space-y-4 p-4 text-sm leading-6 text-slate-600">
@@ -385,7 +385,7 @@ function ExternalLinkButton({ href, children }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-800"
+      className="inline-flex items-center gap-2 rounded-xl bg-amber-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-amber-800"
     >
       {children}
 
@@ -398,16 +398,16 @@ function GrievanceCard({ section }) {
   const Icon = section.icon;
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-[0_12px_35px_rgba(15,23,42,0.08)] sm:p-6 lg:p-7">
-      <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-emerald-500 via-emerald-400 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    <article className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-200 hover:shadow-[0_12px_35px_rgba(15,23,42,0.08)] sm:p-6 lg:p-7">
+      <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-400 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="mb-5 flex items-start gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 ring-1 ring-amber-100">
           <Icon className="h-5 w-5" strokeWidth={1.8} />
         </div>
 
         <div className="min-w-0 flex-1">
-          <div className="mb-1 text-xs font-semibold tracking-[0.18em] text-emerald-600">
+          <div className="mb-1 text-xs font-semibold tracking-[0.18em] text-amber-600">
             STEP {section.number}
           </div>
 
@@ -429,19 +429,19 @@ export default function GrievanceRedressalPolicy() {
     <main className="min-h-screen bg-slate-50 text-slate-900">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-white">
-        <div className="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-emerald-100/50 blur-3xl" />
+        <div className="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-amber-100/50 blur-3xl" />
         <div className="absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-slate-100 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-2 text-xs font-semibold tracking-wide text-emerald-700">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3.5 py-2 text-xs font-semibold tracking-wide text-amber-600">
               <Headphones className="h-4 w-4" />
               CLIENT SUPPORT & GRIEVANCE
             </div>
 
             <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
               Grievance Redressal
-              <span className="text-emerald-600"> Policy</span>
+              <span className="text-amber-600"> Policy</span>
             </h1>
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
@@ -456,15 +456,15 @@ export default function GrievanceRedressalPolicy() {
 
       {/* Contact / Step 1 */}
       <section className="mx-auto max-w-7xl px-5 pt-10 sm:px-6 sm:pt-14 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-emerald-200 bg-white shadow-[0_4px_25px_rgba(15,23,42,0.05)]">
-          <div className="bg-emerald-700 px-5 py-5 sm:px-7">
+        <div className="overflow-hidden rounded-2xl border border-amber-200 bg-white shadow-[0_4px_25px_rgba(15,23,42,0.05)]">
+          <div className="bg-amber-600 px-5 py-5 sm:px-7">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
                 <Phone className="h-5 w-5 text-white" />
               </div>
 
               <div>
-                <p className="text-xs font-semibold tracking-[0.16em] text-emerald-100">
+                <p className="text-xs font-semibold tracking-[0.16em] text-amber-100">
                   STEP 02
                 </p>
 
@@ -485,12 +485,12 @@ export default function GrievanceRedressalPolicy() {
               {/* Contact Details */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
                     <Building2 className="h-5 w-5" />
                   </div>
 
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">
                       Customer / Grievance Contact
                     </p>
 
@@ -503,9 +503,9 @@ export default function GrievanceRedressalPolicy() {
                 <div className="space-y-3">
                   <a
                     href="mailto:contact@investxindia.com"
-                    className="flex items-start gap-3 rounded-xl bg-white p-4 transition hover:ring-1 hover:ring-emerald-200"
+                    className="flex items-start gap-3 rounded-xl bg-white p-4 transition hover:ring-1 hover:ring-amber-200"
                   >
-                    <Mail className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+                    <Mail className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
 
                     <div>
                       <p className="text-xs font-medium text-slate-400">
@@ -520,9 +520,9 @@ export default function GrievanceRedressalPolicy() {
 
                   <a
                     href="tel:+919892440999"
-                    className="flex items-start gap-3 rounded-xl bg-white p-4 transition hover:ring-1 hover:ring-emerald-200"
+                    className="flex items-start gap-3 rounded-xl bg-white p-4 transition hover:ring-1 hover:ring-amber-200"
                   >
-                    <Phone className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+                    <Phone className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
 
                     <div>
                       <p className="text-xs font-medium text-slate-400">
@@ -536,14 +536,14 @@ export default function GrievanceRedressalPolicy() {
                   </a>
 
                   <div className="flex items-start gap-3 rounded-xl bg-white p-4">
-                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
 
                     <div>
                       <p className="text-xs font-medium text-slate-400">
                         Registered & Corporate Office
                       </p>
 
-                      <p className="mt-1 text-sm leading-6 text-slate-700">
+                      <p className="mt-1 text-sm leading-6 text-slate-600">
                         902, Gomes Garden, Kaul Heritage City,
                         <br />
                         Chulna Road, Vasai (West),
@@ -558,12 +558,12 @@ export default function GrievanceRedressalPolicy() {
               {/* Required Information */}
               <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
                     <FileText className="h-5 w-5" />
                   </div>
 
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">
                       Please Provide
                     </p>
 
@@ -585,9 +585,9 @@ export default function GrievanceRedressalPolicy() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-lg bg-slate-50 px-3.5 py-3 text-sm text-slate-700"
+                      className="flex items-start gap-3 rounded-lg bg-slate-50 px-3.5 py-3 text-sm text-slate-600"
                     >
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -601,7 +601,7 @@ export default function GrievanceRedressalPolicy() {
       {/* Remaining Sections */}
       <section className="mx-auto max-w-7xl px-5 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
         <div className="mb-8 sm:mb-10">
-          <p className="text-sm font-semibold tracking-wide text-emerald-600">
+          <p className="text-sm font-semibold tracking-wide text-amber-600">
             GRIEVANCE PROCESS
           </p>
 
@@ -619,7 +619,7 @@ export default function GrievanceRedressalPolicy() {
         {/* Final Security Notice */}
         <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 p-5 text-white sm:p-7">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-500/15 text-amber-400">
               <LockKeyhole className="h-5 w-5" />
             </div>
 
@@ -640,7 +640,7 @@ export default function GrievanceRedressalPolicy() {
         {/* Company Footer Note */}
         <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div className="flex items-center gap-2">
-            <UserRound className="h-4 w-4 text-emerald-600" />
+            <UserRound className="h-4 w-4 text-amber-600" />
             <span>Investxindia Corporate Distribution Pvt. Ltd.</span>
           </div>
 

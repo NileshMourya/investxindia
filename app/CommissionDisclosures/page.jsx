@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -50,13 +49,10 @@ export default function CommissionDisclosures() {
   return (
     <section className="w-full bg-slate-50">
       <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-14">
-
         {/* Main Card */}
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-
           {/* Header */}
           <div className="border-b border-slate-200 bg-white px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-
             <div className="mb-4 flex items-center gap-3">
               <div className="h-8 w-1 rounded-full bg-blue-600" />
 
@@ -68,23 +64,21 @@ export default function CommissionDisclosures() {
             <div className="space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
               <p>
                 As per SEBI guidelines, we have disclosed the various
-                commissions received by Credit and Vault Financial Services
-                from mutual fund companies below. The level of service provided
-                or any recommendations made by Credit and Vault Financial
-                Services are not influenced by the number of commissions
+                commissions received by Investxindia from mutual fund companies
+                below. The level of service provided or any recommendations made
+                by Investxindia are not influenced by the number of commissions
                 received.
               </p>
 
               <p>
                 The table below shows the commission structure applicable to
-                Credit and Vault Financial Services from mutual fund companies.
+                Investxindia from mutual fund companies.
               </p>
             </div>
           </div>
 
           {/* Table Section */}
           <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
-
             {/* Mobile Scroll Hint */}
             <div className="mb-3 flex items-center justify-between gap-3 lg:hidden">
               <p className="text-xs text-slate-500">
@@ -98,14 +92,11 @@ export default function CommissionDisclosures() {
 
             {/* Responsive Table */}
             <div className="overflow-hidden rounded-xl border border-slate-200">
-
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[760px] border-collapse text-left">
-
                   {/* Table Header */}
                   <thead>
                     <tr className="bg-slate-900 text-white">
-
                       <th className="sticky left-0 z-10 min-w-[280px] border-r border-slate-700 bg-slate-900 px-4 py-4 text-sm font-semibold sm:px-6">
                         AMC Name
                       </th>
@@ -121,54 +112,43 @@ export default function CommissionDisclosures() {
                       <th className="min-w-[140px] px-4 py-4 text-center text-sm font-semibold sm:px-6">
                         ELSS
                       </th>
-
                     </tr>
                   </thead>
 
                   {/* Table Body */}
                   <tbody className="divide-y divide-slate-200">
+                    {commissionData.map(([amc, equity, debt, elss], index) => (
+                      <tr
+                        key={amc}
+                        className="group transition-colors hover:bg-blue-50/50"
+                      >
+                        {/* AMC */}
+                        <td className="sticky left-0 z-[1] border-r border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-800 group-hover:bg-blue-50 sm:px-6">
+                          <div className="flex items-center gap-3">
+                            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-500">
+                              {index + 1}
+                            </span>
 
-                    {commissionData.map(
-                      ([amc, equity, debt, elss], index) => (
-                        <tr
-                          key={amc}
-                          className="group transition-colors hover:bg-blue-50/50"
-                        >
+                            <span className="leading-6">{amc}</span>
+                          </div>
+                        </td>
 
-                          {/* AMC */}
-                          <td className="sticky left-0 z-[1] border-r border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-800 group-hover:bg-blue-50 sm:px-6">
-                            <div className="flex items-center gap-3">
+                        {/* Equity */}
+                        <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
+                          {equity || "—"}
+                        </td>
 
-                              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-500">
-                                {index + 1}
-                              </span>
+                        {/* Debt */}
+                        <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
+                          {debt || "—"}
+                        </td>
 
-                              <span className="leading-6">
-                                {amc}
-                              </span>
-
-                            </div>
-                          </td>
-
-                          {/* Equity */}
-                          <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
-                            {equity || "—"}
-                          </td>
-
-                          {/* Debt */}
-                          <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
-                            {debt || "—"}
-                          </td>
-
-                          {/* ELSS */}
-                          <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
-                            {elss || "—"}
-                          </td>
-
-                        </tr>
-                      )
-                    )}
-
+                        {/* ELSS */}
+                        <td className="px-4 py-4 text-center text-sm font-medium text-slate-700 sm:px-6">
+                          {elss || "—"}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -176,10 +156,8 @@ export default function CommissionDisclosures() {
 
             {/* Notes */}
             <div className="mt-8 space-y-4">
-
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
                 <div className="space-y-3 text-sm leading-7 text-slate-600">
-
                   <p>
                     <strong className="font-semibold text-slate-900">
                       Equity-oriented schemes
@@ -195,21 +173,24 @@ export default function CommissionDisclosures() {
                     includes all the schemes that do not fall under
                     equity-oriented schemes (except ELSS).
                   </p>
-
                 </div>
               </div>
               <div className="space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
-              <p>
-               Dear investors please note that investing / transacting through Regular Plans under mutual fund scheme involves distributor commission paid by the AMC’s .
-              </p>
+                <p>
+                  Dear investors please note that investing / transacting
+                  through Regular Plans under mutual fund scheme involves
+                  distributor commission paid by the AMC’s .
+                </p>
 
-              <p>
-               Direct Plans under mutual funds available without distributor commission directly via AMC website or MF Central portal. Please connect us for procedural guidance to transact directly on AMC /RTA portals.
-              </p>
-            </div>
+                <p>
+                  Direct Plans under mutual funds available without distributor
+                  commission directly via AMC website or MF Central portal.
+                  Please connect us for procedural guidance to transact directly
+                  on AMC /RTA portals.
+                </p>
+              </div>
               {/* Contact CTA */}
               <div className="flex flex-col gap-4 rounded-xl bg-slate-900 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-
                 <div>
                   <h2 className="text-base font-semibold text-white sm:text-lg">
                     Need detailed commission information?
@@ -227,9 +208,7 @@ export default function CommissionDisclosures() {
                 >
                   Contact Us
                 </a>
-
               </div>
-
             </div>
           </div>
         </div>

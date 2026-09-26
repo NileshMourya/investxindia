@@ -12,9 +12,6 @@ import Link from "next/link";
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 const links = [
-  { name: "Home", link: "/" },
-  { name: "About Us", link: "/About" },
-  { name: "Contact Us", link: "/Contact" },
   { name: "Privacy Policy", link: "/PrivacyPolicy" },
   { name: "Terms of Conditions", link: "/Terms&Condition" },
   { name: "Disclaimers", link: "/Disclaimers" },
@@ -114,35 +111,29 @@ export function Component() {
             className="w-100 flex flex-wrap sm:flex-row items-center"
             style={{ flexDirection: "column", gap: 4 }}
           >
-            <div className="text-xs leading-6 text-gray-600">
-              <p>
-                <span className="font-semibold text-gray-800">
-                  AMFI Reg No.:
-                </span>{" "}
+            <div className="grid grid-cols-[140px_1fr] gap-y-1 text-xs leading-6 text-gray-600">
+              <span className="font-semibold text-gray-800">AMFI Reg No:</span>
+              <span>
                 ARN-346230{" "}
                 <span className="text-gray-500">
                   (Date of initial Registration: 25 November 2025; Current
                   validity of ARN: 24 November 2028)
                 </span>
-              </p>
+              </span>
 
-              <p>
-                <span className="font-semibold text-gray-800">
-                  APMI Reg No.:
-                </span>{" "}
+              <span className="font-semibold text-gray-800">APMI Reg No:</span>
+              <span>
                 APRN-07831{" "}
                 <span className="text-gray-500">
                   (Date of initial Registration: 31 October 2022; Current
                   validity of APRN: 30 October 2028)
                 </span>
-              </p>
+              </span>
 
-              <p>
-                <span className="font-semibold text-gray-800">
-                  BSE Member Id:
-                </span>{" "}
-                65516
-              </p>
+              <span className="font-semibold text-gray-800">
+                BSE Member Id:
+              </span>
+              <span>65516</span>
             </div>
             <div className="mt-4">
               <Image src="/ISO1.png" alt="APMI" height={90} width={90}></Image>
@@ -179,7 +170,7 @@ export function Component() {
               </div>
             </div>
             <div>
-              <FooterTitle title="Quick Link" />
+              <FooterTitle title="Legal" />
               <FooterLinkGroup col>
                 {links.map((item, id) => (
                   <Link
